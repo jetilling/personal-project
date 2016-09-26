@@ -1,31 +1,69 @@
-angular.module('storySwap', ['ui.router'])
+angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard'])
 .config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/')
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('landingPage', {
       url: '/',
-      controller: 'landingPageCtrl.js',
-      template: './public/views/landingPage.html'
-    }),
+        views: {
+          "info@": {
+            controller: 'landingPageCtrl',
+            templateUrl: './views/landingPage.html'
+          }
+        }
+    })
     .state('login', {
       url: '/login',
-      controller: 'loginCtrl.js',
-      template: './public/views/login.html'
-    }),
+        views: {
+          "info@": {
+            controller: 'loginCtrl',
+            templateUrl: './views/login.html'
+          }
+        }
+    })
     .state('dashboard', {
       url: '/dashboard',
-      controller: 'dashboardCtrl.js',
-      template: './public/views/dashboard.html'
-    }),
+        views: {
+          "info@": {
+            controller: 'dashboardCtrl',
+            templateUrl: './views/dashboard.html',
+          }
+        }
+      })
     .state('stories', {
-      url: '/stories',
-      controller: 'storiesCtrl.js',
-      template: './public/views/stories.html'
-    }),
+      parent: 'dashboard',
+      views: {
+        "dashboard@dashboard": {
+          controller: 'storiesCtrl',
+          templateUrl: './views/stories.html'
+        }
+      }
+    })
+    .state('following', {
+      parent: 'dashboard',
+      views: {
+        "dashboard@dashboard": {
+          controller: 'followingCtrl',
+          templateUrl: './views/following.html'
+        }
+      }
+    })
+    .state('uncompletedStories', {
+      parent: 'dashboard',
+      views: {
+        "dashboard@dashboard": {
+          controller: 'uncompletedStoriesCtrl',
+          templateUrl: './views/uncompletedStories.html'
+        }
+      }
+    })
     .state('logout', {
       url: '/logout',
-      controller: 'logoutCtrl.js',
-      template: './public/views/logout.html'
+        views: {
+          "info@": {
+            controller: 'logoutCtrl',
+            templateUrl: './views/logout.html'
+          }
+        }
     })
 })

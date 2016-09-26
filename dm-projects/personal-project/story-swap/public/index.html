@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='storySwap'>
+<html ng-app="storySwap">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,15 +9,25 @@
   </head>
   <body>
 
-    
-    <ui-view></ui-view>
+
+    <div ui-view="info"></div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
       <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script> -->
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <script src="./public/js/app.js" charset="utf-8"></script>
-    <script src="./public/js/service.js" charset="utf-8"></script>
+    <script src="./js/app.js" charset="utf-8"></script>
+    <script src="./js/info.module.js" charset="utf-8"></script>
+    <script src="./js/dashboard.module.js" charset="utf-8"></script>
+    <script src="./js/service.js" charset="utf-8"></script>
+    <script src="./js/controllers/dashboardCtrl.js" charset="utf-8"></script>
+    <script src="./js/controllers/followingCtrl.js" charset="utf-8"></script>
+    <script src="./js/controllers/landingPageCtrl.js" charset="utf-8"></script>
+    <script src="./js/controllers/loginCtrl.js" charset="utf-8"></script>
+    <script src="./js/controllers/logoutCtrl.js" charset="utf-8"></script>
+    <script src="./js/controllers/storiesCtrl.js" charset="utf-8"></script>
+    <script src="./js/controllers/uncompletedStoriesCtrl.js" charset="utf-8"></script>
+
   </body>
 </html>
