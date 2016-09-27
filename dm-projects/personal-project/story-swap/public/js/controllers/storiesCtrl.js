@@ -1,3 +1,5 @@
-angular.module('storySwap').controller('storiesCtrl', function($scope){
+angular.module('storySwap').controller('storiesCtrl', function($scope, service){
+  $scope.test = "Stories Page!"
 
+    $scope.stories = service.getStories();
 })

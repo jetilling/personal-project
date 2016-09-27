@@ -1,7 +1,17 @@
 <body ng-controller="landingPageCtrl">
-  <h1>welcome!</h1>
+  <h1>{{test}}</h1>
 
-  <button type="button" name="button">create account</button>
+  <div class="form" ng-show='form'>
+    <input type="input" name="name" value="" placeholder="Email" ng-model='email'>
+    <input type="input" name="name" value="" placeholder="Password" ng-model='password'>
+    <input type="input" name="name" value="" placeholder="Year born" ng-model='year'>
+    <p>
+      Terms of Service
+    </p>
+    <button type="button" name="button" ng-click="create(email, password, year)" ui-sref="dashboard">Create Account</button>
+  </div>
+
+  <button type="button" name="button"ng-click="begin()" ng-show="startButton">Start Here!</button>
   <button type="button" name="button" ui-sref="login">log in</button>
 
 </body>

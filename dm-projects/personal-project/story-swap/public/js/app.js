@@ -1,6 +1,6 @@
 angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard'])
 .config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/').when('/dashboard', '/dashboard/stories');
 
   $stateProvider
     .state('landingPage', {
@@ -23,15 +23,15 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
     })
     .state('dashboard', {
       url: '/dashboard',
-        views: {
+      views: {
           "info@": {
             controller: 'dashboardCtrl',
             templateUrl: './views/dashboard.html',
           }
         }
       })
-    .state('stories', {
-      parent: 'dashboard',
+    .state('dashboard.stories', {
+      url: '/stories',
       views: {
         "dashboard@dashboard": {
           controller: 'storiesCtrl',
@@ -39,8 +39,8 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
         }
       }
     })
-    .state('following', {
-      parent: 'dashboard',
+    .state('dashboard.following', {
+      url: '/following',
       views: {
         "dashboard@dashboard": {
           controller: 'followingCtrl',
@@ -48,12 +48,12 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
         }
       }
     })
-    .state('uncompletedStories', {
-      parent: 'dashboard',
+    .state('dashboard.drafts', {
+      url: '/drafts',
       views: {
         "dashboard@dashboard": {
-          controller: 'uncompletedStoriesCtrl',
-          templateUrl: './views/uncompletedStories.html'
+          controller: 'draftsCtrl',
+          templateUrl: './views/drafts.html'
         }
       }
     })

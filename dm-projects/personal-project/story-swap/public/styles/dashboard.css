@@ -1,0 +1,26 @@
+.title {
+  display: inline-block;
+}
+
+
+.stories {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.story {
+  background: lightblue;
+  margin: 10px;
+  text-align: center;
+}
+
+.drafts {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.draft {
+  background: lightblue;
+  margin: 10px;
+  text-align: center;
+}

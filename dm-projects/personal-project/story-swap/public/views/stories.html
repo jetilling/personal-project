@@ -1,3 +1,8 @@
 <body ng-controller="storiesCtrl">
-  <h1>Stories page!</h1>
+  <h1>{{test}}</h1>
+<div class="stories" >
+  <div class="story" ng-repeat="story in stories">
+    {{story}}
+  </div>
+</div>
 </body>
