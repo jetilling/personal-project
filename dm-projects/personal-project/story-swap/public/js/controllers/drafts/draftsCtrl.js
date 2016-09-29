@@ -1,5 +1,5 @@
 angular.module('storySwap').controller('draftsCtrl', function($scope, service){
-  $scope.test = "Finish those uncompleted stories!"
+  $scope.test = "Finish those drafts!"
 
   $scope.drafts = service.getDrafts();
   //

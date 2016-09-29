@@ -14,8 +14,10 @@ var corsOptions = {
 }
 
 var app = module.exports = express();
+app.set('db', db); 
 var serverCtrl = require('./controllers/serverCtrl')
 
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json())
 app.use(cors(corsOptions));
 app.use(session({
@@ -23,6 +25,16 @@ app.use(session({
   saveUninitialized: true,
   resave: true
 }))
+
+// console.log(randomWords({exactly: 3, join: ' '}))
+// console.log(randomWords({exactly: 3, join: ' '}))
+// console.log(randomWords({exactly: 3, join: ' '}))
+
+app.get('/api/randomWords', serverCtrl.randomWords)
+app.get('/api/checkEmail', serverCtrl.checkEmail)
+app.get('/api/dashboard', serverCtrl.getUser);
+app.post('/api/createUser', serverCtrl.createUser);
+
 
 
 app.listen(config.port, function(){

@@ -4,12 +4,11 @@ angular.module('storySwap').directive('draftsDirective', function(){
     restrict: 'AE',
     templateUrl: './views/directives/draftsDirective.html',
     scope: {
-      draft: '=',
-      publish: '@',
-      save: '@'
+      draft: '='
     },
     controller: function($scope, service){
       $scope.drafts = service.getDrafts();
+
 
       $scope.textArea = false;
       $scope.publishButton = false;
@@ -26,13 +25,22 @@ angular.module('storySwap').directive('draftsDirective', function(){
 
       $scope.publish = function(draft, index){
         service.publish(draft)
-        console.log('publishing');
-        service.remove(index)
       }
+
+      $scope.update = function(draft){
+        service.update(draft)
+      }
+
+      $scope.remove = function (draft) {
+        service.remove(draft)
+      }
+
+
 
       $scope.save = function(draft){
         service.save(draft)
       }
+
     },
     link: function(scope, element, attrs){
 

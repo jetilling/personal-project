@@ -1,8 +1,8 @@
 <div class="draft">
-  <div ng-show="draft" ng-model='draft'>{{draft}}</div>
+  <div ng-show="draft">{{draft}}</div>
   <button type="button" name="button" ng-click="continue()" ng-show="continueButton">Continue</button>
-  <button type="button" name="button" ng-click="publish(draft, $index)" ng-show="publishButton">Publish</button>
-  <button type="button" name="button" ng-click="save(draft)" ng-show="saveButton">Save</button>
-  <textarea name="name" rows="8" cols="40" ng-show='textArea' ng-model="draft">{{draft}}</textarea>
-  <button type="button" name="button" ng-click="drafts.splice($index,1)">Delete</button>
+  <button type="button" name="button" ng-click="publish(draft); remove(draft)" ng-show="publishButton">Publish</button>
+  <button type="button" name="button" ng-click="update(draft)" ng-show="saveButton">Save</button>
+  <textarea name="name" rows="8" cols="40" ng-show='textArea' ng-model='draft'>{{draft}}</textarea>
+  <button type="button" name="button" ng-click="remove(draft)">Delete</button>
 </div>

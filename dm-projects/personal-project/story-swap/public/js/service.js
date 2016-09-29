@@ -3,6 +3,20 @@ angular.module('storySwap').service('service', function($http){
   var user = [];
   var saved = []
 
+  this.getRandomWords = function(){
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:8080/api/randomWords',
+    })
+  }
+
+  this.getEmail = function(){
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:8080/api/checkEmail'
+    })
+  }
+
   this.getStories = function(){
     return stories
   }
@@ -13,6 +27,16 @@ angular.module('storySwap').service('service', function($http){
 
   this.getDrafts = function(){
     return saved
+  }
+
+  this.createUser = function(email, password, displayName){
+    console.log(email, password, displayName);
+    return $http({
+      method: 'Post',
+      url: 'http://localhost:8080/api/createUser',
+      data: {email: email, password: password, display_name: displayName}
+    })
+    console.log("created");
   }
 
   this.add = function(addStory){
@@ -31,15 +55,38 @@ angular.module('storySwap').service('service', function($http){
     console.log('published');
   }
 
-  this.remove = function(publish){
-    saved.splice(publish, 1);
+  this.update = function(draft, index){
+            console.log(draft, index)
+    for (var i = 0; i < saved.length; i++){
+      console.log(saved[i])
+      if (saved[i] === draft){
+        saved[i] = draft;
+
+        return true
+      }
+    }
   }
 
+  this.remove = function(draft){
+    console.log ("Called remove on ", draft);
 
-  this.createUser = function(create){
-    user.push(create)
-    console.log("created");
+
+  var index = -1;
+
+  // Find the element in the array
+  for (var i = 0; i < saved.length; i++) {
+      console.log(saved)
+      if (saved[i] === draft) {
+          index = i;
+          break;
+      }
   }
 
+  // Remove the element
+  if (index !== -1) {
+      console.log ("removing the element from the array, index: ", index);
+      saved.splice(index,1);
+  }
+}
 
 })

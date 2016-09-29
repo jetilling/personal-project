@@ -10,15 +10,11 @@ angular.module('storySwap').controller('dashboardCtrl', function($scope, service
 
   $scope.addStory = function(story){
     service.add(story)
-    console.log('adding')
-
     $scope.story = ''
   }
 
   $scope.saveDraft = function(story){
     service.save(story)
-    console.log('saving');
-
     $scope.story = ''
   }
 

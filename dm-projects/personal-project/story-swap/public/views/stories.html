@@ -2,7 +2,10 @@
   <h1>{{test}}</h1>
 <div class="stories" >
   <div class="story" ng-repeat="story in stories">
+    <button type="button" name="button" ng-click="addOne()">like</button>
     {{story}}
+    <br>
+    <div class="likeCount">{{likeCount}}</div>
   </div>
 </div>
 </body>
