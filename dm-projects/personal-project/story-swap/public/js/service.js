@@ -1,5 +1,5 @@
 angular.module('storySwap').service('service', function($http){
-  var stories = ['hi', 'hello', 'there', 'you', 'are', 'a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'];
+  // var stories = ['hi', 'hello', 'there', 'you', 'are', 'a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'];
   var user = [];
   var saved = []
 
@@ -17,18 +17,7 @@ angular.module('storySwap').service('service', function($http){
     })
   }
 
-  this.getStories = function(){
-    return stories
-  }
-
-  this.getUser = function(){
-    return user
-  }
-
-  this.getDrafts = function(){
-    return saved
-  }
-
+//create user
   this.createUser = function(email, password, displayName){
     console.log('reached service');
     return $http({
@@ -38,9 +27,59 @@ angular.module('storySwap').service('service', function($http){
     })
   }
 
-  this.add = function(addStory){
-      stories.push(addStory)
-      console.log('added');
+
+//login
+  this.loginLocal = function(credentials) {
+    return $http({
+      method: "POST",
+      url: 'http://localhost:8080/auth/local',
+      data: credentials
+    })
+    .then(function(res) {
+      return res.data;
+    })
+    .catch(function(err) {
+      console.log('ERROR LOGGING IN!', err);
+    })
+  }
+
+  this.getUser = function() {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:8080/auth/me'
+    })
+    .then(function(res) {
+      return res.data;
+    })
+    .catch(function(err) {
+      console.log(err);
+    })
+  }
+
+  this.getStories = function(){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/stories'
+    })
+    .then(function(res){
+      return res.data
+    })
+  };
+
+  // this.getUser = function(){
+  //   return user
+  // }
+
+  this.getDrafts = function(){
+    return saved
+  }
+
+  this.add = function(story, currentUserId){
+    return $http({
+      method: "POST",
+      url: 'http://localhost:8080/api/createStory',
+      data: {story: story, users_id: currentUserId}
+    })
   }
 
   this.save = function(saveDraft){

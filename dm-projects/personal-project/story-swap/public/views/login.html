@@ -1,6 +1,9 @@
 <body ng-controller="loginCtrl">
   <h1>{{test}}</h1>
 
-  <button type="button" name="button" ui-sref="dashboard">go to dashboard</button>
+  <!-- <button type="button" name="button" ui-sref="dashboard">go to dashboard</button> -->
 
+  <input type="input" name="name" value="" placeholder="Email" ng-model="email">
+  <input type="password" name="name" value="" placeholder="Password" ng-model="password">
+  <button type="button" name="button" ng-click="loginLocal(email, password)">Log In</button>
 </body>

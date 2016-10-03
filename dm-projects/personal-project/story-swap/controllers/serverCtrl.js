@@ -24,8 +24,11 @@ module.exports = {
     })
   },
 
+  getCurrentUser: function(req, res){
+    res.send(req.user)
+  },
+
   createUser: function(req, res){
-    //make creation_date linked to a button click if creation_date doesn't work
     db.create_user([req.body.email, req.body.password, req.body.display_name], function(err, users){
       if(err){
         console.log(err)
@@ -36,7 +39,7 @@ module.exports = {
   },
 
   createStory: function(req, res){
-    db.create_story([req.body.story, req.body.date_posted, req.body.complete, req.body.category], function(err, content){
+    db.create_story([req.body.story, req.body.users_id], function(err, content){
       if(err){
         console.log(err)
       } else {
