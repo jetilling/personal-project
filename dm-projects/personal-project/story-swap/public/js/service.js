@@ -30,13 +30,12 @@ angular.module('storySwap').service('service', function($http){
   }
 
   this.createUser = function(email, password, displayName){
-    console.log(email, password, displayName);
+    console.log('reached service');
     return $http({
       method: 'Post',
       url: 'http://localhost:8080/api/createUser',
       data: {email: email, password: password, display_name: displayName}
     })
-    console.log("created");
   }
 
   this.add = function(addStory){

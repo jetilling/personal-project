@@ -1,21 +1,19 @@
 <body ng-controller="landingPageCtrl">
-  <h1>{{test}}</h1>
+  <section class="intro">
 
-  <div class="form" ng-show='form'>
-    <input type="input" name="name" value="" placeholder="Email" ng-model='email' ng-keyup="emailCheck(email)"><p ng-show='taken'>That email has already been taken</p>
-    <input type="input" name="name" value="" placeholder="Password" ng-model='password'>    <!-- <button type="button" name="button"  ng-click="getRandomWords()" >display name</button> -->
-    <div class="randomWords" ng-repeat="randomWord in randomWords">
-      <button type="button" name="button" ng-model="randomWord" ng-click="select(randomWord)">{{randomWord}}</button>
-    </div>
-    terms of service
-    <p>
-      By creating an account you agree to the terms of service.
-    </p>
+      <div class="slider">
+        <!-- <div><img src="https://hd.unsplash.com/photo-1422480415834-d7d30118ea06" alt="" /></div> -->
+        <div><img src="https://hd.unsplash.com/photo-1448932155749-638e51b56f03" alt="" /></div>
+        <!-- <div><img src="https://hd.unsplash.com/photo-1455995446964-ac64c23b70ba" alt="" /></div> -->
+      </div>
 
-    <button type="button" name="button" ng-click="create(email, password, randomWord)" ui-sref="dashboard">Create Account</button>
-  </div>
+      <h1 class="title">Story Swap</h1>
 
-  <button type="button" name="button"ng-click="begin(); getRandomWords(); getEmails()" ng-show="startButton">Start Here!</button>
-  <button type="button" name="button" ui-sref="login" class='loginBtn'>log in</button>
+      
 
+      <button type="button" name="button" ng-show="start" ui-sref="dashboard">Let's get started!</button>
+      <button class="signUp" type="button" name="button"ng-click="begin(); getRandomWords(); getEmails()" ng-show="startButton" ui-sref="signUp">Sign Up!</button>
+      <button class="logIn" type="button" name="button" ui-sref="login" class='loginBtn' ng-show="logIn">log in</button>
+
+  </section>
 </body>

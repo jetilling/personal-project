@@ -21,6 +21,15 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
           }
         }
     })
+    .state('signUp', {
+      url: '/signUp',
+        views: {
+          "info@": {
+            controller: 'signUpCtrl',
+            templateUrl: './views/signUp.html'
+          }
+        }
+    })
     .state('dashboard', {
       url: '/dashboard',
       views: {
