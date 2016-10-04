@@ -1,24 +1,34 @@
 angular.module('storySwap').controller('draftsCtrl', function($scope, service){
-  $scope.test = "Finish those drafts!"
+  $scope.test = "Finish drafts here"
 
-  $scope.drafts = service.getDrafts();
+  // $scope.drafts = service.getDrafts();
   //
-  // $scope.textArea = false;
-  // $scope.publishButton = false;
-  // $scope.draft = true;
-  // $scope.continueButton = true;
-  //
-  //
-  // $scope.continue = function(){
-  //   $scope.textArea = true;
-  //   $scope.publishButton = true;
-  //   $scope.draft = false;
-  //   $scope.continueButton = false;
-  // }
-  //
-  // $scope.publish = function(updatedDraft){
-  //   service.publish(updatedDraft)
-  //   console.log('publishing');
-  //   // service.delete(updatedDraft)
-  // }
+  var currentUserId;
+  service.getUser()
+    .then(function(res) {
+      if (res) currentUserId = res[0].id;
+        // console.log("drafts", currentUserId);
+        // currentUserId = currentUser
+        $scope.drafts = service.getDrafts(currentUserId)
+            .then(function(response){
+              // console.log('inside ctrl promise');
+                    // console.log(response);
+
+              if(response) $scope.drafts = response.data;
+            })
+  })
+
+
+  // console.log(currentUserId);
+
+  // $scope.drafts = service.getDrafts(currentUserId)
+  //     .then(function(res){
+  //       // console.log('inside ctrl promise');
+  //       //       console.log(res);
+  //       if(res) $scope.drafts = res;
+  //     })
+
+
+
+
 })

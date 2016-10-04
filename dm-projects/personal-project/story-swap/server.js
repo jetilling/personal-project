@@ -5,6 +5,8 @@ var express = require('express'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     cors = require('cors'),
+    // server = require('http').createServer(app), //added
+    // io = require('socket.io')(server),
     config = require('./config.json')
 
 var db = massive.connectSync({
@@ -54,19 +56,14 @@ passport.serializeUser(function(user, done) {
 })
 
 passport.deserializeUser(function(id, done) {
-  console.log('fired!');
   db.getUserById([id], function(err, user) {
-    // user = user[0];
     if (err) console.log(err);
     else console.log('RETRIEVED USER');
-    // console.log('from deserializeUser',user);
     done(null, user);
   })
 })
 
 app.post('/auth/local', passport.authenticate('local'), function(req, res) {
-  // console.log(req.user, "post local");
-  // res.redirect('/#/dashbaord')
   res.status(200).send(true);
 });
 
@@ -77,7 +74,8 @@ app.get('/auth/me', restrict, function(req, res) {
 
 app.get('/auth/logout', function(req, res) {
   req.logout();
-  // res.redirect('/');
+  res.redirect('/');
+    console.log('logged out');
 })
 
 
@@ -86,10 +84,22 @@ app.get('/api/randomWords', serverCtrl.randomWords);
 app.get('/api/checkEmail', serverCtrl.checkEmail);
 app.get('/api/dashboard', serverCtrl.getUser);
 app.get('/api/stories', serverCtrl.readStories);
+app.get('/api/drafts/:id', serverCtrl.getDrafts)
 app.post('/api/createUser', serverCtrl.createUser);
 app.post('/api/createStory', serverCtrl.createStory);
+app.put('/api/likeCount', serverCtrl.updateLikeCount);
+app.put('/api/followUser', serverCtrl.followUser)
+app.delete('/api/deleteDraft', serverCtrl.deleteDraft);
 
 
+// io.on('connection', function(socket){
+//   console.log('a user connected');
+//   socket.on('create story', function(story){
+//     app.post('/api/createStory', serverCtrl.createStory);
+//
+//   io.emit('new story', story);
+//   });
+// });
 
 app.listen(config.port, function(){
   console.log("got 'er listen' on", config.port);

@@ -10,6 +10,7 @@ angular.module('storySwap').controller('loginCtrl', function($scope, service, $s
       password: password
     })
     .then(function(res) {
+      console.log(res);
       if(res) $state.go('dashboard')
     })
   }

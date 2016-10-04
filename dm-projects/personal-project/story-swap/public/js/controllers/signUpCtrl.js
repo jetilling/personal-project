@@ -1,4 +1,4 @@
-angular.module('storySwap').controller('signUpCtrl', function($scope, service){
+angular.module('storySwap').controller('signUpCtrl', function($scope, service, $timeout, $state){
 
   $scope.newName = false;
   $scope.taken = false;
@@ -87,10 +87,19 @@ angular.module('storySwap').controller('signUpCtrl', function($scope, service){
           password = $scope.password,
           displayName = name;
         service.createUser(email, password, displayName)
+        $timeout(function () {
+          service.loginLocal({
+            email: email,
+            password: password
+          })
+          .then(function(res) {
+            if(res) $state.go('dashboard')
+          })
+        }, 10);
         console.log('creating');
-      $scope.form = false;
-      $scope.startHere = true;
-      $scope.startBtn = true;
+      // $scope.form = false;
+      // $scope.startHere = true;
+      // $scope.startBtn = true;
     }
 
   }

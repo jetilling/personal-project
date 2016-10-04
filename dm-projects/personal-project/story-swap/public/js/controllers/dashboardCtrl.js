@@ -1,4 +1,4 @@
-angular.module('storySwap').controller('dashboardCtrl', function($scope, service){
+angular.module('storySwap').controller('dashboardCtrl', function($scope, service, $state){
   $scope.test = "Story Swap"
 
   // $scope.user = service.getUser()
@@ -18,11 +18,9 @@ $scope.user = service.getUser()
       if (res) var currentUser = res[0].id;
         console.log("inside .then", currentUser);
       currentUserId = currentUser
-
     })
 
 console.log(currentUserId);
-  // getUser();
 
   $scope.message = false;
   $scope.compose = function(){
@@ -30,16 +28,27 @@ console.log(currentUserId);
   }
 
   $scope.addStory = function(story){
-    // console.log(story, currentUserId);
-    service.add(story, currentUserId)
+    var complete = true
+    service.add(story, currentUserId, complete)
     $scope.story = ''
   }
+
+  // $scope.addstory = function(story){
+  //   $scope.emit('story', story)
+  // }
 
   $scope.saveDraft = function(story){
-    service.save(story)
+    var complete = false
+    service.add(story, currentUserId, complete)
     $scope.story = ''
   }
 
+  $scope.logout = function(){
+    service.logout()
+    .then(function(res) {
+      if(res) $state.go('logout')
+    })
+  }
 
 
 })

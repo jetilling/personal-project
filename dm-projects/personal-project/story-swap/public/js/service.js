@@ -1,7 +1,7 @@
 angular.module('storySwap').service('service', function($http){
   // var stories = ['hi', 'hello', 'there', 'you', 'are', 'a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'];
   var user = [];
-  var saved = []
+  // var saved = []
 
   this.getRandomWords = function(){
     return $http({
@@ -56,6 +56,8 @@ angular.module('storySwap').service('service', function($http){
     })
   }
 
+
+
   this.getStories = function(){
     return $http({
       method: "GET",
@@ -66,25 +68,39 @@ angular.module('storySwap').service('service', function($http){
     })
   };
 
+
+
   // this.getUser = function(){
   //   return user
   // }
 
-  this.getDrafts = function(){
-    return saved
+  this.getDrafts = function(currentUserId){
+        console.log(currentUserId);
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/drafts/'+ currentUserId
+    })
+    // .then(function(res) {
+    //   console.log(res);
+    //   return res.data;
+    // })
   }
 
-  this.add = function(story, currentUserId){
+  this.add = function(story, currentUserId, complete){
     return $http({
       method: "POST",
       url: 'http://localhost:8080/api/createStory',
-      data: {story: story, users_id: currentUserId}
+      data: {story: story, users_id: currentUserId, complete: complete}
     })
   }
 
-  this.save = function(saveDraft){
-    saved.push(saveDraft)
-    console.log('saved');
+  this.addToLikeCount = function(likeCount, id){
+    var newLikeCount = likeCount + 1;
+    return $http({
+      method: "PUT",
+      url: 'http://localhost:8080/api/likeCount',
+      data: {id: id, like_count: newLikeCount}
+    })
   }
 
 
@@ -105,26 +121,49 @@ angular.module('storySwap').service('service', function($http){
     }
   }
 
-  this.remove = function(draft){
-    console.log ("Called remove on ", draft);
-
-
-  var index = -1;
-
-  // Find the element in the array
-  for (var i = 0; i < saved.length; i++) {
-      console.log(saved)
-      if (saved[i] === draft) {
-          index = i;
-          break;
-      }
+  this.remove = function(id){
+    console.log(id);
+    return $http({
+      method: "DELETE",
+      url: 'http://localhost:8080/api/deleteDraft',
+      data: {id: id}
+    })
   }
 
-  // Remove the element
-  if (index !== -1) {
-      console.log ("removing the element from the array, index: ", index);
-      saved.splice(index,1);
-  }
+//   this.remove = function(draft){
+//     console.log ("Called remove on ", draft);
+//
+//
+//   var index = -1;
+//
+//   // Find the element in the array
+//   for (var i = 0; i < saved.length; i++) {
+//       console.log(saved)
+//       if (saved[i] === draft) {
+//           index = i;
+//           break;
+//       }
+//   }
+//
+//   // Remove the element
+//   if (index !== -1) {
+//       console.log ("removing the element from the array, index: ", index);
+//       saved.splice(index,1);
+//   }
+// }
+
+this.logout = function() {
+  return $http({
+    method: 'GET',
+    url: '/auth/logout'
+  })
+  .then(function(res) {
+    console.log('fired');
+    return res.data;
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
 }
 
 })

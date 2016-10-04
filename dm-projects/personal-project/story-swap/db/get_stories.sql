@@ -1,4 +1,5 @@
-SELECT content.story, users.display_name, content.like_count, content.category
+SELECT content.story, users.display_name, content.like_count, content.category, content.id, content.users_id
 FROM content
 JOIN users ON content.users_id = users.id
--- WHERE current_date - content.date_posted <= 7
+WHERE complete = TRUE
+ORDER BY content.id ASC

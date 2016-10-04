@@ -7,13 +7,13 @@
 <button type="button" name="button" ui-sref='dashboard.following'>Following</button>
 <button type="button" name="button" ui-sref='dashboard.drafts'>Drafts</button>
 <button type="button" name="button" ng-click="compose()">Compose</button>
-<button type="button" name="button" ui-sref='logout'>log out</button>
+<button type="button" name="button" ng-click="logout()">log out</button>
 
 
 
 <div class="compose" ng-show="message">
   <textarea name="name" rows="4" cols="40" placeholder="What's your story?" ng-model="story"></textarea>
-   <button type="button" name="button" ng-click="addStory(story)">Publish</button>
+   <button type="button" name="button" ng-click="addStory(story); compose()">Publish</button>
    <button type="button" name="button" ng-click='saveDraft(story)'>Save Draft</button>
 
 </div>

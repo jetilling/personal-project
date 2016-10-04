@@ -7,7 +7,6 @@ angular.module('storySwap').directive('draftsDirective', function(){
       draft: '='
     },
     controller: function($scope, service){
-      $scope.drafts = service.getDrafts();
 
 
       $scope.textArea = false;
@@ -31,8 +30,9 @@ angular.module('storySwap').directive('draftsDirective', function(){
         service.update(draft)
       }
 
-      $scope.remove = function (draft) {
-        service.remove(draft)
+      $scope.remove = function(id) {
+        console.log(id);
+        service.remove(id)
       }
 
 
