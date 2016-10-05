@@ -1,7 +1,4 @@
 angular.module('storySwap').service('service', function($http){
-  // var stories = ['hi', 'hello', 'there', 'you', 'are', 'a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q'];
-  var user = [];
-  // var saved = []
 
   this.getRandomWords = function(){
     return $http({
@@ -46,7 +43,7 @@ angular.module('storySwap').service('service', function($http){
   this.getUser = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:8080/auth/me'
+      url: 'http://localhost:8080/api/me'
     })
     .then(function(res) {
       return res.data;
@@ -68,14 +65,16 @@ angular.module('storySwap').service('service', function($http){
     })
   };
 
+  this.getMyStories = function(currentUserId){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/myStories/'+ currentUserId
+    })
+  }
 
-
-  // this.getUser = function(){
-  //   return user
-  // }
 
   this.getDrafts = function(currentUserId){
-        console.log(currentUserId);
+        // console.log(currentUserId);
     return $http({
       method: "GET",
       url: 'http://localhost:8080/api/drafts/'+ currentUserId
@@ -104,32 +103,41 @@ angular.module('storySwap').service('service', function($http){
   }
 
 
-  this.publish = function(publish){
-    stories.push(publish);
-    console.log('published');
-  }
-
-  this.update = function(draft, index){
-            console.log(draft, index)
-    for (var i = 0; i < saved.length; i++){
-      console.log(saved[i])
-      if (saved[i] === draft){
-        saved[i] = draft;
-
-        return true
-      }
-    }
-  }
+  // this.publish = function(publish){
+  //   stories.push(publish);
+  //   console.log('published');
+  // }
+  //
+  // this.update = function(draft, index){
+  //           console.log(draft, index)
+  //   for (var i = 0; i < saved.length; i++){
+  //     console.log(saved[i])
+  //     if (saved[i] === draft){
+  //       saved[i] = draft;
+  //
+  //       return true
+  //     }
+  //   }
+  // }
 
   this.remove = function(id){
     console.log(id);
     return $http({
       method: "DELETE",
       url: 'http://localhost:8080/api/deleteDraft',
-      data: {id: id}
+      data: {id: id},
     })
   }
 
+  this.removeFromDash = function(id){
+    console.log(id);
+    var removeFromDash = true
+    return $http({
+      method: "PUT",
+      url: 'http://localhost:8080/api/removeFromDash',
+      data: {id: id, delete_from_dash: removeFromDash}
+    })
+  }
 //   this.remove = function(draft){
 //     console.log ("Called remove on ", draft);
 //
@@ -152,18 +160,18 @@ angular.module('storySwap').service('service', function($http){
 //   }
 // }
 
-this.logout = function() {
-  return $http({
-    method: 'GET',
-    url: '/auth/logout'
-  })
-  .then(function(res) {
-    console.log('fired');
-    return res.data;
-  })
-  .catch(function(err) {
-    console.log(err);
-  })
-}
+// this.logout = function() {
+//   return $http({
+//     method: 'GET',
+//     url: '/auth/logout'
+//   })
+//   .then(function(res) {
+//     console.log('fired');
+//     return res.data;
+//   })
+//   .catch(function(err) {
+//     console.log(err);
+//   })
+// }
 
 })

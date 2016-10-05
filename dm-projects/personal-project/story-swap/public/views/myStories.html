@@ -1,0 +1,11 @@
+<body ng-controller="myStoriesCtrl">
+  {{test}}
+  <div class="myStories">
+    <div class="myStory" ng-repeat="myStory in myStories">
+      {{myStory.story}}
+      <div ng-show='id'>{{myStory.id}}</div>
+      <button type="button" name="button" ng-click="remove(myStory.id)">Delete from My Stories</button>
+    </div>
+  </div>
+
+</body>

@@ -60,17 +60,31 @@ module.exports = {
     })
   },
 
+  getMyStories: function(req, res){
+    db.view_my_stories([req.params.id], function(err, content){
+      if(err) console.log(err);
+      else {res.status(200).json(content); console.log(req.params.id);}
+    })
+  },
+
+  removeFromDash: function(req, res){
+    db.delete_story_from_dash([req.body.id, req.body.delete_from_dash], function(err, content){
+      if(err) console.log(err);
+      else res.status(200)
+    })
+  },
+
   deleteDraft: function(req, res){
     db.delete_draft([req.body.id], function(err, content){
       if(err) console.log(err);
-      else {res.status(200); console.log('deleted');}
+      else {res.status(200); console.log(req.body.id);}
     })
   },
 
   updateLikeCount: function(req, res){
     db.like_story([req.body.id, req.body.like_count], function(err, content){
       if(err) console.log(err);
-      else {res.status(200); console.log(req.body.id, req.body.like_count);}
+      else res.status(200);
     })
   },
 

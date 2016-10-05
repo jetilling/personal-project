@@ -6,14 +6,9 @@ angular.module('storySwap').controller('draftsCtrl', function($scope, service){
   var currentUserId;
   service.getUser()
     .then(function(res) {
-      if (res) currentUserId = res[0].id;
-        // console.log("drafts", currentUserId);
-        // currentUserId = currentUser
+      if (res) currentUserId = res;
         $scope.drafts = service.getDrafts(currentUserId)
             .then(function(response){
-              // console.log('inside ctrl promise');
-                    // console.log(response);
-
               if(response) $scope.drafts = response.data;
             })
   })

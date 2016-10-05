@@ -1,5 +1,5 @@
-angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard'])
-.config(function($stateProvider, $urlRouterProvider){
+angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer'])
+.config(function($stateProvider, $urlRouterProvider, $authProvider){
   $urlRouterProvider.otherwise('/').when('/dashboard', '/dashboard/stories');
 
   $stateProvider
@@ -57,6 +57,15 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
         }
       }
     })
+    .state('dashboard.myStories', {
+      url: '/myStories',
+      views: {
+        "dashboard@dashboard": {
+          controller: 'myStoriesCtrl',
+          templateUrl: './views/myStories.html'
+        }
+      }
+    })
     .state('dashboard.drafts', {
       url: '/drafts',
       views: {
@@ -75,4 +84,8 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
           }
         }
     })
+
+  $authProvider.loginUrl = 'http://localhost:8080/auth/login';
+  $authProvider.signupUrl = 'http://localhost:8080/auth/signup';
 })
+// })

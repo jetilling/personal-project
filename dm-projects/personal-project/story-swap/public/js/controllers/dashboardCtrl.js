@@ -1,21 +1,31 @@
-angular.module('storySwap').controller('dashboardCtrl', function($scope, service, $state){
+angular.module('storySwap').controller('dashboardCtrl', function($scope, service, $state, $auth){
   $scope.test = "Story Swap"
 
+// $auth.get(req.user)
+$scope.logout = function(){
+  $auth.logout()
+      .then(function() {
+        console.log('You have been logged out');
+        $state.go('logout');
+  });
+}
+
+  //  $scope.isAuthenticated();
   // $scope.user = service.getUser()
 
-$scope.user = service.getUser()
-    .then(function(res) {
-      if (res) {
-        var result = res[0];
-        $scope.user = result.display_name
-      }
-      else   $scope.user = 'NOT LOGGED IN';
-    })
+// $scope.user = service.getUser()
+//     .then(function(res) {
+//       if (res) {
+//         var result = res[0];
+//         $scope.user = result.display_name
+//       }
+//       else   $scope.user = 'NOT LOGGED IN';
+//     })
 
  var currentUserId;
   service.getUser()
     .then(function(res) {
-      if (res) var currentUser = res[0].id;
+      if (res) var currentUser = res;
         console.log("inside .then", currentUser);
       currentUserId = currentUser
     })
@@ -43,12 +53,12 @@ console.log(currentUserId);
     $scope.story = ''
   }
 
-  $scope.logout = function(){
-    service.logout()
-    .then(function(res) {
-      if(res) $state.go('logout')
-    })
-  }
+  // $scope.logout = function(){
+  //   service.logout()
+  //   .then(function(res) {
+  //     if(res) $state.go('logout')
+  //   })
+  // }
 
 
 })
