@@ -25,6 +25,13 @@ module.exports = {
     res.send(req.user)
   },
 
+  getDisplayName: function(req, res){
+    db.getUserById([req.params.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200).json(users);
+    })
+  },
+
   createUser: function(req, res){
     db.create_user([req.body.email, req.body.password, req.body.display_name], function(err, users){
       if(err) console.log(err);
@@ -89,9 +96,51 @@ module.exports = {
   },
 
   followUser: function(req, res){
-    db.follow_user([req.body.id, req.body.users_id], function(err, content){
+    db.follow_user([req.body.users_id, req.body.id], function(err, users){
       if(err) console.log(err);
       else res.status(200)
+    })
+  },
+
+  unfollowUser: function(req, res){
+    db.unfollow_user([req.body.users_id, req.body.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200)
+    })
+  },
+
+  viewFollower: function(req, res){
+    db.view_follower([req.body.view_follower, req.body.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200).json(users)
+    })
+  },
+
+  getViewFollower: function(req, res){
+    db.get_view_follower([req.params.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200).json(users)
+    })
+  },
+
+  getFollowing: function(req, res){
+    db.view_following_id([req.params.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200).json(users)
+    })
+  },
+
+  getFollowingUser: function(req, res){
+    db.view_following_stories_storiesPage([req.params.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200).json(users);
+    })
+  },
+
+  getFollowingUserStory: function(req, res){
+    db.view_following_stories_followingPage([req.params.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200).json(users);
     })
   }
 

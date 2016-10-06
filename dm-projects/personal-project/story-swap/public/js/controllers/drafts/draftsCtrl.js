@@ -4,7 +4,7 @@ angular.module('storySwap').controller('draftsCtrl', function($scope, service){
   // $scope.drafts = service.getDrafts();
   //
   var currentUserId;
-  service.getUser()
+  service.getUserId()
     .then(function(res) {
       if (res) currentUserId = res;
         $scope.drafts = service.getDrafts(currentUserId)

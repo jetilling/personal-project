@@ -26,21 +26,21 @@ angular.module('storySwap').service('service', function($http){
 
 
 //login
-  this.loginLocal = function(credentials) {
-    return $http({
-      method: "POST",
-      url: 'http://localhost:8080/auth/local',
-      data: credentials
-    })
-    .then(function(res) {
-      return res.data;
-    })
-    .catch(function(err) {
-      console.log('ERROR LOGGING IN!', err);
-    })
-  }
+  // this.loginLocal = function(credentials) {
+  //   return $http({
+  //     method: "POST",
+  //     url: 'http://localhost:8080/auth/local',
+  //     data: credentials
+  //   })
+  //   .then(function(res) {
+  //     return res.data;
+  //   })
+  //   .catch(function(err) {
+  //     console.log('ERROR LOGGING IN!', err);
+  //   })
+  // }
 
-  this.getUser = function() {
+  this.getUserId = function() {
     return $http({
       method: 'GET',
       url: 'http://localhost:8080/api/me'
@@ -53,6 +53,12 @@ angular.module('storySwap').service('service', function($http){
     })
   }
 
+  this.getDisplayName = function(res){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/getDisplayName/' + res
+    })
+  }
 
 
   this.getStories = function(){
@@ -74,7 +80,6 @@ angular.module('storySwap').service('service', function($http){
 
 
   this.getDrafts = function(currentUserId){
-        // console.log(currentUserId);
     return $http({
       method: "GET",
       url: 'http://localhost:8080/api/drafts/'+ currentUserId
@@ -102,23 +107,59 @@ angular.module('storySwap').service('service', function($http){
     })
   }
 
+  this.followUser = function(users_id, user){
+    return $http({
+      method: "POST",
+      url: 'http://localhost:8080/api/followUser',
+      data: {users_id: users_id, id: user}
+    })
+  }
 
-  // this.publish = function(publish){
-  //   stories.push(publish);
-  //   console.log('published');
-  // }
-  //
-  // this.update = function(draft, index){
-  //           console.log(draft, index)
-  //   for (var i = 0; i < saved.length; i++){
-  //     console.log(saved[i])
-  //     if (saved[i] === draft){
-  //       saved[i] = draft;
-  //
-  //       return true
-  //     }
-  //   }
-  // }
+  this.unfollowUser = function(id, user){
+    console.log("currentUserId:", user);
+    console.log("users_id:", id);
+    return $http({
+      method: "PUT",
+      url: 'http://localhost:8080/api/unfollowUser',
+      data: {users_id: id, id: user}
+    })
+  }
+
+  this.viewFollower = function(id, user){
+    return $http({
+      method: "POST",
+      url: 'http://localhost:8080/api/viewFollower',
+      data: {view_follower: id, id: user}
+    })
+  }
+
+  this.getViewFollower = function(id){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/getViewFollower/'+ id
+    })
+  }
+
+  this.getFollowing = function(res){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/getFollowing/'+ res
+    })
+  }
+
+  this.getFollowingUser = function(item){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/getFollowingUser/'+ item
+    })
+  }
+
+  this.getFollowingUserStory = function(item){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/getFollowingUserStory/'+ item
+    })
+  }
 
   this.remove = function(id){
     console.log(id);
@@ -158,20 +199,6 @@ angular.module('storySwap').service('service', function($http){
 //       console.log ("removing the element from the array, index: ", index);
 //       saved.splice(index,1);
 //   }
-// }
-
-// this.logout = function() {
-//   return $http({
-//     method: 'GET',
-//     url: '/auth/logout'
-//   })
-//   .then(function(res) {
-//     console.log('fired');
-//     return res.data;
-//   })
-//   .catch(function(err) {
-//     console.log(err);
-//   })
 // }
 
 })

@@ -1,3 +1,18 @@
 <body ng-controller="followingCtrl">
   <h1>{{test}}</h1>
+  <button type="button" name="button" ng-click="showAll()">All</button>
+  <div ng-repeat="user in users">
+    <div ng-show="userId">{{user.id}}</div>
+    <button type="button" name="button" ng-click="viewUserStories(user.id)">{{user.display_name}}</button>
+  </div>
+  <div  ng-repeat="follow in following | orderBy: 'id'">
+    <div ng-show="followId">
+      {{follow.id}}
+    </div>
+
+
+    {{follow.story}}
+    {{follow.display_name}}
+  </div>
+
 </body>

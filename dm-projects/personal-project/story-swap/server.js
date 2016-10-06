@@ -1,12 +1,7 @@
 var express = require('express'),
-    // session = require('express-session'),
     bodyParser = require('body-parser'),
     massive = require('massive'),
-    // passport = require('passport'),
-    // LocalStrategy = require('passport-local').Strategy,
     cors = require('cors'),
-    // expressJWT = require('express-jwt'),
-    // jwt = require('jsonwebtoken')
     jwt = require('jwt-simple'),
     moment = require('moment'),
     // server = require('http').createServer(app), //added
@@ -27,14 +22,6 @@ var serverCtrl = require('./controllers/serverCtrl')
 
 app.use(bodyParser.json())
 app.use(cors(corsOptions));
-// app.use(expressJWT({secret: config.expressJWTSecret}).unless({path: ['/#/', '/#/login', '/#/signUp']}));
-// app.use(session({
-//   secret: config.sessionSecret,
-//   saveUninitialized: true,
-//   resave: true
-// }))
-// app.use(passport.initialize());
-// app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 
@@ -82,25 +69,12 @@ function createJWT(user) {
  | GET /api/me
  |--------------------------------------------------------------------------
  */
-//
-// findById = function(user){
-//   db.users.getUserById([], function(err, users){
-//     return users
-//   })
-// }
-
-// app.get('/api/me', ensureAuthenticated, function(req, res) {
-//   db.users.getUserById([req.user], function(err, users){
-//     res.send(users)
-//   })
-// });
 
 app.get('/api/me', ensureAuthenticated, function(req, res) {
     if (!req.user) return res.status(404);
     var user = req.user
     res.json(user)
   })
-
 
 /*
  |--------------------------------------------------------------------------
@@ -151,7 +125,7 @@ app.post('/auth/login', function(req, res) {
             user: getSafeUser(user)
           })
 
-});
+    });
 });
 
 /*
@@ -178,7 +152,7 @@ app.post('/auth/signup', function(req, res) {
 
     });
   });
-// });
+
 
 function getSafeUser (user) {
   return {
@@ -191,51 +165,6 @@ function getSafeUser (user) {
 }
 
 
-// restrict = function(req, res, next){
-//   if(req.isUnauthenticated()) return res.status(401).json('please log in')
-//   next();
-// }
-
-//login stuff w/sessions
-// passport.use(new LocalStrategy(
-//   {usernameField: 'email'},
-//   function(email, password, done) {
-//     db.users.findOne({email: email}, function(err, user) {
-//       if (err) { return done(err); }
-//       if (!user) { return done(null, false); }
-//       if (user.password != password) { return done(null, false); }
-//       console.log('from LocalStrategy',user);
-//       return done(null, user);
-//     })
-//   }
-// ))
-//
-// passport.serializeUser(function(user, done) {
-//   done(null, user.id);
-// })
-//
-// passport.deserializeUser(function(id, done) {
-//   db.getUserById([id], function(err, user) {
-//     if (err) console.log(err);
-//     else console.log('RETRIEVED USER');
-//     done(null, user);
-//   })
-// })
-//
-// app.post('/auth/local', passport.authenticate('local'), function(req, res) {
-//   res.status(200).send(true);
-// });
-//
-// app.get('/auth/me', restrict, function(req, res) {
-//   if (!req.user) return res.sendStatus(404);
-//   res.status(200).send(req.user);
-// })
-//
-// app.get('/auth/logout', function(req, res) {
-//   req.logout();
-//   res.redirect('/');
-//     console.log('logged out');
-// })
 
 
 //database requests
@@ -245,11 +174,19 @@ app.get('/api/dashboard', ensureAuthenticated, serverCtrl.getUser);
 app.get('/api/stories', ensureAuthenticated, serverCtrl.readStories);
 app.get('/api/drafts/:id', ensureAuthenticated, serverCtrl.getDrafts);
 app.get('/api/myStories/:id', ensureAuthenticated, serverCtrl.getMyStories);
+app.get('/api/getDisplayName/:id', ensureAuthenticated, serverCtrl.getDisplayName);
+app.get('/api/getFollowing/:id', ensureAuthenticated, serverCtrl.getFollowing);
+app.get('/api/getFollowingUser/:id', ensureAuthenticated, serverCtrl.getFollowingUser);
+app.get('/api/getFollowingUserStory/:id', ensureAuthenticated, serverCtrl.getFollowingUserStory);
+app.get('/api/getViewFollower/:id', ensureAuthenticated, serverCtrl.getViewFollower);
 app.post('/api/createUser', ensureAuthenticated, serverCtrl.createUser);
 app.post('/api/createStory', ensureAuthenticated, serverCtrl.createStory);
+app.post('/api/followUser', ensureAuthenticated, serverCtrl.followUser);
+app.post('/api/viewFollower', ensureAuthenticated, serverCtrl.viewFollower);
 app.put('/api/likeCount', ensureAuthenticated, serverCtrl.updateLikeCount);
 app.put('/api/followUser', ensureAuthenticated, serverCtrl.followUser);
 app.put('/api/removeFromDash', ensureAuthenticated, serverCtrl.removeFromDash);
+app.put('/api/unfollowUser', ensureAuthenticated, serverCtrl.unfollowUser)
 app.delete('/api/deleteDraft', ensureAuthenticated, serverCtrl.deleteDraft);
 
 

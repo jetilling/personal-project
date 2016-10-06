@@ -1,1 +1,1 @@
-UPDATE users SET follows = '{$2}' WHERE id = $1
+UPDATE users SET follows = array_append(follows,$1) WHERE id = $2

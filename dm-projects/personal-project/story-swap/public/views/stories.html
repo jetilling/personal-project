@@ -1,5 +1,11 @@
 <body ng-controller="storiesCtrl">
   <h1>{{test}}</h1>
+  <div ng-hide='user'>{{user}}</div>
+  <div ng-repeat="follow in following">
+    <div ng-show="userId">{{follow.id}}</div>
+    <div ng-click="viewStories(follow.id, user)">{{follow.display_name}}</div> <button type="button" name="button" ng-click="unfollowUser(follow.id, user)" >Unfollow</button>
+  </div>
+
 <div class="stories" >
   <div class="story" ng-repeat="story in stories">
     {{story.display_name}} -
@@ -10,6 +16,7 @@
     <br>
     <div class="likeCount" ng-model="likeCount">{{story.like_count}}</div>
     <button type="button" name="button" ng-click="addOne(story.like_count,story.id)">like</button>
+    <button type="button" name="button" ng-click="followUser(story.users_id, user)">Follow</button>
   </div>
 </div>
 </body>

@@ -2,7 +2,7 @@ angular.module('storySwap').controller('myStoriesCtrl', function($scope, service
   $scope.test = 'this page shows your posted stories'
 
   var currentUserId;
-  service.getUser()
+  service.getUserId()
     .then(function(res) {
       if (res) currentUserId = res;
       $scope.myStories = service.getMyStories(currentUserId)

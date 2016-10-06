@@ -13,20 +13,24 @@ $scope.logout = function(){
   //  $scope.isAuthenticated();
   // $scope.user = service.getUser()
 
-// $scope.user = service.getUser()
-//     .then(function(res) {
-//       if (res) {
-//         var result = res[0];
-//         $scope.user = result.display_name
-//       }
-//       else   $scope.user = 'NOT LOGGED IN';
-//     })
+  service.getUserId()
+    .then(function(res) {
+      if (res) {
+        service.getDisplayName(res)
+        .then(function(response){
+                  // console.log('scope.user res:', response);
+          var result = response.data;
+          $scope.user = result[0].display_name
+        })
+      }
+      else   $scope.user = 'NOT LOGGED IN';
+    })
 
  var currentUserId;
-  service.getUser()
+  service.getUserId()
     .then(function(res) {
       if (res) var currentUser = res;
-        console.log("inside .then", currentUser);
+        // console.log("inside .then", currentUser);
       currentUserId = currentUser
     })
 
