@@ -7,7 +7,8 @@
   </div>
 
 <div class="stories" >
-  <div class="story" ng-repeat="story in stories">
+  <stories-directive ng-repeat="story in stories" story='story'></stories-directive>
+  <!-- <div class="story" ng-repeat="story in stories">
     {{story.display_name}} -
     {{story.story}}
     {{story.users_id}}
@@ -15,8 +16,9 @@
     <div ng-show="id" ng-model="id">{{story.id}}</div>
     <br>
     <div class="likeCount" ng-model="likeCount">{{story.like_count}}</div>
-    <button type="button" name="button" ng-click="addOne(story.like_count,story.id)">like</button>
-    <button type="button" name="button" ng-click="followUser(story.users_id, user)">Follow</button>
-  </div>
+    <button type="button" name="button" ng-show="likeBtn" ng-click="addOne(story.like_count,story.id)">like</button>
+    <button type="button" name="button" ng-click="followUser(story.users_id, user, story.display_name)">Follow</button>
+    <button type="button" name="button" ng-click="saveStory(story.id, user)">Save Story</button>
+  </div> -->
 </div>
 </body>

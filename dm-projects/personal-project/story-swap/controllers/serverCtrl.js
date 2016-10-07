@@ -77,7 +77,7 @@ module.exports = {
   removeFromDash: function(req, res){
     db.delete_story_from_dash([req.body.id, req.body.delete_from_dash], function(err, content){
       if(err) console.log(err);
-      else res.status(200)
+      else res.status(200).json(true)
     })
   },
 
@@ -91,21 +91,28 @@ module.exports = {
   updateLikeCount: function(req, res){
     db.like_story([req.body.id, req.body.like_count], function(err, content){
       if(err) console.log(err);
-      else res.status(200);
+      else res.status(200).json(true)
+    })
+  },
+
+  saveStory: function(req, res){
+    db.save_story([req.body.storyId, req.body.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200)
     })
   },
 
   followUser: function(req, res){
     db.follow_user([req.body.users_id, req.body.id], function(err, users){
       if(err) console.log(err);
-      else res.status(200)
+      else res.status(200).json(true)
     })
   },
 
   unfollowUser: function(req, res){
     db.unfollow_user([req.body.users_id, req.body.id], function(err, users){
       if(err) console.log(err);
-      else res.status(200)
+      else res.status(200).json(true)
     })
   },
 

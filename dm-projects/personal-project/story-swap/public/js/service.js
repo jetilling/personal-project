@@ -107,6 +107,14 @@ angular.module('storySwap').service('service', function($http){
     })
   }
 
+  this.saveStory = function(id, user){
+    return $http({
+      method: "POST",
+      url: 'http://localhost:8080/api/saveStory',
+      data: {contentId: id, id: user}
+    })
+  }
+
   this.followUser = function(users_id, user){
     return $http({
       method: "POST",
@@ -116,8 +124,6 @@ angular.module('storySwap').service('service', function($http){
   }
 
   this.unfollowUser = function(id, user){
-    console.log("currentUserId:", user);
-    console.log("users_id:", id);
     return $http({
       method: "PUT",
       url: 'http://localhost:8080/api/unfollowUser',

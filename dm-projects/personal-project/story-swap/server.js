@@ -4,8 +4,7 @@ var express = require('express'),
     cors = require('cors'),
     jwt = require('jwt-simple'),
     moment = require('moment'),
-    // server = require('http').createServer(app), //added
-    // io = require('socket.io')(server),
+
     config = require('./config.json')
 
 var db = massive.connectSync({
@@ -18,7 +17,9 @@ var corsOptions = {
 
 var app = module.exports = express();
 app.set('db', db);
-var serverCtrl = require('./controllers/serverCtrl')
+var serverCtrl = require('./controllers/serverCtrl');
+    // http = require('http').Server(app), //added
+    // io = require('socket.io')(http)
 
 app.use(bodyParser.json())
 app.use(cors(corsOptions));
@@ -179,6 +180,7 @@ app.get('/api/getFollowing/:id', ensureAuthenticated, serverCtrl.getFollowing);
 app.get('/api/getFollowingUser/:id', ensureAuthenticated, serverCtrl.getFollowingUser);
 app.get('/api/getFollowingUserStory/:id', ensureAuthenticated, serverCtrl.getFollowingUserStory);
 app.get('/api/getViewFollower/:id', ensureAuthenticated, serverCtrl.getViewFollower);
+app.post('/api/saveStory', ensureAuthenticated, serverCtrl.saveStory);
 app.post('/api/createUser', ensureAuthenticated, serverCtrl.createUser);
 app.post('/api/createStory', ensureAuthenticated, serverCtrl.createStory);
 app.post('/api/followUser', ensureAuthenticated, serverCtrl.followUser);
@@ -193,9 +195,14 @@ app.delete('/api/deleteDraft', ensureAuthenticated, serverCtrl.deleteDraft);
 // io.on('connection', function(socket){
 //   console.log('a user connected');
 //   socket.on('create story', function(story){
-//     app.post('/api/createStory', serverCtrl.createStory);
+//     app.post('/api/createStory', ensureAuthenticated, serverCtrl.createStory);
+//     serverCtrl.createStory()
 //
-//   io.emit('new story', story);
+//
+//   io.emit('new story', function(story){
+//     app.get('/api/stories', ensureAuthenticated, serverCtrl.readStories);
+//
+//   });
 //   });
 // });
 

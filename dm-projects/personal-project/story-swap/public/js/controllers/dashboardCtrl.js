@@ -1,6 +1,7 @@
 angular.module('storySwap').controller('dashboardCtrl', function($scope, service, $state, $auth){
   $scope.test = "Story Swap"
 
+
 // $auth.get(req.user)
 $scope.logout = function(){
   $auth.logout()
@@ -47,9 +48,11 @@ console.log(currentUserId);
     $scope.story = ''
   }
 
-  // $scope.addstory = function(story){
-  //   $scope.emit('story', story)
-  // }
+// //Socket.io
+//   $scope.addStory = function(story){
+//     console.log(story);
+//     socket.emit('story', story)
+//   }
 
   $scope.saveDraft = function(story){
     var complete = false
