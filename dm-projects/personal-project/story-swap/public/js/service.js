@@ -90,6 +90,22 @@ angular.module('storySwap').service('service', function($http){
     // })
   }
 
+  this.updateDraft = function(data, id){
+    return $http({
+      method: "PUT",
+      url: 'http://localhost:8080/api/updateDraft',
+      data: {story: data, id: id}
+    })
+  }
+
+  this.publishdraft = function(id, complete){
+    return $http({
+      method: "PUT",
+      url: 'http://localhost:8080/api/publishDraft',
+      data: {id: id, complete: complete}
+    })
+  }
+
   this.add = function(story, currentUserId, complete){
     return $http({
       method: "POST",
@@ -171,8 +187,7 @@ angular.module('storySwap').service('service', function($http){
     console.log(id);
     return $http({
       method: "DELETE",
-      url: 'http://localhost:8080/api/deleteDraft',
-      data: {id: id},
+      url: 'http://localhost:8080/api/deleteDraft/' + id
     })
   }
 

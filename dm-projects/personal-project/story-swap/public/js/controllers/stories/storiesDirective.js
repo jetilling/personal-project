@@ -2,35 +2,29 @@ angular.module('storySwap').directive('storiesDirective', function(){
   return {
     restrict: 'AE',
     templateUrl: './views/directives/storiesDirective.html',
-    // scope: {
-    //   story: '='
-    // },
+
     controller: function($scope, service){
         // var stories = []
       $scope.likeBtn = true
       $scope.followBtn = true
 
+      console.log($scope.followingArr);
+
+//can't follow yourself
       service.getUserId()
         .then(function(res) {
            if (res) currentUserId = res;
              $scope.user = currentUserId
-             console.log($scope.story.users_id);
-               if ($scope.user === $scope.story.users_id) {$scope.followBtn = false; console.log('fired');}
+               if ($scope.user === $scope.story.users_id) $scope.followBtn = false;
              })
 
+//can't double follow others - maybe copy following arr/function into here and use it that way.
+      // if ($scope.followingArr.indexOf($scope.story.users_id) <= -1){
+      //   $scope.followBtn = false;
+      // }
 
-    //
-    // //get stories
-    //    service.getStories()
-    //         .then(function(res){
-    //           console.log(res);
-    //           if(res) var result = res;
-    //           result.forEach(function(item){
-    //             stories.push(item)
-    //           })
-    //         })
-    //     $scope.stories = stories
 
+//like stories
       $scope.addOne = function(likeCount, id){
         console.log(likeCount, id);
         service.addToLikeCount(likeCount, id)

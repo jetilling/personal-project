@@ -188,8 +188,10 @@ app.post('/api/viewFollower', ensureAuthenticated, serverCtrl.viewFollower);
 app.put('/api/likeCount', ensureAuthenticated, serverCtrl.updateLikeCount);
 app.put('/api/followUser', ensureAuthenticated, serverCtrl.followUser);
 app.put('/api/removeFromDash', ensureAuthenticated, serverCtrl.removeFromDash);
-app.put('/api/unfollowUser', ensureAuthenticated, serverCtrl.unfollowUser)
-app.delete('/api/deleteDraft', ensureAuthenticated, serverCtrl.deleteDraft);
+app.put('/api/unfollowUser', ensureAuthenticated, serverCtrl.unfollowUser);
+app.put('/api/updateDraft', ensureAuthenticated, serverCtrl.updateDraft);
+app.put('/api/publishDraft', ensureAuthenticated, serverCtrl.publishDraft);
+app.delete('/api/deleteDraft/:id', ensureAuthenticated, serverCtrl.deleteDraft);
 
 
 // io.on('connection', function(socket){

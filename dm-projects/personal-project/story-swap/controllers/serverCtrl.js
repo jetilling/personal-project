@@ -82,9 +82,23 @@ module.exports = {
   },
 
   deleteDraft: function(req, res){
-    db.delete_draft([req.body.id], function(err, content){
+    db.delete_draft([req.params.id], function(err, content){
       if(err) console.log(err);
-      else {res.status(200); console.log(req.body.id);}
+      else res.status(200).json(true)
+    })
+  },
+
+  updateDraft: function(req, res){
+    db.update_draft([req.body.story, req.body.id], function(err, content){
+      if(err) console.log(err);
+      else res.status(200).json(true)
+    })
+  },
+
+  publishDraft: function(req, res){
+    db.publish_draft([req.body.id, req.body.complete], function(err, content){
+      if(err) console.log(err);
+      else res.status(200).json(true)
     })
   },
 

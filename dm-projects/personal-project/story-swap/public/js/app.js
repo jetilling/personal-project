@@ -1,4 +1,4 @@
-angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer'])
+angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable'])
 .config(function($stateProvider, $urlRouterProvider, $authProvider){
   $urlRouterProvider.otherwise('/').when('/dashboard', '/dashboard/stories');
 

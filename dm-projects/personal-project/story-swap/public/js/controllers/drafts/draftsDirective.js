@@ -33,6 +33,22 @@ angular.module('storySwap').directive('draftsDirective', function(){
       $scope.remove = function(id) {
         console.log(id);
         service.remove(id)
+        .then(function(res){
+          if(res){
+            var index = -1;
+              // Find the element in the array
+              for (var i = 0; i < $scope.drafts.length; i++) {
+                  if ($scope.drafts[i].id === id) {
+                      index = i;
+                      break;
+                  }
+              }
+              // Remove the element
+              if (index !== -1) {
+                  $scope.drafts.splice(index,1);
+              }
+          }
+        })
       }
 
 

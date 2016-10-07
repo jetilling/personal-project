@@ -54,8 +54,8 @@ angular.module('storySwap').controller('followingCtrl', function($scope, service
         })
       }
         else console.log('idk');
-  });
-}
+    });
+  }
 $scope.showAll()
 
 
