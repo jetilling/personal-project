@@ -14,6 +14,13 @@ module.exports = {
     res.status(200).send(random)
   },
 
+  comparePassword: function(req, res){
+    db.compare_password([req.body.password, req.body.email], function(err, user){
+      if(err) console.log(err);
+      else res.status(200).json(user)
+    })
+  },
+
   checkEmail: function(req, res){
     db.check_email(function(err, users){
       if (err) console.log(err);

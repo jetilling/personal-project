@@ -2,6 +2,26 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
 .config(function($stateProvider, $urlRouterProvider, $authProvider){
   $urlRouterProvider.otherwise('/').when('/dashboard', '/dashboard/stories');
 
+  var skipIfLoggedIn = ['$q', '$auth', function($q, $auth) {
+  var deferred = $q.defer();
+  if ($auth.isAuthenticated()) {
+    deferred.reject();
+  } else {
+    deferred.resolve();
+  }
+  return deferred.promise;
+}];
+
+  var loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
+      var deferred = $q.defer();
+      if ($auth.isAuthenticated()) {
+        deferred.resolve();
+      } else {
+        $location.path('/login');
+      }
+      return deferred.promise;
+    }];
+
   $stateProvider
     .state('landingPage', {
       url: '/',
@@ -19,6 +39,9 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
             controller: 'loginCtrl',
             templateUrl: './views/login.html'
           }
+        },
+        resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
         }
     })
     .state('signUp', {
@@ -28,6 +51,9 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
             controller: 'signUpCtrl',
             templateUrl: './views/signUp.html'
           }
+        },
+        resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
         }
     })
     .state('dashboard', {
@@ -37,6 +63,9 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
             controller: 'dashboardCtrl',
             templateUrl: './views/dashboard.html',
           }
+        },
+        resolve: {
+          loginRequired: loginRequired
         }
       })
     .state('dashboard.stories', {
@@ -46,6 +75,9 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
           controller: 'storiesCtrl',
           templateUrl: './views/stories.html'
         }
+      },
+      resolve: {
+        loginRequired: loginRequired
       }
     })
     .state('dashboard.following', {
@@ -82,6 +114,9 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
             controller: 'logoutCtrl',
             templateUrl: './views/logout.html'
           }
+        },
+        resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
         }
     })
 

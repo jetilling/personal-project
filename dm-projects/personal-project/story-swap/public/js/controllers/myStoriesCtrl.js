@@ -1,7 +1,8 @@
 angular.module('storySwap').controller('myStoriesCtrl', function($scope, service){
-  $scope.test = 'this page shows your posted stories'
+  $scope.test = 'this page shows your posted stories and saved stories'
 
 var myStories = [];
+var savedStories = [];
 
   var currentUserId;
   service.getUserId()
@@ -38,5 +39,28 @@ var myStories = [];
       }
     })
   }
+
+  //saved stories
+  service.getUserId()
+    .then(function(res) {
+      if (res) {
+        service.getFollowing(res)
+          .then(function(response){
+            var result = response.data[0].follows;
+            result.forEach(function(item){
+              service.getFollowingUser(item)
+                .then(function(response){
+                    var result = response.data
+                  result.forEach(function(item){
+                    savedStories.push(item)
+                    })
+                  })
+                  // console.log(followingArr);
+                })
+              })
+            })
+        }
+        else console.log('idk');
+  });
 
 })

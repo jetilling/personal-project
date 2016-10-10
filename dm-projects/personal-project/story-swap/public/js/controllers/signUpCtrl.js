@@ -23,7 +23,7 @@ var name;
       display_name: name
     }).then(function (response) {
       console.log("signUpCtrl:", response);
-      $state.go('dashboard');
+      $state.go('login');
     }).catch(function (response) {
       console.log("signUpCtrl Error:", response);
       // window.alert('Error: Register failed');

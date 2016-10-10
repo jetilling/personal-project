@@ -3,12 +3,10 @@ angular.module('storySwap').directive('storiesDirective', function(){
     restrict: 'AE',
     templateUrl: './views/directives/storiesDirective.html',
 
-    controller: function($scope, service){
-        // var stories = []
+    controller: function($scope, service, $timeout){
       $scope.likeBtn = true
       $scope.followBtn = true
 
-      console.log($scope.followingArr);
 
 //can't follow yourself
       service.getUserId()
@@ -18,10 +16,76 @@ angular.module('storySwap').directive('storiesDirective', function(){
                if ($scope.user === $scope.story.users_id) $scope.followBtn = false;
              })
 
-//can't double follow others - maybe copy following arr/function into here and use it that way.
-      // if ($scope.followingArr.indexOf($scope.story.users_id) <= -1){
-      //   $scope.followBtn = false;
-      // }
+//can't double follow others
+var followingArr = []
+
+//on refresh loads all users your following and hides their follow button.
+service.getUserId()
+  .then(function(res) {
+    if (res) {
+      service.getFollowing(res)
+        .then(function(response){
+          var result = response.data[0].follows;
+          result.forEach(function(item){
+            service.getFollowingUser(item)
+              .then(function(response){
+                  var result = response.data
+                result.forEach(function(item){
+                  followingArr.push(item)
+                })
+                followingArr.forEach(function(item){
+                  if (item.id === $scope.story.users_id) {$scope.followBtn = false; console.log('fired');}
+
+                })
+                // console.log(followingArr);
+              })
+            })
+          })
+      }
+      else console.log('idk');
+});
+
+//on follow click, loads all people a user is following and hides their follow btn.
+$scope.getFollowing = function(){
+  $scope.followBtn = true
+service.getUserId()
+  .then(function(res) {
+    if (res) {
+      service.getFollowing(res)
+        .then(function(response){
+          var result = response.data[0].follows;
+          result.forEach(function(item){
+            service.getFollowingUser(item)
+              .then(function(response){
+                  var result = response.data
+                result.forEach(function(item){
+                  followingArr.push(item)
+                })
+                followingArr.forEach(function(item){
+                  if (item.id === $scope.story.users_id) {$scope.followBtn = false; console.log('fired');}
+                  else {$scope.followBtn = true}
+
+                })
+                // console.log(followingArr);
+              })
+            })
+          })
+      }
+      else console.log('idk');
+});
+}
+
+
+// following.push($scope.following)
+// following.map(function(x){
+//   // console.log(x.id);
+//   return x.id
+// })
+
+// console.log(following[0]);
+// console.log('following',following);
+
+// console.log('new following', following);
 
 
 //like stories
