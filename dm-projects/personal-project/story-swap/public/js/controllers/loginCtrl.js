@@ -1,6 +1,11 @@
 angular.module('storySwap').controller('loginCtrl', function($scope, service, $state, $auth){
-  $scope.test = "Welcome back"
 
+  $scope.disappear = function(){
+    angular.element(document).find(".nav").css("top", "-39%")
+  }
+  $scope.appear = function(){
+    angular.element(document).find(".nav").css("top", "-26.5%")
+  }
 
   // login w/sessions
   // $scope.loginLocal = function(email, password) {

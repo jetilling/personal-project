@@ -1,9 +1,22 @@
 <body ng-controller="loginCtrl">
-  <h1>{{test}}</h1>
+  <section class="login">
+    <nav class="nav" ng-mouseover="disappear()" >
+      <a ui-sref="landingPage">Story Swap</a>
+    </nav>
+    <div class="under-nav">
+      <a class="back-to-landing" ui-sref="landingPage">Story Swap</a>
+    </div>
 
-  <!-- <button type="button" name="button" ui-sref="dashboard">go to dashboard</button> -->
 
-  <input type="input" name="name" value="" placeholder="Email" ng-model="email">
-  <input type="password" name="name" value="" placeholder="Password" ng-model="password">
-  <button ng-click="login(email, password)">Login</button>
+  <div class="welcome" ng-mouseover="appear()">
+    <h1>Welcome Back</h1>
+  </div>
+
+  <form class="loginForm" method="submit">
+    <input class="email" type="input" name="name" value="" placeholder="Email" ng-model="email">
+    <input class="password" type="password" name="name" value="" placeholder="Password" ng-model="password">
+    <button class="loginPageBtn" ng-click="login(email, password)">Login</button>
+  </form>
+
+  </section>
 </body>

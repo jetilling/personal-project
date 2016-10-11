@@ -1,19 +1,58 @@
 <body ng-controller="landingPageCtrl">
-  <section class="intro">
+  <section class="intro-main">
+    <div class="intro-video">
+      <!-- <video loop class="background-vid" src="./videos/In-And-Out.mp4" autoplay poster="posterimage.jpg"></video> -->
+    </div>
 
-      <div class="slider">
-        <!-- <div><img src="https://hd.unsplash.com/photo-1422480415834-d7d30118ea06" alt="" /></div> -->
-        <div><img src="https://hd.unsplash.com/photo-1448932155749-638e51b56f03" alt="" /></div>
-        <!-- <div><img src="https://hd.unsplash.com/photo-1455995446964-ac64c23b70ba" alt="" /></div> -->
+    <div class="title-Buttons">
+      <div class="intro-title">
+        <h1 class="title">Story Swap</h1>
       </div>
 
-      <h1 class="title">Story Swap</h1>
+      <div class="buttons">
+        <button class="signUpBtn" type="button" name="button"ng-click="begin(); getRandomWords(); getEmails()" ng-show="startButton" ui-sref="signUp">Sign Up!</button>
+        <button class="logInBtn" type="button" name="button" ui-sref="login" class='loginBtn' ng-show="logIn">log in</button>
+      </div>
+    </div>
 
-      
+    <div class="slanted"></div>
 
-      <button type="button" name="button" ng-show="start" ui-sref="dashboard">Let's get started!</button>
-      <button class="signUp" type="button" name="button"ng-click="begin(); getRandomWords(); getEmails()" ng-show="startButton" ui-sref="signUp">Sign Up!</button>
-      <button class="logIn" type="button" name="button" ui-sref="login" class='loginBtn' ng-show="logIn">log in</button>
+  </section>
+  <section class="info">
 
+    <div class="words">
+      <br>
+      <p>Explore</p>
+      <br>
+      <p>A New</p>
+      <br>
+      <p>World of Experiences</p>
+      <br>
+    </div>
+    <div class="boxes">
+      <div class="overlay"></div>
+      <div class="inside-write">
+        Write whatever you want!
+      </div>
+      <div class="write">
+        Write
+      </div>
+
+
+      <div class="learn">
+        Learn
+      </div>
+        <div class="inside-learn">
+          Learn from the experiences of others
+        </div>
+
+      <div class="discover">
+          Discover
+      </div>
+        <div class="inside-discover">
+          Discover a world like none before
+        </div>
+
+    </div>
   </section>
 </body>

@@ -1,7 +1,9 @@
 <body ng-controller="signUpCtrl">
+<section class="signUp">
 
-<h1 ng-show="newName"> Hello, {{displayName}}</h1>
-<h2 ng-show="startHere">Let's get started!</h2>
+<h1 class="signup-title">Let's get started!</h1>
+<h2 class="signup-displayName"> Hello, {{displayName}}</h2>
+
 
 
 <!-- <div class="form" ng-show="form">
@@ -16,7 +18,7 @@
   <div class="terms" >By creating an account you agree to the terms of service.</div>
 </div> -->
 
-<div class="form">
+<div class="signup-form">
   <input class="email" type="email" name="name" value="" placeholder="Email" ng-model='email'>
   <input class="password" type="password" name="name" value="" placeholder="Password" ng-model='password'>
   <div class="randomWords" ng-repeat="randomWord in randomWords">
@@ -24,10 +26,11 @@
   </div>
   <p ng-show="chooseName">Please choose a display name</p>
   <br>
-<button ng-click="signup(email, password)">Register</button>
+<button class="signup-register" ng-click="signup(email, password)">Register</button>
   <div class="terms" >By creating an account you agree to the terms of service.</div>
 </div>
 
 <button type="button" name="button" ui-sref="dashboard" ng-show="startBtn">Go to Dashboard</button>
 
+</section>
 </body>

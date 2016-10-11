@@ -131,6 +131,28 @@ angular.module('storySwap').service('service', function($http){
     })
   }
 
+  this.getSavedStories = function(res){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/getSavedStories/'+ res
+    })
+  }
+
+  this.getSavedStoryById = function(item){
+    return $http({
+      method: "GET",
+      url: 'http://localhost:8080/api/getSavedStoryById/'+ item
+    })
+  }
+
+  this.removeSavedStory = function(id, user){
+    return $http({
+      method: "PUT",
+      url: 'http://localhost:8080/api/removeSavedStory',
+      data: {users_id: id, id: user}
+    })
+  }
+
   this.followUser = function(users_id, user){
     return $http({
       method: "POST",

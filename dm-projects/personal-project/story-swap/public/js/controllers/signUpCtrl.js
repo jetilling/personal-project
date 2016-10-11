@@ -1,5 +1,6 @@
 angular.module('storySwap').controller('signUpCtrl', function($scope, service, $timeout, $state, $location, $auth){
 
+  $scope.startHere = true;
   $scope.getRandomWords = service.getRandomWords()
     .then(function(response){
       $scope.randomWords = response.data

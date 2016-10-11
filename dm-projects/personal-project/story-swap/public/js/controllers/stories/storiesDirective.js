@@ -103,6 +103,15 @@ service.getUserId()
             }
           })
       }
+
+//save Story
+    $scope.saveStory = function(id, user){
+      console.log(id, user);
+      service.saveStory(id, user)
+    }
+
+
+
     }
   }
 

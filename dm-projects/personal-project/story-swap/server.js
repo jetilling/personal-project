@@ -213,6 +213,8 @@ app.get('/api/getFollowing/:id', ensureAuthenticated, serverCtrl.getFollowing);
 app.get('/api/getFollowingUser/:id', ensureAuthenticated, serverCtrl.getFollowingUser);
 app.get('/api/getFollowingUserStory/:id', ensureAuthenticated, serverCtrl.getFollowingUserStory);
 app.get('/api/getViewFollower/:id', ensureAuthenticated, serverCtrl.getViewFollower);
+app.get('/api/getSavedStories/:id', ensureAuthenticated, serverCtrl.getSavedStories);
+app.get('/api/getSavedStoryById/:id', ensureAuthenticated, serverCtrl.getSavedStoryById);
 app.post('/api/saveStory', ensureAuthenticated, serverCtrl.saveStory);
 app.post('/api/createUser', ensureAuthenticated, serverCtrl.createUser);
 app.post('/api/createStory', ensureAuthenticated, serverCtrl.createStory);
@@ -224,6 +226,7 @@ app.put('/api/removeFromDash', ensureAuthenticated, serverCtrl.removeFromDash);
 app.put('/api/unfollowUser', ensureAuthenticated, serverCtrl.unfollowUser);
 app.put('/api/updateDraft', ensureAuthenticated, serverCtrl.updateDraft);
 app.put('/api/publishDraft', ensureAuthenticated, serverCtrl.publishDraft);
+app.put('/api/removeSavedStory', ensureAuthenticated, serverCtrl.removeSavedStory);
 app.delete('/api/deleteDraft/:id', ensureAuthenticated, serverCtrl.deleteDraft);
 
 

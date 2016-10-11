@@ -117,9 +117,30 @@ module.exports = {
   },
 
   saveStory: function(req, res){
-    db.save_story([req.body.storyId, req.body.id], function(err, users){
+    db.save_story([req.body.contentId, req.body.id], function(err, users){
       if(err) console.log(err);
       else res.status(200)
+    })
+  },
+
+  getSavedStories: function(req, res){
+    db.get_saved_stories_id([req.params.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200).json(users)
+    })
+  },
+
+  getSavedStoryById: function(req, res){
+    db.get_saved_stories([req.params.id], function(err, content){
+      if(err) console.log(err);
+      else res.status(200).json(content)
+    })
+  },
+
+  removeSavedStory: function(req, res){
+    db.remove_saved_story([req.body.users_id, req.body.id], function(err, users){
+      if(err) console.log(err);
+      else res.status(200).json(true)
     })
   },
 
