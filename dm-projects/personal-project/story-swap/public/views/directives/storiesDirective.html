@@ -3,17 +3,20 @@
   <div class="story-displayName">
     {{story.display_name}}
   </div>
-
+  <div class="story-box">
     {{story.story}}
+  </div>
+
   <div ng-show="userId">
     {{story.users_id}}
   </div>
   {{story.category}}
   <div ng-show="id" ng-model="id">{{story.id}}</div>
+
   <div class="storiesPage-story-control">
+    <div class="storiesPage-likeBtn" type="button" name="button" ng-show="likeBtn" ng-click="addOne(story.like_count,story.id)">like</div>
     <div class="likeCount" ng-model="likeCount">{{story.like_count}}</div>
-    <button type="button" name="button" ng-show="likeBtn" ng-click="addOne(story.like_count,story.id)">like</button>
-    <button type="button" name="button" ng-show="followBtn" ng-click="followUser(story.users_id, user, story.display_name); getFollowing()">Follow</button>
-    <button type="button" name="button" ng-click="saveStory(story.id, user)">Save Story</button>
+    <div class="storiesPage-followBtn" type="button" name="button" ng-show="followBtn" ng-click="followUser(story.users_id, user, story.display_name); getFollowing()">Follow</div>
+    <div class="storiesPage-saveBtn" type="button" name="button" ng-click="saveStory(story.id, user)">Save Story</div>
   </div>
 </div>

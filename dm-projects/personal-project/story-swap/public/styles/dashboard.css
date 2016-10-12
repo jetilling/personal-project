@@ -184,12 +184,61 @@
   width: 40%;
   border-radius: 5px;
   border: 1px solid black;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Muli', sans-serif;
+}
+
+.story-box {
+  height: 100%;
+  width: 90%;
+  margin-left: 10%;
+  padding-top: 10px;
+  padding-bottom: 20%;
+  position: relative;
+  top: -12%;
+  overflow: scroll;
 }
 
 .storiesPage-story-control {
   display: flex;
   justify-content: center;
+  position: relative;
+  top: -30%;
+  height: 18%;
+  background: #E8FFF5;
+  padding-top: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 1px solid black;
+}
+
+.storiesPage-likeBtn {
+  margin-right: 5%;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.likeCount {
+  margin-right: 5%;
+}
+
+.storiesPage-followBtn {
+  margin-right: 5%;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.storiesPage-saveBtn {
+  font-family: 'Merriweather Sans', sans-serif;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .story-displayName-box {
@@ -202,6 +251,7 @@
   left: 0%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  z-index: 30;
 }
 
 .story-displayName {
@@ -219,6 +269,7 @@
   font-family: 'Lobster', cursive;
   font-size: 20px;
   width: 200px;
+  z-index: 30;
 }
 
 @media(min-width: 1470px){
@@ -268,6 +319,7 @@
 
 .storiesPage-following-displayName:hover {
   border-bottom: 2px solid black;
+  cursor: default;
 }
 
 .storiesPage-following-unfollowBtn {
