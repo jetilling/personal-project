@@ -44,6 +44,18 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
           skipIfLoggedIn: skipIfLoggedIn
         }
     })
+    .state('confirmLogin', {
+      url: '/confirmLogin',
+        views: {
+          "info@": {
+            controller: 'confirmLoginCtrl',
+            templateUrl: './views/confirm-login.html'
+          }
+        },
+        resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
+        }
+    })
     .state('signUp', {
       url: '/signUp',
         views: {

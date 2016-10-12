@@ -1,4 +1,13 @@
 <body ng-controller="logoutCtrl">
-  <h1>{{test}}</h1>
-  <button type="button" name="button" ui-sref='login'>Log back in</button>
+  <section class="logout">
+    <nav class="logout-nav" ng-mouseover="disappear()" >
+      <a ui-sref="landingPage">Story Swap</a>
+    </nav>
+    <div class="logout-under-nav">
+      <a class="logout-back-to-landing" ui-sref="landingPage">Story Swap</a>
+    </div>
+
+    <h1 class="logout-title" ng-mouseover="appear()">You're logged out!</h1>
+    <button class="logout-Page-Btn" type="button" name="button" ui-sref='login' ng-mouseover="appear()">Log back in</button>
+  </section>
 </body>

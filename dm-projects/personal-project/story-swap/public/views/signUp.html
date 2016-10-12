@@ -1,7 +1,14 @@
 <body ng-controller="signUpCtrl">
 <section class="signUp">
 
-<h1 class="signup-title">Let's get started!</h1>
+  <nav class="signup-nav" ng-mouseover="disappear()" >
+    <a ui-sref="landingPage">Story Swap</a>
+  </nav>
+  <div class="signup-under-nav">
+    <a class="signup-back-to-landing" ui-sref="landingPage">Story Swap</a>
+  </div>
+
+<h1 class="signup-title" ng-mouseover="appear()">Let's get started!</h1>
 <h2 class="signup-displayName"> Hello, {{displayName}}</h2>
 
 
@@ -18,7 +25,7 @@
   <div class="terms" >By creating an account you agree to the terms of service.</div>
 </div> -->
 
-<div class="signup-form">
+<div class="signup-form" ng-mouseover="appear()">
   <input class="email" type="email" name="name" value="" placeholder="Email" ng-model='email'>
   <input class="password" type="password" name="name" value="" placeholder="Password" ng-model='password'>
   <div class="randomWords" ng-repeat="randomWord in randomWords">

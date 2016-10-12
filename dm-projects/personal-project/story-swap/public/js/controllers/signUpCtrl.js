@@ -1,5 +1,12 @@
 angular.module('storySwap').controller('signUpCtrl', function($scope, service, $timeout, $state, $location, $auth){
 
+  $scope.disappear = function(){
+    angular.element(document).find(".signup-nav").css("top", "-25%")
+  }
+  $scope.appear = function(){
+    angular.element(document).find(".signup-nav").css("top", "-15%")
+  }
+
   $scope.startHere = true;
   $scope.getRandomWords = service.getRandomWords()
     .then(function(response){
@@ -24,7 +31,7 @@ var name;
       display_name: name
     }).then(function (response) {
       console.log("signUpCtrl:", response);
-      $state.go('login');
+      $state.go('confirmLogin');
     }).catch(function (response) {
       console.log("signUpCtrl Error:", response);
       // window.alert('Error: Register failed');

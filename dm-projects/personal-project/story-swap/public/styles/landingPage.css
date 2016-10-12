@@ -149,6 +149,58 @@
   background: floralwhite;
 }
 
+.signup-nav {
+  display: flex;
+  position: relative;
+  top: -15%;
+  height: 10.5%;
+  width: 100%;
+  background-image: url('../img/space-background.jpg');
+  transition: all 500ms ease;
+  z-index: 40;
+}
+
+
+.signup-nav a {
+  display: none;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Signika', sans-serif;  font-size: 25px;
+  color: black;
+  position: relative;
+  top: 25%;
+  left: 5%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 40;
+}
+
+.signup-under-nav{
+  position: fixed;
+  top: 0%;
+  height: 10%;
+  width: 100%;
+  background: grey;
+  transition: all 500ms ease;
+  box-shadow: inset 0px -10px 20px -2px rgba(93,97,97,1);
+}
+
+.signup-back-to-landing {
+  /*display: none;*/
+  outline: none;
+  text-decoration: none;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 100px;
+  color: #393838;
+  position: relative;
+  top: -63%;
+  left: 5%;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+}
+
+
 .signup-title {
   display: flex;
   margin: 20px;
@@ -226,7 +278,7 @@
 
 }
 
-/*login*/
+/*login and confirm login*/
 .login {
   display: flex;
   flex-direction: column;
@@ -248,6 +300,17 @@
   z-index: 40;
 }
 
+.confirmLogin-nav {
+    display: flex;
+    position: relative;
+    top: -27.8%;
+    height: 10.5%;
+    width: 100%;
+    background-image: url('../img/geometric-background.jpg');
+    transition: all 500ms ease;
+    z-index: 40;
+}
+
 
 .nav a {
   display: none;
@@ -263,7 +326,31 @@
   z-index: 40;
 }
 
+.confirmLogin-nav a {
+    display: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Signika', sans-serif;  font-size: 25px;
+    color: black;
+    position: relative;
+    top: 25%;
+    left: 5%;
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 40;
+}
+
 .under-nav{
+  position: fixed;
+  top: 0%;
+  height: 10%;
+  width: 100%;
+  background: grey;
+  transition: all 500ms ease;
+  box-shadow: inset 0px -10px 20px -2px rgba(93,97,97,1);
+}
+
+.confirmLogin-under-nav {
   position: fixed;
   top: 0%;
   height: 10%;
@@ -288,9 +375,31 @@
 
 }
 
+.confirmLogin-back-to-landing {
+  /*display: none;*/
+  outline: none;
+  text-decoration: none;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 100px;
+  color: #393838;
+  position: relative;
+  top: -63%;
+  left: 5%;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+}
+
 .welcome {
   display: flex;
   font-size: 60px;
+  /*position: relative;*/
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.confirm {
+  display: flex;
+  font-size: 40px;
   /*position: relative;*/
   font-family: 'Merriweather Sans', sans-serif;
 }
@@ -313,14 +422,7 @@
   background: transparent;
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 20px;
-
 }
-
-/*.email:focus{
-  background-image: url('https://hd.unsplash.com/photo-1455995446964-ac64c23b70ba') no-repeat;
-  background-repeat:repeat-y;
-  background-position:right;
-}*/
 
 .password {
   height: 30px;
@@ -354,7 +456,94 @@
   opacity: 1;
 }
 
+/*logout page*/
+.logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: floralwhite;
+}
 
+.logout-title {
+  display: flex;
+  font-size: 40px;
+  /*position: relative;*/
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.logout-nav {
+  display: flex;
+  position: relative;
+  top: -38.5%;
+  height: 10.5%;
+  width: 100%;
+  background-image: url('../img/desert-triangle.png');
+  background-position: left -300px top -500px;
+  transition: all 500ms ease;
+  z-index: 40;
+}
+
+.logout-nav a {
+    display: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Signika', sans-serif;  font-size: 25px;
+    color: black;
+    position: relative;
+    top: 25%;
+    left: 5%;
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 40;
+}
+
+.logout-under-nav{
+  position: fixed;
+  top: 0%;
+  height: 10%;
+  width: 100%;
+  background: grey;
+  transition: all 500ms ease;
+  box-shadow: inset 0px -10px 20px -2px rgba(93,97,97,1);
+}
+
+.logout-back-to-landing {
+  /*display: none;*/
+  outline: none;
+  text-decoration: none;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 100px;
+  color: #393838;
+  position: relative;
+  top: -63%;
+  left: 5%;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logout-Page-Btn {
+  width: 175px;
+  height: 40px;
+  background: #6CA15C;
+  outline: none;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  margin: 10px;
+  opacity: .75;
+}
+
+.logout-Page-Btn:hover {
+  opacity: 1;
+}
+
+/*landing page*/
 .info {
   position: relative;
   /*height: 100vh;*/
