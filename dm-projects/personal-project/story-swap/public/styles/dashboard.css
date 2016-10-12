@@ -1,11 +1,172 @@
+.dashboard-nav {
+  height: 10vh;
+  width: 100%;
+  background: mintcream;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid black
+}
+
 .dashTitle {
-  display: inline-block;
+  display: flex;
+  margin-top: 33px;
+  height: 10vh;
+  margin-left: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  color: black;
+  -webkit-text-fill-color: transparent;
+ background: -webkit-linear-gradient(transparent, transparent),
+             url('../img/space2-background.jpg') repeat;
+ background: -o-linear-gradient(transparent, transparent);
+ -webkit-background-clip: text;
+}
+
+.dashboard-nav-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+}
+
+.storiesBtn {
+  height: 10vh;
+  background: transparent;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.storiesBtn:hover{
+  /*font-weight: bold;*/
+  color: black;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  /*background: url("../img/space-background.jpg")*/
+}
+
+.followingBtn {
+  height: 10vh;
+  font-size: 15px;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.followingBtn:hover{
+  /*font-weight: bold;*/
+  color: black;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  /*background: url("../img/space-background.jpg")*/
+}
+
+.draftsBtn {
+  height: 10vh;
+  font-size: 15px;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.draftsBtn:hover{
+  /*font-weight: bold;*/
+  color: black;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  /*background: url("../img/space-background.jpg")*/
+}
+
+.userBtn {
+  height: 10vh;
+  font-size: 15px;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.userBtn:hover{
+  /*font-weight: bold;*/
+  color: black;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  /*background: url("../img/space-background.jpg")*/
+}
+
+.composeBtn {
+  height: 10vh;
+  font-size: 15px;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.composeBtn:hover{
+  /*font-weight: bold;*/
+  color: black;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  /*background: url("../img/space-background.jpg")*/
+}
+
+.logOutBtn {
+  height: 10vh;
+  font-size: 15px;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.logOutBtn:hover{
+  /*font-weight: bold;*/
+  color: black;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  /*background: url("../img/space-background.jpg")*/
+}
+
+/*.compose{
+  transition: all 500ms ease;
+}*/
+
+/*stories page*/
+.storiesPage {
+  /*display: flex;*/
+  overflow: scroll;
+  display: flex;
+  /*flex-direction: column;*/
+  align-items: center;
+  justify-content: center;
+  background: #819799;
+  /*background: -webkit-linear-gradient(#458E56, #6AD483);
+  background: -o-linear-gradient(#458E56, #6AD483);
+  background: -moz-linear-gradient(#458E56, #6AD483);
+  background: linear-gradient(#458E56, #6AD483);*/
+  width: 100%;
 }
 
 
 .stories {
   height: 90vh;
   overflow: scroll;
+  position: relative;
+  left: 19%;
+  width: 200%;
+  height: 100vh;
 }
 
 .story {
@@ -14,10 +175,99 @@
   left: 60px;
   margin: 10px;
   text-align: center;
-  height: 20%;
+  height: 25%;
   width: 40%;
 }
 
+.storiesPage-following {
+  position: relative;
+  height: 50vh;
+  width: 50%;
+  /*border: 3px solid black;*/
+  margin-right: 19%;
+  margin-bottom: 20%;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.storiesPage-following h1 {
+  font-size: 25px;
+  font-family: 'Lobster', cursive;
+
+}
+.storiesPage-following-displayName {
+  display: inline-block;
+  margin: 10px;
+}
+
+.storiesPage-following-unfollowBtn {
+
+}
+
+/*Following */
+.following-page {
+  height: 100vh;
+  width: 100%;
+  background: #819799;
+}
+
+.following-page h1 {
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+.following-page-stuff {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #819799;
+  width: 100%;
+}
+
+.following-page-btns {
+  position: relative;
+  height: 50vh;
+  width: 50%;
+  /*border: 3px solid black;*/
+  margin-right: 19%;
+  margin-bottom: 20%;
+  font-family: 'Merriweather Sans', sans-serif;
+  outline: none;
+}
+
+.following-button {
+  background: #819799;
+  border: none;
+  font-size: 15px;
+
+}
+
+.following-button:hover {
+  border: 1px solid black
+}
+
+.following-page-stories {
+  height: 90vh;
+  overflow: scroll;
+  position: relative;
+  left: 19%;
+  width: 200%;
+  height: 100vh;
+}
+
+.following-page-story {
+  background: lightblue;
+  position: relative;
+  left: 60px;
+  margin: 10px;
+  text-align: center;
+  height: 200px;
+  width: 40%;
+  font-family: 'Merriweather Sans', sans-serif;
+
+}
+
+/*my stories page*/
 .myStories {
   height: 90vh;
   overflow: scroll;

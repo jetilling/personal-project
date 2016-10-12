@@ -1,24 +1,30 @@
 <body ng-controller='dashboardCtrl'>
-  <h1 class="dashTitle">{{test}}</h1>
-  <h1>{{user}}</h1>
+  <section class="dashboard-nav">
 
 
-<button type="button" name="button" ui-sref='dashboard.stories'>Stories</button>
-<button type="button" name="button" ui-sref='dashboard.following'>Following</button>
-<button type="button" name="button" ui-sref='dashboard.drafts'>Drafts</button>
-<button type="button" name="button" ui-sref='dashboard.myStories'>My Stories</button>
-<button type="button" name="button" ng-click="compose()">Compose</button>
-<button type="button" name="button" ng-click="logout()">log out</button>
+    <h1 class="dashTitle">{{test}}</h1>
 
 
+  <div class="dashboard-nav-btns">
+    <button class="storiesBtn" type="button" name="button" ui-sref='dashboard.stories' ng-click="border()">stories</button>
+    <button class="followingBtn" type="button" name="button" ui-sref='dashboard.following' ng-click="border()">following</button>
+    <button class="draftsBtn" type="button" name="button" ui-sref='dashboard.drafts' ng-click="border()">drafts</button>
+    <button class="userBtn" type="button" name="button" ui-sref='dashboard.myStories' ng-click="border()">{{user}}</button>
+    <button class="composeBtn" type="button" name="button" ng-click="compose()" ng-click="border()">compose</button>
+    <button class="logOutBtn" type="button" name="button" ng-click="logout()" ng-click="border()">log out</button>
+  </div>
+  </section>
+  <section class="dashboard-compose">
 
-<div class="compose" ng-show="message">
-  <textarea name="name" rows="4" cols="40" placeholder="What's your story?" ng-model="story"></textarea>
-   <button type="button" name="button" ng-click="addStory(story); compose()">Publish</button>
-   <button type="button" name="button" ng-click='saveDraft(story)'>Save Draft</button>
 
-</div>
+    <div class="compose" ng-show="message">
+      <textarea name="name" rows="4" cols="40" placeholder="What's your story?" ng-model="story"></textarea>
+       <button type="button" name="button" ng-click="addStory(story); compose()">Publish</button>
+       <button type="button" name="button" ng-click='saveDraft(story)'>Save Draft</button>
 
+    </div>
+
+  </section>
   <div ui-view="dashboard"></div>
 
 </body>

@@ -1,7 +1,7 @@
 angular.module('storySwap').controller('dashboardCtrl', function($scope, service, $state, $auth){
   $scope.test = "Story Swap"
 
-
+// angular.element(document).find('.storiesBtn').css("border-left", "3px solid black", "border-right", "3px solid black", "border-top", "3px solid black")
 // $auth.get(req.user)
 $scope.logout = function(){
   $auth.logout()

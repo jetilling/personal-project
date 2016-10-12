@@ -72,6 +72,7 @@
 }
 .intro-title {
   display: flex;
+  height: 125px;
   /*display: inline-block;*/
   position: relative;
   font-size: 120px;
@@ -80,6 +81,7 @@
   /*text-align: center;*/
   /*margin-top: 15%;*/
   /*left: 35%;*/
+
   z-index: 50;
 }
 
@@ -88,11 +90,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Lobster', cursive;
+
   /*display: inline-block;*/
-  font-size: 70px;
+  font-size: 80px;
   /*position: relative;*/
   /*top: 30%;*/
   /*left: 70%;*/
+  color: white;
+
 
 }
 
@@ -112,31 +118,43 @@
 
 .signUpBtn {
   display: inline-block;
-  /*position: relative;
-  top: 35%;
-  left: 20%;*/
   width: 250px;
   height: 50px;
-  background: #2b8cbe;
+  background: #6CA15C;
   outline: none;
-  border: 1.5px solid #0868ac;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
   color: white;
   font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: 3px;
   margin: 20px;
+  opacity: .75;
+}
+
+.signUpBtn:hover {
+  opacity: 1;
 }
 
 .logInBtn {
   display: inline-block;
-  /*position: relative;
-  top: 50%;
-  left: -30%;*/
   width: 250px;
   height: 50px;
-  background: #2b8cbe;
+  background: #6CA15C;
   outline: none;
-  border: 1.5px solid #0868ac;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
   color: white;
   font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: 3px;
+   opacity: .75;
+}
+
+.logInBtn:hover {
+  opacity: 1;
 }
 
 /*sign up page*/
@@ -146,7 +164,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: floralwhite;
+  background: mintcream;
 }
 
 .signup-nav {
@@ -175,29 +193,44 @@
   z-index: 40;
 }
 
+.overlay-nav{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: lightgrey;
+  height: 10vh;
+  width: 100%;
+  opacity: 0.3;
+  z-index: 1;
+}
+
 .signup-under-nav{
   position: fixed;
   top: 0%;
   height: 10%;
   width: 100%;
-  background: grey;
+  /*background: grey;*/
+  background-image: url('../img/pixel-background.jpg');
   transition: all 500ms ease;
-  box-shadow: inset 0px -10px 20px -2px rgba(93,97,97,1);
+  box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
+
 }
 
 .signup-back-to-landing {
   /*display: none;*/
   outline: none;
   text-decoration: none;
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size: 100px;
-  color: #393838;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  color: #393B3B;
   position: relative;
-  top: -63%;
+  top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
-
+  z-index: 50;
 }
 
 
@@ -285,8 +318,13 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: floralwhite;
+  background: mintcream;
+}
 
+.loginBox {
+  /*background: #94C7CC;*/
+  padding: 40px;
+  border: 3px solid black
 }
 
 .nav {
@@ -340,56 +378,91 @@
     z-index: 40;
 }
 
+.overlay-nav{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: lightgrey;
+  height: 10vh;
+  width: 100%;
+  opacity: 0.3;
+  z-index: 1;
+}
+
 .under-nav{
   position: fixed;
   top: 0%;
   height: 10%;
   width: 100%;
-  background: grey;
+  background: #FF5B64;
+  /*background-image: url('../img/skyline.jpeg');*/
+  background-position: left -1900px top 2700px;
   transition: all 500ms ease;
-  box-shadow: inset 0px -10px 20px -2px rgba(93,97,97,1);
-}
+  box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
 
-.confirmLogin-under-nav {
-  position: fixed;
-  top: 0%;
-  height: 10%;
-  width: 100%;
-  background: grey;
-  transition: all 500ms ease;
-  box-shadow: inset 0px -10px 20px -2px rgba(93,97,97,1);
 }
 
 .back-to-landing {
   /*display: none;*/
   outline: none;
   text-decoration: none;
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size: 100px;
-  color: #393838;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  color: #393B3B;
   position: relative;
-  top: -63%;
+  top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
+  /*-webkit-text-fill-color: transparent;
+ background: -webkit-linear-gradient(transparent, transparent),
+             url('../img/desert-triangle.png') repeat;
+ background: -o-linear-gradient(transparent, transparent);
+ -webkit-background-clip: text;*/
+  z-index: 50;
+}
+
+.confirm-overlay-nav{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: lightgrey;
+  height: 10vh;
+  width: 100%;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.confirm-under-nav{
+  position: fixed;
+  top: 0%;
+  height: 10%;
+  width: 100%;
+  /*background: grey;*/
+  background-image: url('../img/pixel-background.jpg');
+  transition: all 500ms ease;
+  box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
 
 }
 
-.confirmLogin-back-to-landing {
+.confirm-back-to-landing {
   /*display: none;*/
   outline: none;
   text-decoration: none;
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size: 100px;
-  color: #393838;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  color: #393B3B;
   position: relative;
-  top: -63%;
+  top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
-
+  z-index: 50;
 }
-
 .welcome {
   display: flex;
   font-size: 60px;
@@ -439,7 +512,7 @@
 .loginPageBtn {
   width: 175px;
   height: 40px;
-  background: #6CA15C;
+  background: #85C2B6;
   outline: none;
   font-family: 'Merriweather Sans', sans-serif;
   border: 1.5px solid black;
@@ -463,7 +536,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: floralwhite;
+  background: mintcream;
 }
 
 .logout-title {
@@ -499,28 +572,44 @@
     z-index: 40;
 }
 
+.logout-overlay-nav{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: lightgrey;
+  height: 10vh;
+  width: 100%;
+  opacity: 0.3;
+  z-index: 1;
+}
+
 .logout-under-nav{
   position: fixed;
   top: 0%;
   height: 10%;
   width: 100%;
-  background: grey;
+  /*background: grey;*/
+  background-image: url('../img/pixel-background.jpg');
   transition: all 500ms ease;
-  box-shadow: inset 0px -10px 20px -2px rgba(93,97,97,1);
+  box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
+
 }
 
 .logout-back-to-landing {
   /*display: none;*/
   outline: none;
   text-decoration: none;
-  font-family: 'Merriweather Sans', sans-serif;
-  font-size: 100px;
-  color: #393838;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  color: #393B3B;
   position: relative;
-  top: -63%;
+  top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
+  z-index: 50;
 }
 
 .logout-Page-Btn {

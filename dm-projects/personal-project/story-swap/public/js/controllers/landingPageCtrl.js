@@ -13,7 +13,7 @@ angular.module('storySwap').controller('landingPageCtrl', function($scope, servi
     $scope.logIn = false
   }
 
-  var videoList = ["./videos/Falling-Leaf.mp4", "./videos/In-And-Out.mp4", "./videos/The-DJ.mp4"];
+  var videoList = ["./videos/Falling-Leaf.mp4", "./videos/In-And-Out.mp4", "./videos/The-DJ.mp4", "./videos/High-Lines.mp4"];
   videoList.sort(function(a, b) {return 0.5 - Math.random()});
 
   console.log(videoList[0]);
