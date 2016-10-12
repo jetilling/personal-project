@@ -21,15 +21,15 @@
 </div>
 
 <div class="storiesPage-following">
-  <h1>Following</h1>
+  <h1>Following:</h1>
   <div  ng-repeat="follow in following">
     <div ng-show="userId">{{follow.id}}</div>
     <div  class="storiesPage-following-displayName" ng-click="viewStories(follow.id, user)">{{follow.display_name}}</div>
-    <button class="storiesPage-following-unfollowBtn" type="button" name="button" ng-click="unfollowUser(follow.id, user)" >Unfollow</button>
+    <button class="storiesPage-following-unfollowBtn" type="button" name="button" ng-click="unfollowUser(follow.id, user)" ><img src="./img/x.png" alt="" /></button>
   </div>
 </div>
-  <div class="storiesPage-label">
+  <!-- <div class="storiesPage-label">
     stories
-  </div>
+  </div> -->
 </section>
 </body>

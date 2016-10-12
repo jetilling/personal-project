@@ -151,11 +151,8 @@
   /*flex-direction: column;*/
   align-items: center;
   justify-content: center;
-  background: #819799;
-  /*background: -webkit-linear-gradient(#458E56, #6AD483);
-  background: -o-linear-gradient(#458E56, #6AD483);
-  background: -moz-linear-gradient(#458E56, #6AD483);
-  background: linear-gradient(#458E56, #6AD483);*/
+  background: #94C7CC;
+  /*background: #FF5B64;*/
   width: 100%;
 }
 
@@ -165,29 +162,46 @@
   overflow: scroll;
   position: relative;
   left: 19%;
+  background: #5B9A9E;
+  /*background: #D14758;*/
+    /* top: 4%; */
+  margin-top: 10px;
   width: 200%;
   height: 100vh;
   z-index: 30;
+  border-radius: 5px;
+  /*border: 2px solid #D14758;*/
+  border: 2px solid #5B9A9E;
 }
 
 .story {
-  background: lightblue;
+  background: #E8FFF5;
   position: relative;
   left: 60px;
   margin: 10px;
   text-align: center;
   height: 25%;
   width: 40%;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.storiesPage-story-control {
+  display: flex;
+  justify-content: center;
 }
 
 .story-displayName-box {
   border-right: 2px solid black;
   width: 10%;
   height: 100%;
-  background: green;
+  background: mintcream;
   display: inline-block;
   position: absolute;
   left: 0%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .story-displayName {
@@ -197,6 +211,7 @@
   -o-transform: rotate(-90deg);
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   position: relative;
+  /*color: #FF5B64;*/
   display: flex;
   justify-content: center;
   left: -24%;
@@ -251,11 +266,21 @@
   margin: 10px;
 }
 
-.storiesPage-following-unfollowBtn {
-
+.storiesPage-following-displayName:hover {
+  border-bottom: 2px solid black;
 }
 
-.storiesPage-label {
+.storiesPage-following-unfollowBtn {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.storiesPage-following-unfollowBtn img {
+  height: 15px;
+}
+
+/*.storiesPage-label {
   position: absolute;
   font-size: 180px;
   width: 100%;
@@ -268,17 +293,16 @@
   -webkit-text-fill-color: transparent;
  background: -webkit-linear-gradient(transparent, transparent),
              url('../img/word-background.jpg') repeat;
-  /*background-position: left -600px top -300px;*/
  background: -o-linear-gradient(transparent, transparent);
  -webkit-background-clip: text;
  opacity: .8;
-}
+}*/
 
 /*Following */
 .following-page {
   height: 100vh;
   width: 100%;
-  background: #819799;
+  background: #94C7CC;
 }
 
 .following-page h1 {
@@ -291,7 +315,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #819799;
+  background: #94C7CC;
   width: 100%;
   z-index: 30;
 }
@@ -305,13 +329,15 @@
   margin-bottom: 20%;
   font-family: 'Merriweather Sans', sans-serif;
   outline: none;
+  z-index: 30;
 }
 
 .following-button {
   background: #819799;
   border: none;
-  font-size: 15px;
+  font-size: 20px;
   outline: none;
+  background: transparent;
 }
 
 .following-button:hover {
@@ -323,21 +349,84 @@
   overflow: scroll;
   position: relative;
   left: 19%;
+  background: #5B9A9E;
+  /*background: #D14758;*/
+    /* top: 4%; */
+  margin-top: 10px;
   width: 200%;
   height: 100vh;
   z-index: 30;
+  border-radius: 5px;
+  /*border: 2px solid #D14758;*/
+  border: 2px solid #5B9A9E;
 }
 
 .following-page-story {
-  background: lightblue;
+  background: #E8FFF5;
   position: relative;
   left: 60px;
   margin: 10px;
   text-align: center;
-  height: 200px;
+  height: 173px;
   width: 40%;
+  border-radius: 5px;
+  border: 1px solid black;
   font-family: 'Merriweather Sans', sans-serif;
 }
+
+.following-displayName-box {
+  border-right: 2px solid black;
+  width: 10%;
+  height: 100%;
+  background: mintcream;
+  display: inline-block;
+  position: absolute;
+  left: 0%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.following-displayName {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  position: relative;
+  /*color: #FF5B64;*/
+  display: flex;
+  justify-content: center;
+  left: -26%;
+  top: 68%;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  width: 200px;
+}
+
+@media(min-width: 1470px){
+  .story-displayName {
+    left: -20%;
+  }
+}
+
+@media(max-width: 1246px){
+  .story-displayName {
+    left: -28%
+  }
+}
+
+@media(max-width: 1138px){
+  .story-displayName {
+    left: -30%
+  }
+}
+
+@media(max-width: 1024px){
+  .story-displayName {
+    left: -32%;
+  }
+}
+
 
 .followingPage-label {
   position: absolute;
