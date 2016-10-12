@@ -1,26 +1,31 @@
 <body ng-controller="myStoriesCtrl">
-  {{test}}
+<section class="myStories-page">
+
+  <div class="myStories-page-toggleBtns">
+    <button type="button" name="button" ng-click="viewMyStories()">My Stories</button>
+    <button type="button" name="button" ng-click="viewSavedStories()">Saved Stories</button>
+  </div>
+
 
   <div ng-show="userLoggedIn">{{user}}</div>
 
-  <button type="button" name="button" ng-click="viewMyStories()">My Stories</button>
-  <button type="button" name="button" ng-click="viewSavedStories()">Saved Stories</button>
-
-<div ng-show="stories">
-  <div ng-repeat="savedStory in savedStories">
-    {{savedStory.story}}
-    {{savedStory.display_name}}
-    <div ng-show='id'>{{savedStory.id}}</div>
-    <button type="button" name="button" ng-click="removeSavedStory(savedStory.id, user)">Delete Saved Story</button>
+<div class="myStories-page-stuff">
+  <div class="savedStories" ng-show="stories">
+    <div class="savedStory" ng-repeat="savedStory in savedStories">
+      {{savedStory.story}}
+      {{savedStory.display_name}}
+      <div ng-show='id'>{{savedStory.id}}</div>
+      <button type="button" name="button" ng-click="removeSavedStory(savedStory.id, user)">Delete Saved Story</button>
+    </div>
   </div>
-</div>
 
-  <div class="storiesByMe" ng-show="myStories">
+  <div class="myStories" ng-show="storiesByMe">
     <div class="myStory" ng-repeat="myStory in myStories">
       {{myStory.story}}
       <div ng-show='id'>{{myStory.id}}</div>
       <button type="button" name="button" ng-click="remove(myStory.id)">Delete from My Stories</button>
     </div>
   </div>
-
+</div>
+</section>
 </body>

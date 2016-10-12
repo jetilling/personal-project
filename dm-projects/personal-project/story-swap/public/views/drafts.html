@@ -1,14 +1,19 @@
 <body ng-controller="draftsCtrl">
-  <h1>{{test}}</h1>
-  <div class="drafts">
+  <section class="drafts-page">
 
-    <div class="draft" ng-repeat="draft in drafts">
-      <div ng-show='draftid' ng-model="id">{{draft.id}}</div>
-      <div editable-textarea="draft.story" onbeforesave="updateDraft($data, draft.id); showPublishBtn()" oncancel="showPublishBtn()" ng-click="hidePublishBtn()"><pre>{{draft.story}}</pre></div>
-      <button type="button" name="button" ng-show="publishBtn" ng-click="publish(draft.id)">Publish</button>
-      <button type="button" name="button" ng-click="remove(draft.id)">Delete</button>
+      <h1>{{test}}</h1>
+    <div class="drafts-page-stuff">
+      <div class="drafts">
+
+        <div class="draft" ng-repeat="draft in drafts">
+          <div ng-show='draftid' ng-model="id">{{draft.id}}</div>
+          <div editable-textarea="draft.story" onbeforesave="updateDraft($data, draft.id); showPublishBtn()" oncancel="showPublishBtn()" ng-click="hidePublishBtn()"><pre>{{draft.story}}</pre></div>
+          <button type="button" name="button" ng-show="publishBtn" ng-click="publish(draft.id)">Publish</button>
+          <button type="button" name="button" ng-click="remove(draft.id)">Delete</button>
+        </div>
+
+
+      </div>
     </div>
-
-
-  </div>
+  </section>
 </body>

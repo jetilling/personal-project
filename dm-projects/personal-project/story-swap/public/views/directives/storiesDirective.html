@@ -1,7 +1,15 @@
 <div class="story">
-  {{story.display_name}} -
+  <div class="story-displayName-box">
+
+  </div>
+  <div class="story-displayName">
+  {{story.display_name}}
+ </div>
+
   {{story.story}}
-  {{story.users_id}}
+  <div ng-show="userId">
+    {{story.users_id}}
+  </div>
   {{story.category}}
   <div ng-show="id" ng-model="id">{{story.id}}</div>
   <br>
