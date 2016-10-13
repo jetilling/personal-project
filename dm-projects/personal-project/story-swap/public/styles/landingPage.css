@@ -318,67 +318,34 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: mintcream;
-  /*background: url('../img/skyline.jpeg');
-  background-position: left -1000px top -2000px;*/
+  /*background: mintcream;*/
+}
+
+.login-background {
+  position: absolute;
+  top: -182%;
+  left: -131%;
+  width: 100%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
 .loginBox {
   /*background: #94C7CC;*/
   padding: 40px;
   border: 3px solid black;
-}
-
-.nav {
-  display: flex;
-  position: relative;
-  top: -26.5%;
-  height: 10.5%;
-  width: 100%;
-  background-image: url('../img/input-background.jpg');
-  transition: all 500ms ease;
-  z-index: 40;
-}
-
-.confirmLogin-nav {
-    display: flex;
-    position: relative;
-    top: -27.8%;
-    height: 10.5%;
-    width: 100%;
-    background-image: url('../img/geometric-background.jpg');
-    transition: all 500ms ease;
-    z-index: 40;
+  background: mintcream;
+  box-shadow: 5px 5px 20px #141414;
+  z-index: 30;
 }
 
 
-.nav a {
-  display: none;
-  outline: none;
-  text-decoration: none;
-  font-family: 'Signika', sans-serif;  font-size: 25px;
-  color: black;
-  position: relative;
-  top: 25%;
-  left: 5%;
-  font-weight: bold;
-  letter-spacing: 2px;
-  z-index: 40;
-}
 
-.confirmLogin-nav a {
-    display: none;
-    outline: none;
-    text-decoration: none;
-    font-family: 'Signika', sans-serif;  font-size: 25px;
-    color: black;
-    position: relative;
-    top: 25%;
-    left: 5%;
-    font-weight: bold;
-    letter-spacing: 2px;
-    z-index: 40;
-}
+
+
 
 .overlay-nav{
   position: absolute;
@@ -398,16 +365,15 @@
   top: 0%;
   height: 10%;
   width: 100%;
-  background: #FF5B64;
+  background: #00A06F;
   /*background-image: url('../img/skyline.jpeg');*/
   background-position: left -1900px top 2700px;
   transition: all 500ms ease;
   box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
-
+  z-index: 30;
 }
 
 .back-to-landing {
-  /*display: none;*/
   outline: none;
   text-decoration: none;
   font-family: 'Lobster', cursive;
@@ -418,11 +384,6 @@
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
-  /*-webkit-text-fill-color: transparent;
- background: -webkit-linear-gradient(transparent, transparent),
-             url('../img/desert-triangle.png') repeat;
- background: -o-linear-gradient(transparent, transparent);
- -webkit-background-clip: text;*/
   z-index: 50;
 }
 
@@ -514,7 +475,7 @@
 .loginPageBtn {
   width: 175px;
   height: 40px;
-  background: #85C2B6;
+  background: #FF5B64;
   outline: none;
   font-family: 'Merriweather Sans', sans-serif;
   border: 1.5px solid black;
@@ -524,11 +485,10 @@
   font-weight: lighter;
   letter-spacing: 3px;
   margin: 10px;
-  opacity: .75;
 }
 
 .loginPageBtn:hover {
-  opacity: 1;
+  background: #FB8684;
 }
 
 /*logout page*/

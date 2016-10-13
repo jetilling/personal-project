@@ -143,7 +143,7 @@
   display: flex;
   height: 20vh;
     /* justify-content: flex-end; */
-  background: #79BD8F;
+  background: #394B49;
   padding-top: 9px;
   position: absolute;
   z-index: 100;
@@ -218,7 +218,7 @@ padding-right: 34px;
   align-items: center;
   justify-content: center;
   /*background: #94C7CC;*/
-  background: #79BD8F;
+  background: #394B49;
   width: 100%;
 }
 
@@ -229,7 +229,7 @@ padding-right: 34px;
   position: relative;
   left: 19%;
   /*background: #5B9A9E;*/
-  background: #00A388;
+  background: #00A06F;
     /* top: 4%; */
   margin-top: 10px;
   width: 200%;
@@ -237,7 +237,7 @@ padding-right: 34px;
   z-index: 30;
   border-radius: 5px;
   /*border: 2px solid #D14758;*/
-  border: 2px solid #5B9A9E;
+  border: 2px solid grey;
 }
 
 .story {
@@ -268,8 +268,8 @@ padding-right: 34px;
   display: flex;
   justify-content: center;
   position: relative;
-  top: -30%;
-  height: 18%;
+  top: -31%;
+  height: 19%;
   background: #E8FFF5;
   padding-top: 10px;
   border-bottom-left-radius: 5px;
@@ -286,6 +286,10 @@ padding-right: 34px;
   cursor: pointer;
 }
 
+.storiesPage-likeBtn:hover {
+  border-bottom: 2px solid black;
+}
+
 .likeCount {
   margin-right: 5%;
 }
@@ -299,12 +303,21 @@ padding-right: 34px;
   cursor: pointer;
 }
 
+.storiesPage-followBtn:hover {
+  border-bottom: 2px solid black;
+}
+
 .storiesPage-saveBtn {
   font-family: 'Merriweather Sans', sans-serif;
   border: none;
   background: transparent;
   font-size: 15px;
   cursor: pointer;
+}
+
+.storiesPage-saveBtn:hover {
+  border-bottom: 2px solid black;
+
 }
 
 .story-displayName-box {
@@ -408,7 +421,7 @@ padding-right: 34px;
   font-family: 'Lobster', cursive;
   font-weight: lighter;
   /*color: #393B3B;*/
-  color: #FFFF9D;
+  color: #272A2F;
   /*-webkit-text-fill-color: transparent;
  background: -webkit-linear-gradient(transparent, transparent),
              url('../img/In-And-Out.jpg') repeat;
@@ -422,7 +435,7 @@ padding-right: 34px;
 .following-page {
   height: 100vh;
   width: 100%;
-  background: #94C7CC;
+  background: #394B49;
 }
 
 .following-page h1 {
@@ -435,7 +448,7 @@ padding-right: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #94C7CC;
+  background: #394B49;
   width: 100%;
   z-index: 30;
 }
@@ -469,7 +482,7 @@ padding-right: 34px;
   overflow: scroll;
   position: relative;
   left: 19%;
-  background: #5B9A9E;
+  background: #00A06F;
   /*background: #D14758;*/
     /* top: 4%; */
   margin-top: 10px;
@@ -478,7 +491,7 @@ padding-right: 34px;
   z-index: 30;
   border-radius: 5px;
   /*border: 2px solid #D14758;*/
-  border: 2px solid #5B9A9E;
+  border: 2px solid grey;
 }
 
 .following-page-story {
@@ -568,7 +581,7 @@ padding-right: 34px;
   font-family: 'Lobster', cursive;
   font-weight: lighter;
   /*color: #DB9E36;*/
-  color: #FFFF9D;
+  color: #272A2F;
   /*-webkit-text-fill-color: transparent;
  background: -webkit-linear-gradient(transparent, transparent),
              url('../img/space2-background.jpg') repeat;
@@ -582,14 +595,14 @@ padding-right: 34px;
 .drafts-page {
   height: 100vh;
   width: 100%;
-  background: #79BD8F;
+  background: #394B49;
 }
 
 .drafts-page-stuff {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #79BD8F;
+  background: #394B49;
   width: 100%;
 }
 
@@ -603,9 +616,9 @@ padding-right: 34px;
   /* left: 19%; */
   width: 67.5%;
   height: 100vh;
-  background: #00A388;
+  background: #00A06F;
   margin-top: 10px;
-  border: 1px solid green;
+  border: 1px solid grey;
   border-radius: 5px;
 }
 
@@ -640,7 +653,7 @@ padding-right: 34px;
 }
 
 .draft-publish:hover {
-  font-weight: bolder;
+  border-bottom: 1px solid black;
   cursor: default;
 
 }
@@ -650,21 +663,22 @@ padding-right: 34px;
 }
 
 .draft-delete:hover {
-  font-weight: bolder;
+  /*font-weight: bolder;*/
+  border-bottom: 1px solid black;
   cursor: default;
 }
 
 .draftPage-label {
   position: absolute;
-  font-size: 160px;
+  font-size: 140px;
   width: 100%;
   padding-left: 5%;
-  left: 48%;
+  left: 49%;
   top: 70%;
   font-family: 'Lobster', cursive;
   font-weight: lighter;
   /*color: #DB9E36;*/
-  color: #FFFF9D;
+  color: #272A2F;
   /*-webkit-text-fill-color: transparent;
  background: -webkit-linear-gradient(transparent, transparent),
              url('../img/In-And-Out.jpg') repeat;
@@ -679,7 +693,7 @@ padding-right: 34px;
 .myStories-page {
   height: 100vh;
   width: 100%;
-  background: #79BD8F;
+  background: #394B49;
 }
 
 .myStories-page-toggleBtns {
@@ -693,8 +707,9 @@ padding-right: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #79BD8F;
+  background: #394B49;
   width: 100%;
+  overflow: scroll;
 }
 
 .myStories {
@@ -707,9 +722,9 @@ padding-right: 34px;
     /* left: 19%; */
     width: 67.5%;
     height: 100vh;
-    background: #00A388;
+    background: #00A06F;
     margin-top: 28px;
-    border: 1px solid green;
+    border: 1px solid grey;
     border-radius: 5px;
 }
 
@@ -776,8 +791,7 @@ padding-right: 34px;
   top: 70%;
   font-family: 'Lobster', cursive;
   font-weight: lighter;
-  /*color: #DB9E36;*/
-  /*color: #FFFF9D;*/
+  /*color: #272A2F;*/
   /*-webkit-text-fill-color: transparent;
  background: -webkit-linear-gradient(transparent, transparent),
              url('../img/In-And-Out.jpg') repeat;
@@ -788,22 +802,194 @@ padding-right: 34px;
 /*}*/
 
 .savedStories {
-  height: 90vh;
   overflow: scroll;
-  position: relative;
-  left: 19%;
-  width: 200%;
-  height: 100vh;
-  margin-top: 35px;
+    position: relative;
+    /* left: 19%; */
+    /* background: #5B9A9E; */
+    background: #00A06F;
+    /* top: 12%; */
+    margin-top: 10px;
+    width: 67.5%;
+    height: 100vh;
+    z-index: 30;
+    border-radius: 5px;
+    /* border: 2px solid #D14758; */
+    border: 2px solid grey;
+    margin-top: 27px;
 }
 
 .savedStory {
-  background: lightblue;
+  background: #E8FFF5;
   position: relative;
-  left: 180px;
+  left: 60px;
   margin: 10px;
   text-align: center;
-  height: 25%;
-  width: 30%;
-  font-family: 'Merriweather Sans', sans-serif;
+  height: 175px;
+  width: 40%;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family: 'Muli', sans-serif;
+}
+
+.savedStory-displayName-box {
+  border-right: 2px solid black;
+  width: 10%;
+  height: 100%;
+  background: mintcream;
+  display: inline-block;
+  position: absolute;
+  left: 0%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  z-index: 30;
+}
+
+.savedStory-displayName {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  left: -24%;
+  top: 60%;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  width: 200px;
+  z-index: 30;
+}
+
+.savedStory-story-box {
+  height: 100%;
+  width: 90%;
+  margin-left: 10%;
+  padding-top: 8px;
+  padding-bottom: 20%;
+  position: relative;
+  top: -11%;
+  overflow: scroll;
+}
+
+.savedStory-btn-control {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -30%;
+  height: 19%;
+  background: #E8FFF5;
+  padding-top: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.savedStory-delete:hover {
+  cursor: default;
+  border-bottom: 1px solid black;
+}
+
+@media(max-width: 770px) {
+  body {
+    background: #394B49;
+  }
+  /*dashboard nav*/
+  .dashTitle {
+    margin-top: 10%
+  }
+
+  .storiesBtn {
+    font-size: 13px;
+  }
+
+  .followingBtn {
+    font-size: 13px;
+  }
+
+  .draftsBtn {
+    font-size: 13px;
+  }
+
+  .userBtn {
+    font-size: 13px;
+  }
+
+  .composeBtn {
+    font-size: 13px;
+  }
+
+  .logOutBtn {
+    font-size: 13px;
+  }
+
+  .compose {
+    left: 0vw;
+    width: 100vw;
+    position: inherit;
+  }
+
+  .compose-textarea {
+    left: 28vw;
+  }
+
+  .compose-btn-body {
+    position: relative;
+    left: 34vw;
+  }
+
+  /*stories page*/
+  .storiesPage {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .stories {
+    /*left: 16%;
+    height: 90vh;
+    width: 300%;*/
+    left: 9%;
+    height: 90vh;
+    width: 192vw;
+  }
+
+  .story {
+    width: 55%;
+    left: 3%;
+  }
+
+  .story-displayName {
+    left: -25%;
+    top: 66%;
+  }
+
+  .storiesPage-story-control {
+    top: -18%;
+  }
+
+  .story-box {
+    top: -8%;
+    height: 20vh;
+  }
+
+  .storiesPage-following {
+    width: 44vw;
+    left: -16%;
+    margin-right: 0%;
+    position: relative;
+    height: 33vh;
+    top: -15%;
+    overflow: scroll;
+  }
+
+  .storiesPage-label {
+    width: 53%;
+    left: 48%;
+    top: 66%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3)
 }

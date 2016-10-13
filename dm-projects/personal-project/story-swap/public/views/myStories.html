@@ -12,10 +12,17 @@
 <div class="myStories-page-stuff">
   <div class="savedStories" ng-show="stories">
     <div class="savedStory" ng-repeat="savedStory in savedStories">
-      {{savedStory.story}}
-      {{savedStory.display_name}}
+      <div class="savedStory-displayName-box"></div>
+      <div class="savedStory-displayName">
+        {{savedStory.display_name}}
+      </div>
+      <div class="savedStory-story-box">
+        {{savedStory.story}}
+      </div>
       <div ng-show='id'>{{savedStory.id}}</div>
-      <div type="button" name="button" ng-click="removeSavedStory(savedStory.id, user)">Delete Saved Story</div>
+      <div class="savedStory-btn-control">
+        <div class="savedStory-delete" type="button" name="button" ng-click="removeSavedStory(savedStory.id, user)">Delete Saved Story</div>
+      </div>
     </div>
   </div>
 
