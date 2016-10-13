@@ -1,6 +1,23 @@
 angular.module('storySwap').controller('dashboardCtrl', function($scope, service, $state, $auth){
   $scope.test = "Story Swap"
 
+  $scope.menu = true;
+  $scope.close = false;
+
+$scope.showMenu = function(){
+  angular.element(document).find('.dashTitle').css("left", "-66%")
+  angular.element(document).find('.mobile-nav').css("top", "2.5%")
+  $scope.menu = false;
+  $scope.close = true;
+}
+
+$scope.closeMenu = function(){
+  angular.element(document).find('.dashTitle').css("left", "0%")
+  angular.element(document).find('.mobile-nav').css("top", "-5%")
+  $scope.menu = true;
+  $scope.close = false;
+}
+
 // angular.element(document).find('.storiesBtn').css("border-left", "3px solid black", "border-right", "3px solid black", "border-top", "3px solid black")
 // $auth.get(req.user)
 $scope.logout = function(){
