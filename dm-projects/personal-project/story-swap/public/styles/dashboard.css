@@ -27,7 +27,7 @@
   display: none;
 }
 
-.menu-nav {
+.mobile-nav {
   display: none;
 }
 
@@ -1067,7 +1067,7 @@ padding-right: 34px;
     left: 17%;
     position: absolute;
     transition: .5s;
-
+    display: inline-block;
   }
 
   .dashboard-nav-btns {
@@ -1250,6 +1250,7 @@ padding-right: 34px;
   }
 
   .mobile-nav {
+    display: inline-block;
     left: 13%;
   }
 
@@ -1265,6 +1266,10 @@ padding-right: 34px;
     font-size: 17px;
   }
 
+  .myStories-btn-box {
+    height: 17%;
+  }
+
   .savedStory-displayName {
     left: -25%;
     top: 64%;
@@ -1275,4 +1280,69 @@ padding-right: 34px;
     top: -12%;
   }
 
+}
+
+@media(max-width: 320px) {
+  .dashTitle {
+    left: 0%;
+    font-size: 45px;
+    top: -14%;
+  }
+
+  .mobile-nav {
+    display: inline-block;
+    left: 2%;
+  }
+
+  .compose-publishBtn {
+    font-size: 8px;
+    padding-left: 19px;
+  }
+
+  .compose-saveBtn {
+    font-size: 8px;
+    padding-left: 24px;
+  }
+
+  .story-displayName {
+    left: -31%;
+    top: 56%;
+    font-size: 15px;
+  }
+
+  .storiesPage-likeBtn {
+    font-size: 12px;
+  }
+
+  .storiesPage-saveBtn {
+    font-size: 12px;
+  }
+
+  .likeCount {
+    font-size: 12px;
+  }
+
+  .following-displayName {
+    left: -31%;
+    top: 56%;
+    font-size: 15px;
+  }
+
+  .myStories-btn-box {
+    height: 21%;
+  }
+
+  .myStories-btn-box div {
+    font-size: 15px;
+  }
+
+  .savedStory-displayName {
+    left: -31%;
+    top: 63%;
+    font-size: 15px;
+  }
+
+  .savedStory-btn-control {
+    top: -11%;
+  }
 }

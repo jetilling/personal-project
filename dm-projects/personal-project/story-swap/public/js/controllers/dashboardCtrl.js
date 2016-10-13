@@ -5,7 +5,7 @@ angular.module('storySwap').controller('dashboardCtrl', function($scope, service
   $scope.close = false;
 
 $scope.showMenu = function(){
-  angular.element(document).find('.dashTitle').css("left", "-66%")
+  angular.element(document).find('.dashTitle').css("left", "-80%")
   angular.element(document).find('.mobile-nav').css("top", "2.5%")
   $scope.menu = false;
   $scope.close = true;
