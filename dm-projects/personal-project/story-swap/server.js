@@ -4,8 +4,6 @@ var express = require('express'),
     cors = require('cors'),
     jwt = require('jwt-simple'),
     moment = require('moment'),
-    bcrypt = require('bcrypt'),
-    saltRounds = 10,
     config = require('./config.json');
 
 var db = massive.connectSync({
@@ -19,8 +17,7 @@ var corsOptions = {
 var app = module.exports = express();
 app.set('db', db);
 var serverCtrl = require('./controllers/serverCtrl');
-    // http = require('http').Server(app), //added
-    // io = require('socket.io')(http)
+
 
 app.use(bodyParser.json())
 app.use(cors(corsOptions));
@@ -103,33 +100,6 @@ app.put('/api/me', ensureAuthenticated, function(req, res) {
  |--------------------------------------------------------------------------
  */
 
-//  comparePassword = function(password, userPassword, user){
-//      if (password === userPassword) {
-//        return true
-//      }
-//    }
-//
-// app.post('/auth/login', function(req, res) {
-//       db.users.findOne({email: req.body.email}, function(err, user) {
-//           if (err) return res.status(500)
-//           if (!user) {
-//             return res.status(401).send({
-//               message: 'Invalid email and/or password'
-//             })
-//           }
-//           else if(!comparePassword(req.body.password, user.password, user)){
-//             return res.status(401).send({
-//               message: 'Invalid email and/or password'
-//             })
-//           }
-//           res.send({
-//             token: createJWT(user),
-//             user: getSafeUser(user)
-//           })
-//
-//     });
-// });
-
 app.post('/auth/login', function(req, res) {
      db.users.findOne({email: req.body.email}, function(err, user) {
          if (err) return res.status(500)
@@ -140,11 +110,8 @@ app.post('/auth/login', function(req, res) {
          }
 
            db.compare_password([req.body.password, user.id], function(err, correct){
-            //  for(prop in correct){
-            //    console.log(prop);
-            //  }
+
                if(err) console.log(err);
-              //  console.log(correct[0]);
               if(correct[0]['?column?']){
                 res.send({
                 token: createJWT(user),
@@ -152,7 +119,6 @@ app.post('/auth/login', function(req, res) {
               })
             }
               else res.status(401).send("Invalid email and/or password")
-              //  console.log(correct);
              })
 
    });
@@ -169,9 +135,7 @@ app.post('/auth/signup', function(req, res) {
       return res.status(409).send({ message: 'Email is already taken' });
     }
     else {
-        // var hash = bcrypt.hashSync(req.body.password, saltRounds);
-        // console.log(hash);
-        // req.body.password = hash
+
         db.create_user([req.body.email, req.body.password, req.body.display_name], function(err, users){
           db.users.findOne({email: req.body.email}, function(err, user){
             console.log(user);
