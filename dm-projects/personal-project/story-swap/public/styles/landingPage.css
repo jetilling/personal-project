@@ -17,12 +17,11 @@
 
 .background-vid {
   display: inline-block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  z-index: 10
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -550,7 +549,7 @@
 .section-1{
   width: 100%;
   height: 68vh;
-  background: black;
+  background: #394B49;
   color: mintcream;
   font-size: 50px;
   font-family: 'Merriweather Sans', sans-serif;
@@ -633,58 +632,177 @@
 }
 
 .how-it-works {
-  height: 93vh;
+  height: 105vh;
   width: 100vw;
   background: #00A06F;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .hiw-title {
-  font-size: 80px;
-    width: 69vw;
-    /* width: 222vh; */
-    height: 24vh;
+  font-size: 100px;
     color: #3D4148;
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    position: absolute;
+    left: -17%;
+    top: 44%;
+    width: 50vw;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.steps {
+  display: flex;
+    height: 80vh;
     position: relative;
-    top: 3%;
-    left: -16%;
+    left: 16%;
+    width: 84vw;
+    background: #394B49;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .step-1 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   position: relative;
-  left: -20%;
+  left: 3%;
+  height: 60%;
+  width: 29%;
+  align-items: center;
+  top: 19%;
+  border: 4px solid black;
+  background: mintcream;
+  border-radius: 5px;
+
 }
 
-.step-1-num {}
+.step-1-num {
+  font-size: 75px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 2px 2px 8px #272525;
+  border-bottom: 2px solid black;
+}
 
-.step-1-desc {}
+.step-1-desc {
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
 
 .step-2 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   position: relative;
-  left: -14%;
+  left: 6%;
+  width: 29%;
+  height: 60%;
+  align-items: center;
+  top: 19%;
+  border: 4px solid black;
+  background: mintcream;
+  border-radius: 5px;
+
 }
 
-.step-2-num {}
+.step-2-num {
+  font-size: 75px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 2px 2px 8px #272525;
+  border-bottom: 2px solid black;
+}
 
-.step-2-desc {}
+.step-2-desc {
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
 
 .step-3 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   position: relative;
-  left: -12%;
+  left: 9%;
+  width: 29%;
+  height: 60%;
+  align-items: center;
+  top: 19%;
+  border: 4px solid black;
+  background: mintcream;
+  border-radius: 5px;
 }
 
-.step-3-num {}
 
-.step-3-desc {}
+.step-3-num {
+  font-size: 75px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 2px 2px 8px #272525;
+  border-bottom: 2px solid black;
+  position: relative;
+  top: -3%;
+}
+
+.step-3-desc {
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  top: -3%;
+}
+
+.signup {
+  height: 100vh;
+  background: mintcream;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-call {
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+}
+
+.signup-call h1 {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 45px;
+}
+
+.signup-call h2 {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 25px;
+  margin: 45px;
+}
+
+.signup-call-btn {
+  display: inline-block;
+  width: 250px;
+  height: 50px;
+  background: #FF5B64;
+  outline: none;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: 3px;
+   opacity: .8;
+}
+
+.signup-call-btn:hover {
+  background: #FB8684
+}
