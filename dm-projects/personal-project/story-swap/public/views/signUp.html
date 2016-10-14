@@ -6,14 +6,14 @@
   </nav> -->
 
   <div class="signup-under-nav">
-    <div class="overlay-nav"></div>
     <a class="signup-back-to-landing" ui-sref="landingPage">Story Swap</a>
   </div>
 
-<h1 class="signup-title" ng-mouseover="appear()">Let's get started!</h1>
-<h2 class="signup-displayName"> Hello, {{displayName}}</h2>
+<!-- <h1 class="signup-title" ng-mouseover="appear()">Let's get started!</h1>
+<h2 class="signup-displayName"> Hello, {{displayName}}</h2> -->
 
-
+<div class="signup-background">
+</div>
 
 <!-- <div class="form" ng-show="form">
   <input class="email" type="input" name="name" value="" placeholder="Email" ng-model='email' ng-click="getEmails()"><p ng-show='taken'>That email has already been taken</p><p ng-show='invalidEmail'>You must enter a vaild email address</p>
@@ -27,7 +27,9 @@
   <div class="terms" >By creating an account you agree to the terms of service.</div>
 </div> -->
 
-<div class="signup-form" ng-mouseover="appear()">
+<div class="signup-form">
+  <h1 class="signup-title" ng-mouseover="appear()">Let's get started!</h1>
+  <h2 class="signup-displayName"> Hello, {{displayName}}</h2>
   <input class="email" type="email" name="name" value="" placeholder="Email" ng-model='email'>
   <input class="password" type="password" name="name" value="" placeholder="Password" ng-model='password'>
   <div class="randomWords" ng-repeat="randomWord in randomWords">

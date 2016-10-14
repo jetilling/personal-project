@@ -93,7 +93,7 @@
   font-family: 'Lobster', cursive;
 
   /*display: inline-block;*/
-  font-size: 80px;
+  font-size: 100px;
   /*position: relative;*/
   /*top: 30%;*/
   /*left: 70%;*/
@@ -120,7 +120,7 @@
   display: inline-block;
   width: 250px;
   height: 50px;
-  background: #6CA15C;
+  background: #FF5B64;
   outline: none;
   font-family: 'Merriweather Sans', sans-serif;
   border: 1.5px solid black;
@@ -130,18 +130,18 @@
   font-weight: lighter;
   letter-spacing: 3px;
   margin: 20px;
-  opacity: .75;
+  opacity: .8;
 }
 
 .signUpBtn:hover {
-  opacity: 1;
+  background: #FB8684
 }
 
 .logInBtn {
   display: inline-block;
   width: 250px;
   height: 50px;
-  background: #6CA15C;
+  background: #FF5B64;
   outline: none;
   font-family: 'Merriweather Sans', sans-serif;
   border: 1.5px solid black;
@@ -150,11 +150,11 @@
   font-size: 20px;
   font-weight: lighter;
   letter-spacing: 3px;
-   opacity: .75;
+   opacity: .8;
 }
 
 .logInBtn:hover {
-  opacity: 1;
+  background: #FB8684
 }
 
 /*sign up page*/
@@ -167,43 +167,17 @@
   background: mintcream;
 }
 
-.signup-nav {
-  display: flex;
-  position: relative;
-  top: -15%;
-  height: 10.5%;
-  width: 100%;
-  background-image: url('../img/space-background.jpg');
-  transition: all 500ms ease;
-  z-index: 40;
-}
-
-
-.signup-nav a {
-  display: none;
-  outline: none;
-  text-decoration: none;
-  font-family: 'Signika', sans-serif;  font-size: 25px;
-  color: black;
-  position: relative;
-  top: 25%;
-  left: 5%;
-  font-weight: bold;
-  letter-spacing: 2px;
-  z-index: 40;
-}
-
-.overlay-nav{
+.signup-background {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: lightgrey;
-  height: 10vh;
   width: 100%;
-  opacity: 0.3;
-  z-index: 1;
+  height: 100vh;
+  background: url('../img/skyline.jpeg');
+  background-position: left -346% top -324%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
 .signup-under-nav{
@@ -211,26 +185,25 @@
   top: 0%;
   height: 10%;
   width: 100%;
-  /*background: grey;*/
-  background-image: url('../img/pixel-background.jpg');
+  background: transparent;
+  background-position: left -1900px top 2700px;
   transition: all 500ms ease;
-  box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
-
+  z-index: 30;
 }
 
 .signup-back-to-landing {
-  /*display: none;*/
   outline: none;
   text-decoration: none;
   font-family: 'Lobster', cursive;
   font-size: 60px;
-  color: #393B3B;
+  color: mintcream;
   position: relative;
   top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 50;
+  border-bottom: 4px solid mintcream;
 }
 
 
@@ -252,6 +225,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 40px;
+  border: 3px solid black;
+  background: mintcream;
+  box-shadow: 5px 5px 20px #141414;
+  z-index: 30;
 }
 
 
@@ -285,7 +263,7 @@
 .signup-register {
   width: 175px;
   height: 40px;
-  background: #6CA15C;
+  background: #FF5B64;
   outline: none;
   font-family: 'Merriweather Sans', sans-serif;
   border: 1.5px solid black;
@@ -294,12 +272,13 @@
   font-size: 20px;
   font-weight: lighter;
   letter-spacing: 3px;
-  margin: 10px;
-  opacity: .75;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  z-index: 30;
 }
 
 .signup-register:hover{
-  opacity: 1;
+  background: #FB8684;
 }
 
 .terms {
@@ -318,14 +297,14 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /*background: mintcream;*/
 }
 
 .login-background {
   position: absolute;
-  top: -182%;
-  left: -131%;
   width: 100%;
+  height: 100vh;
+  background: url('../img/skyline.jpeg');
+  background-position: left -346% top -324%;
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
@@ -334,7 +313,6 @@
 }
 
 .loginBox {
-  /*background: #94C7CC;*/
   padding: 40px;
   border: 3px solid black;
   background: mintcream;
@@ -343,33 +321,14 @@
 }
 
 
-
-
-
-
-.overlay-nav{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: lightgrey;
-  height: 10vh;
-  width: 100%;
-  opacity: 0.3;
-  z-index: 1;
-}
-
 .under-nav{
   position: fixed;
   top: 0%;
   height: 10%;
   width: 100%;
-  background: #00A06F;
-  /*background-image: url('../img/skyline.jpeg');*/
+  background: transparent;
   background-position: left -1900px top 2700px;
   transition: all 500ms ease;
-  box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
   z-index: 30;
 }
 
@@ -378,54 +337,63 @@
   text-decoration: none;
   font-family: 'Lobster', cursive;
   font-size: 60px;
-  color: #393B3B;
+  color: mintcream;
   position: relative;
   top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 50;
+  border-bottom: 4px solid mintcream;
 }
 
-.confirm-overlay-nav{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: lightgrey;
-  height: 10vh;
-  width: 100%;
-  opacity: 0.3;
-  z-index: 1;
-}
-
-.confirm-under-nav{
+.confirmLogin-under-nav{
   position: fixed;
   top: 0%;
   height: 10%;
   width: 100%;
-  /*background: grey;*/
-  background-image: url('../img/pixel-background.jpg');
+  background: transparent;
+  background-position: left -1900px top 2700px;
   transition: all 500ms ease;
-  box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
-
+  z-index: 30;
 }
 
-.confirm-back-to-landing {
-  /*display: none;*/
+.confirmLogin-back-to-landing {
   outline: none;
   text-decoration: none;
   font-family: 'Lobster', cursive;
   font-size: 60px;
-  color: #393B3B;
+  color: mintcream;
   position: relative;
   top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 50;
+  border-bottom: 4px solid mintcream;
 }
+
+.confirmLogin-background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: url('../img/skyline.jpeg');
+  background-position: left -346% top -324%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.confirmLogin-box {
+  padding: 40px;
+  border: 3px solid black;
+  background: mintcream;
+  box-shadow: 5px 5px 20px #141414;
+  z-index: 30;
+}
+
 .welcome {
   display: flex;
   font-size: 60px;
@@ -504,80 +472,57 @@
 .logout-title {
   display: flex;
   font-size: 40px;
+  color: mintcream;
   /*position: relative;*/
   font-family: 'Merriweather Sans', sans-serif;
+  z-index: 30
 }
 
-.logout-nav {
-  display: flex;
-  position: relative;
-  top: -38.5%;
-  height: 10.5%;
-  width: 100%;
-  background-image: url('../img/desert-triangle.png');
-  background-position: left -300px top -500px;
-  transition: all 500ms ease;
-  z-index: 40;
-}
-
-.logout-nav a {
-    display: none;
-    outline: none;
-    text-decoration: none;
-    font-family: 'Signika', sans-serif;  font-size: 25px;
-    color: black;
-    position: relative;
-    top: 25%;
-    left: 5%;
-    font-weight: bold;
-    letter-spacing: 2px;
-    z-index: 40;
-}
-
-.logout-overlay-nav{
+.logout-background {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: lightgrey;
-  height: 10vh;
   width: 100%;
-  opacity: 0.3;
-  z-index: 1;
+  height: 100vh;
+  background: url('../img/skyline.jpeg');
+  background-position: left -346% top -324%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
+
 
 .logout-under-nav{
   position: fixed;
   top: 0%;
   height: 10%;
   width: 100%;
-  /*background: grey;*/
-  background-image: url('../img/pixel-background.jpg');
+  background: transparent;
+  background-position: left -1900px top 2700px;
   transition: all 500ms ease;
-  box-shadow: inset 0px -4px 20px -2px rgba(93,97,97,1);
+  z-index: 30;
 
 }
 
 .logout-back-to-landing {
-  /*display: none;*/
   outline: none;
   text-decoration: none;
   font-family: 'Lobster', cursive;
   font-size: 60px;
-  color: #393B3B;
+  color: mintcream;
   position: relative;
   top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 50;
+  border-bottom: 4px solid mintcream;
 }
 
 .logout-Page-Btn {
   width: 175px;
   height: 40px;
-  background: #6CA15C;
+  background: #FF5B64;
   outline: none;
   font-family: 'Merriweather Sans', sans-serif;
   border: 1.5px solid black;
@@ -586,12 +531,12 @@
   font-size: 20px;
   font-weight: lighter;
   letter-spacing: 3px;
-  margin: 10px;
-  opacity: .75;
+  margin-top: 30px;
+  z-index: 30;
 }
 
 .logout-Page-Btn:hover {
-  opacity: 1;
+  background: #FB8684;
 }
 
 /*landing page*/
@@ -602,151 +547,144 @@
   overflow: hidden;
 }
 
-
-
-.slanted {
-  display: flex;
-  position: relative;;
-  top: 40.5%;
-  width: 102%;
-  height: 10%;
+.section-1{
+  width: 100%;
+  height: 68vh;
   background: black;
-  color: white;
-  font-size: 30px;
-  transform: rotate(-1deg);
-  transform-origin: 0 0;
-  z-index: 60;
+  color: mintcream;
+  font-size: 50px;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
-.words{
-  width: 100%;
-  /*height: 100%;*/
-  background: black;
-  color: white;
-  font-size: 30px;
+.section-1-tag {
+  height: 68vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-1-tag p {
+  margin: 30px;
 }
 
 .overlay {
   position: absolute;
-  top: 210px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: #999;
-  z-index: 1;
-  height: 30vh;
-  width: 100%;
-  opacity: 0.3;
-  z-index: 1;
+    top: 52%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #3D4148;
+    z-index: 1;
+    height: 50.25vh;
+    width: 100%;
+    opacity: 0.5;
+    z-index: 1;
 }
 
-.boxes {
-  height: 30vh;
+.section-2 {
+  height: 90vh;
   width: 100%;
-  /*height: 100%;*/
-  background: green
-  /*background: url('https://hd.unsplash.com/photo-1455995446964-ac64c23b70ba') no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /*background: #00A06F;*/
+  background: url('https://hd.unsplash.com/photo-1455995446964-ac64c23b70ba') no-repeat;
   background-size: auto;
-  background-position: 0;*/
+  background-position: left 58% top 50%;
 }
 
-.write {
+.section-2-title {
+  z-index: 30;
+    height: 40vh;
+    width: 33vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: 11%;
+}
+
+.section-2-title h2 {
+  font-family: 'Merriweather Sans', sans-serif;
+    font-size: 31px;
+    font-weight: lighter;
+    margin-top: 35px;
+}
+
+.section-2-title h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 83px;
+  font-weight: bolder;
+  margin-top: 35px;
+}
+
+.section-2-words {
+  display: flex;
+    width: 100vw;
+    height: 10vh;
+    position: relative;
+    top: 6%;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 26px;
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #F5E6E6;
+}
+
+.how-it-works {
+  height: 93vh;
+  width: 100vw;
+  background: #00A06F;
+  display: flex;
+  align-items: center;
+}
+
+.hiw-title {
+  font-size: 80px;
+    width: 69vw;
+    /* width: 222vh; */
+    height: 24vh;
+    color: #3D4148;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    position: relative;
+    top: 3%;
+    left: -16%;
+}
+
+.step-1 {
+  display: flex;
+  flex-direction: column;
   position: relative;
-    height: 40%;
-    width: 10%;
-    z-index: 20;
-    display: inline-block;
-    margin-top: 6%;
-    margin-left: 15%;
-    /* z-index: 5; */
-    border: 2px solid black;
-    text-align: center;
-    padding-top: 1%;
-    background: green;
+  left: -20%;
 }
 
-.write:hover {
-  background: transparent;
-  color: transparent;
-}
+.step-1-num {}
 
-.learn {
+.step-1-desc {}
+
+.step-2 {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  margin-left: 20%;
-  height: 20%;
-  width: 10%;
-  z-index: 20;
-  display: inline-block;
-  z-index: 5;
-  border: 2px solid black;
-  text-align: center;
-  padding-top: 1%
-
+  left: -14%;
 }
 
-.discover {
+.step-2-num {}
+
+.step-2-desc {}
+
+.step-3 {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  margin-left: 20%;
-  height: 20%;
-  width: 10%;
-  margin-right: 10%
-  z-index: 20;
-  display: inline-block;
-  /*margin-left: 5%*/
-  z-index: 5;
-  border: 2px solid black;
-  text-align: center;
-  padding-top: 1%;
+  left: -12%;
 }
 
-.inside-write {
-  position: absolute;
-  left: 15%;
-  /*width: 30%;*/
-  z-index: 0;
-  background: lightblue;
-  height: 20%;
-  width: 10%;
-  z-index: 20;
-  display: inline-block;
-  margin-top: 6%;
-  /*margin-left: 15%;*/
-  border: 2px solid black;
-  text-align: center;
-  padding-top: 1%;
-  /*display: none;*/
-}
+.step-3-num {}
 
-.inside-learn {
-  position: absolute;
-  width: 30%;
-  z-index: 0;
-  margin-left: 20%;
-  height: 20%;
-  width: 10%;
-  z-index: 20;
-  display: inline-block;
-  border: 2px solid black;
-  text-align: center;
-  padding-top: 1%
-  background: lightblue;
-  /*display: none;*/
-}
-
-.inside-discover {
-  position: absolute;
-  width: 30%;
-  z-index: 0;
-  margin-left: 20%;
-  height: 20%;
-  width: 10%;
-  margin-right: 10%
-  z-index: 20;
-  display: inline-block;
-  /*margin-left: 5%*/
-  border: 2px solid black;
-  text-align: center;
-  padding-top: 1%;
-  background: lightblue
-  /*display: none;*/
-}
+.step-3-desc {}

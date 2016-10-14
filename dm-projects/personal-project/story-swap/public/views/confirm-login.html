@@ -1,13 +1,15 @@
 <body ng-controller="confirmLoginCtrl">
   <section class="login">
-    <nav class="confirmLogin-nav" ng-mouseover="disappear()" >
-      <a ui-sref="landingPage">Story Swap</a>
-    </nav>
+
     <div class="confirmLogin-under-nav">
       <a class="confirmLogin-back-to-landing" ui-sref="landingPage">Story Swap</a>
     </div>
 
+    <div class="confirmLogin-background">
+    </div>
 
+
+<div class="confirmLogin-box">
   <div class="confirm" ng-mouseover="appear()">
     <h1>Please log in to continue</h1>
   </div>
@@ -17,6 +19,6 @@
     <input class="password" type="password" name="name" value="" placeholder="Password" ng-model="password">
     <button class="loginPageBtn" ng-click="login(email, password)">Login</button>
   </form>
-
+</div>
   </section>
 </body>
