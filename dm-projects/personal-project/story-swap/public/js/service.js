@@ -3,14 +3,14 @@ angular.module('storySwap').service('service', function($http){
   this.getRandomWords = function(){
     return $http({
       method: 'GET',
-      url: 'http://localhost:8080/api/randomWords',
+      url: '/api/randomWords',
     })
   }
 
   this.getEmail = function(){
     return $http({
       method: 'GET',
-      url: 'http://localhost:8080/api/checkEmail'
+      url: '/api/checkEmail'
     })
   }
 
@@ -19,7 +19,7 @@ angular.module('storySwap').service('service', function($http){
     console.log('reached service');
     return $http({
       method: 'Post',
-      url: 'http://localhost:8080/api/createUser',
+      url: '/api/createUser',
       data: {email: email, password: password, display_name: displayName}
     })
   }
@@ -43,7 +43,7 @@ angular.module('storySwap').service('service', function($http){
   this.getUserId = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:8080/api/me'
+      url: '/api/me'
     })
     .then(function(res) {
       return res.data;
@@ -56,7 +56,7 @@ angular.module('storySwap').service('service', function($http){
   this.getDisplayName = function(res){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/getDisplayName/' + res
+      url: '/api/getDisplayName/' + res
     })
   }
 
@@ -64,7 +64,7 @@ angular.module('storySwap').service('service', function($http){
   this.getStories = function(){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/stories'
+      url: '/api/stories'
     })
     .then(function(res){
       return res.data
@@ -74,7 +74,7 @@ angular.module('storySwap').service('service', function($http){
   this.getMyStories = function(currentUserId){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/myStories/'+ currentUserId
+      url: '/api/myStories/'+ currentUserId
     })
   }
 
@@ -82,7 +82,7 @@ angular.module('storySwap').service('service', function($http){
   this.getDrafts = function(currentUserId){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/drafts/'+ currentUserId
+      url: '/api/drafts/'+ currentUserId
     })
     // .then(function(res) {
     //   console.log(res);
@@ -93,7 +93,7 @@ angular.module('storySwap').service('service', function($http){
   this.updateDraft = function(data, id){
     return $http({
       method: "PUT",
-      url: 'http://localhost:8080/api/updateDraft',
+      url: '/api/updateDraft',
       data: {story: data, id: id}
     })
   }
@@ -101,7 +101,7 @@ angular.module('storySwap').service('service', function($http){
   this.publishdraft = function(id, complete){
     return $http({
       method: "PUT",
-      url: 'http://localhost:8080/api/publishDraft',
+      url: '/api/publishDraft',
       data: {id: id, complete: complete}
     })
   }
@@ -109,7 +109,7 @@ angular.module('storySwap').service('service', function($http){
   this.add = function(story, currentUserId, complete){
     return $http({
       method: "POST",
-      url: 'http://localhost:8080/api/createStory',
+      url: '/api/createStory',
       data: {story: story, users_id: currentUserId, complete: complete}
     })
   }
@@ -118,7 +118,7 @@ angular.module('storySwap').service('service', function($http){
     var newLikeCount = likeCount + 1;
     return $http({
       method: "PUT",
-      url: 'http://localhost:8080/api/likeCount',
+      url: '/api/likeCount',
       data: {id: id, like_count: newLikeCount}
     })
   }
@@ -126,7 +126,7 @@ angular.module('storySwap').service('service', function($http){
   this.saveStory = function(id, user){
     return $http({
       method: "POST",
-      url: 'http://localhost:8080/api/saveStory',
+      url: '/api/saveStory',
       data: {contentId: id, id: user}
     })
   }
@@ -134,21 +134,21 @@ angular.module('storySwap').service('service', function($http){
   this.getSavedStories = function(res){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/getSavedStories/'+ res
+      url: '/api/getSavedStories/'+ res
     })
   }
 
   this.getSavedStoryById = function(item){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/getSavedStoryById/'+ item
+      url: '/api/getSavedStoryById/'+ item
     })
   }
 
   this.removeSavedStory = function(id, user){
     return $http({
       method: "PUT",
-      url: 'http://localhost:8080/api/removeSavedStory',
+      url: '/api/removeSavedStory',
       data: {users_id: id, id: user}
     })
   }
@@ -156,7 +156,7 @@ angular.module('storySwap').service('service', function($http){
   this.followUser = function(users_id, user){
     return $http({
       method: "POST",
-      url: 'http://localhost:8080/api/followUser',
+      url: '/api/followUser',
       data: {users_id: users_id, id: user}
     })
   }
@@ -164,7 +164,7 @@ angular.module('storySwap').service('service', function($http){
   this.unfollowUser = function(id, user){
     return $http({
       method: "PUT",
-      url: 'http://localhost:8080/api/unfollowUser',
+      url: '/api/unfollowUser',
       data: {users_id: id, id: user}
     })
   }
@@ -172,7 +172,7 @@ angular.module('storySwap').service('service', function($http){
   this.viewFollower = function(id, user){
     return $http({
       method: "POST",
-      url: 'http://localhost:8080/api/viewFollower',
+      url: '/api/viewFollower',
       data: {view_follower: id, id: user}
     })
   }
@@ -180,28 +180,28 @@ angular.module('storySwap').service('service', function($http){
   this.getViewFollower = function(id){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/getViewFollower/'+ id
+      url: '/api/getViewFollower/'+ id
     })
   }
 
   this.getFollowing = function(res){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/getFollowing/'+ res
+      url: '/api/getFollowing/'+ res
     })
   }
 
   this.getFollowingUser = function(item){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/getFollowingUser/'+ item
+      url: '/api/getFollowingUser/'+ item
     })
   }
 
   this.getFollowingUserStory = function(item){
     return $http({
       method: "GET",
-      url: 'http://localhost:8080/api/getFollowingUserStory/'+ item
+      url: '/api/getFollowingUserStory/'+ item
     })
   }
 
@@ -209,7 +209,7 @@ angular.module('storySwap').service('service', function($http){
     console.log(id);
     return $http({
       method: "DELETE",
-      url: 'http://localhost:8080/api/deleteDraft/' + id
+      url: '/api/deleteDraft/' + id
     })
   }
 
@@ -218,7 +218,7 @@ angular.module('storySwap').service('service', function($http){
     var removeFromDash = true
     return $http({
       method: "PUT",
-      url: 'http://localhost:8080/api/removeFromDash',
+      url: '/api/removeFromDash',
       data: {id: id, delete_from_dash: removeFromDash}
     })
   }
