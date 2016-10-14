@@ -3,10 +3,11 @@
     Story Swap
   </div>
   <div class="nav-btns">
-    <button class="nav-signUpBtn" type="button" name="button"ng-click="begin(); getRandomWords(); getEmails()" ng-show="startButton" ui-sref="signUp">Sign Up!</button>
+    <button class="nav-signUpBtn" type="button" name="button"ng-click="begin(); getRandomWords(); getEmails()" ng-show="startButton" ui-sref="signUp">Sign Up</button>
     <button class="nav-logInBtn" type="button" name="button" ui-sref="login" class='loginBtn' ng-show="logIn">Log in</button>
   </div>
 </div>
+<div class="intro-overlay"></div>
 <section class="intro-main">
   <div class="intro-video">
     <!-- <video loop class="background-vid" src="./videos/In-And-Out.mp4" autoplay poster="posterimage.jpg"></video> -->
@@ -18,7 +19,7 @@
     </div>
 
     <div class="buttons">
-      <button class="signUpBtn" type="button" name="button"ng-click="begin(); getRandomWords(); getEmails()" ng-show="startButton" ui-sref="signUp">Sign Up!</button>
+      <button class="signUpBtn" type="button" name="button"ng-click="begin(); getRandomWords(); getEmails()" ng-show="startButton" ui-sref="signUp">Sign Up</button>
       <button class="logInBtn" type="button" name="button" ui-sref="login" class='loginBtn' ng-show="logIn">Log in</button>
     </div>
   </div>
@@ -29,9 +30,9 @@
 
   <div class="section-1">
     <div class="section-1-tag">
-      <p>Explore</p>
-      <p>A New</p>
-      <p>World of Experiences</p>
+      <p id="share">Share</p>
+      <p id="stories">Stories</p>
+      <p id="anon">Anonymously</p>
     </div>
   </div>
   <div class="section-2">
@@ -81,6 +82,7 @@
     </div>
   </div>
 </section>
+
 <section class="signup">
   <div class="signup-call">
     <h1>What are you waiting for?</h1>
