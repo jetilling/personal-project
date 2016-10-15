@@ -6,7 +6,7 @@
 
         <div class="draft" ng-repeat="draft in drafts">
           <div ng-show='draftid' ng-model="id">{{draft.id}}</div>
-          <div class="draft-editable" editable-textarea="draft.story" onbeforesave="updateDraft($data, draft.id); showPublishBtn()" oncancel="showPublishBtn()" ng-click="hidePublishBtn()"><pre>{{draft.story}}</pre></div>
+          <div class="draft-editable" editable-textarea="draft.story" onbeforesave="updateDraft($data, draft.id); showPublishBtn()" oncancel="showPublishBtn()" ng-click="hidePublishBtn()">{{draft.story}}</div>
           <div class="draft-btns">
             <div class="draft-publish" type="button" name="button" ng-show="publishBtn" ng-click="publish(draft.id)">Publish</div>
             <div class="draft-delete" type="button" name="button" ng-click="remove(draft.id)">Delete</div>

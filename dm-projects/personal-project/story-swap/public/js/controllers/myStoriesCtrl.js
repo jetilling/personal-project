@@ -39,6 +39,7 @@ var savedStories = [];
           if(response) result = response.data;
           result.forEach(function(item){
             myStories.push(item)
+            $scope.displayName = myStories[0].display_name
           })
       })
   })
@@ -73,13 +74,10 @@ var savedStories = [];
         service.getSavedStories(res)
           .then(function(response){
             var result = response.data[0].saved_stories;
-            console.log(result);
             result.forEach(function(item){
-              console.log(item);
               service.getSavedStoryById(item)
                 .then(function(response){
                     var result = response.data
-                    console.log(result);
                   result.forEach(function(item){
                     savedStories.push(item)
                     })

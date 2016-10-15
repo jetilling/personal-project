@@ -49,12 +49,10 @@
 }
 
 .storiesBtn:hover{
-  /*font-weight: bold;*/
   color: black;
   border-top: 3px solid black;
   border-left: 3px solid black;
   border-right: 3px solid black;
-  /*background: url("../img/space-background.jpg")*/
 }
 
 .followingBtn {
@@ -67,12 +65,10 @@
 }
 
 .followingBtn:hover{
-  /*font-weight: bold;*/
   color: black;
   border-top: 3px solid black;
   border-left: 3px solid black;
   border-right: 3px solid black;
-  /*background: url("../img/space-background.jpg")*/
 }
 
 .draftsBtn {
@@ -85,12 +81,10 @@
 }
 
 .draftsBtn:hover{
-  /*font-weight: bold;*/
   color: black;
   border-top: 3px solid black;
   border-left: 3px solid black;
   border-right: 3px solid black;
-  /*background: url("../img/space-background.jpg")*/
 }
 
 .userBtn {
@@ -103,12 +97,10 @@
 }
 
 .userBtn:hover{
-  /*font-weight: bold;*/
   color: black;
   border-top: 3px solid black;
   border-left: 3px solid black;
   border-right: 3px solid black;
-  /*background: url("../img/space-background.jpg")*/
 }
 
 .composeBtn {
@@ -121,12 +113,10 @@
 }
 
 .composeBtn:hover{
-  /*font-weight: bold;*/
   color: black;
   border-top: 3px solid black;
   border-left: 3px solid black;
   border-right: 3px solid black;
-  /*background: url("../img/space-background.jpg")*/
 }
 
 .logOutBtn {
@@ -139,18 +129,15 @@
 }
 
 .logOutBtn:hover{
-  /*font-weight: bold;*/
   color: black;
   border-top: 3px solid black;
   border-left: 3px solid black;
   border-right: 3px solid black;
-  /*background: url("../img/space-background.jpg")*/
 }
 
 .compose{
   display: flex;
   height: 20vh;
-    /* justify-content: flex-end; */
   background: #394B49;
   padding-top: 9px;
   position: absolute;
@@ -183,7 +170,6 @@
     height: 25%;
     position: relative;
     font-family: 'Merriweather Sans', sans-serif;
-    /* left: -5.8%; */
     width: 10%;
     padding-left: 43px;
     border: 1px solid black;
@@ -202,7 +188,6 @@
 height: 25%;
 position: relative;
 font-family: 'Merriweather Sans', sans-serif;
-/* left: -5.8%; */
 width: 10%;
 padding-left: 43px;
 border: 1px solid black;
@@ -236,15 +221,12 @@ padding-right: 34px;
   overflow: scroll;
   position: relative;
   left: 19%;
-  /*background: #5B9A9E;*/
   background: #00A06F;
-    /* top: 4%; */
   margin-top: 10px;
   width: 200%;
   height: 100vh;
   z-index: 30;
   border-radius: 5px;
-  /*border: 2px solid #D14758;*/
   border: 2px solid grey;
 }
 
@@ -295,7 +277,7 @@ padding-right: 34px;
 }
 
 .storiesPage-likeBtn:hover {
-  border-bottom: 2px solid black;
+  text-decoration: underline;
 }
 
 .likeCount {
@@ -312,7 +294,7 @@ padding-right: 34px;
 }
 
 .storiesPage-followBtn:hover {
-  border-bottom: 2px solid black;
+  text-decoration: underline;
 }
 
 .storiesPage-saveBtn {
@@ -324,7 +306,7 @@ padding-right: 34px;
 }
 
 .storiesPage-saveBtn:hover {
-  border-bottom: 2px solid black;
+  text-decoration: underline;
 
 }
 
@@ -348,11 +330,10 @@ padding-right: 34px;
   -o-transform: rotate(-90deg);
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   position: relative;
-  /*color: #FF5B64;*/
   display: flex;
   justify-content: center;
   left: -24%;
-  top: 60%;
+  top: 55%;
   font-family: 'Lobster', cursive;
   font-size: 20px;
   width: 200px;
@@ -397,7 +378,7 @@ padding-right: 34px;
 .storiesPage-following h1 {
   font-size: 25px;
   font-family: 'Lobster', cursive;
-
+  text-decoration: underline;
 }
 .storiesPage-following-displayName {
   display: inline-block;
@@ -428,15 +409,8 @@ padding-right: 34px;
   top: 70%;
   font-family: 'Lobster', cursive;
   font-weight: lighter;
-  /*color: #393B3B;*/
   color: #272A2F;
-  /*-webkit-text-fill-color: transparent;
- background: -webkit-linear-gradient(transparent, transparent),
-             url('../img/In-And-Out.jpg') repeat;
- background: -o-linear-gradient(transparent, transparent);
- -webkit-background-clip: text;*/
- /*opacity: .8;*/
- z-index: 40;
+  z-index: 40;
 }
 
 /*Following */
@@ -465,7 +439,6 @@ padding-right: 34px;
   position: relative;
   height: 50vh;
   width: 50%;
-  /*border: 3px solid black;*/
   margin-right: 19%;
   margin-bottom: 20%;
   font-family: 'Merriweather Sans', sans-serif;
@@ -491,14 +464,11 @@ padding-right: 34px;
   position: relative;
   left: 19%;
   background: #00A06F;
-  /*background: #D14758;*/
-    /* top: 4%; */
   margin-top: 10px;
   width: 200%;
   height: 100vh;
   z-index: 30;
   border-radius: 5px;
-  /*border: 2px solid #D14758;*/
   border: 2px solid grey;
 }
 
@@ -545,25 +515,25 @@ padding-right: 34px;
 }
 
 @media(min-width: 1470px){
-  .story-displayName {
+  .following-displayName {
     left: -20%;
   }
 }
 
 @media(max-width: 1246px){
-  .story-displayName {
+  .following-displayName {
     left: -28%
   }
 }
 
 @media(max-width: 1138px){
-  .story-displayName {
+  .following-displayName {
     left: -30%
   }
 }
 
 @media(max-width: 1024px){
-  .story-displayName {
+  .following-displayName {
     left: -32%;
   }
 }
@@ -579,6 +549,38 @@ padding-right: 34px;
     overflow: scroll;
 }
 
+.followingPage-unfollow {
+  border-top: 1px solid black;
+  position: relative;
+  text-align: center;
+  top: -28%;
+  height: 4vh;
+  background: #E8FFF5;
+  width: 23vw;
+  left: 10%;
+  border-bottom-right-radius: 5px;
+}
+
+.followingPage-unfollow-btn {
+  padding-top: 5px;
+  cursor: default;
+}
+
+.followingPage-unfollow-btn:hover {
+  text-decoration: underline;
+}
+
+.followingPage-title-box {
+  width: 15.2vw;
+}
+
+.followingPage-title-box h1 {
+  font-family: 'lobster', cursive;
+  font-size: 26px;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+}
+
 .followingPage-label {
   position: absolute;
   font-size: 110px;
@@ -588,15 +590,8 @@ padding-right: 34px;
   top: 70%;
   font-family: 'Lobster', cursive;
   font-weight: lighter;
-  /*color: #DB9E36;*/
   color: #272A2F;
-  /*-webkit-text-fill-color: transparent;
- background: -webkit-linear-gradient(transparent, transparent),
-             url('../img/space2-background.jpg') repeat;
- background: -o-linear-gradient(transparent, transparent);
- -webkit-background-clip: text;*/
- /*opacity: .8;*/
- z-index: 40;
+  z-index: 40;
 }
 
 /* drafts */
@@ -621,7 +616,6 @@ padding-right: 34px;
   height: 90vh;
   overflow: scroll;
   position: relative;
-  /* left: 19%; */
   width: 67.5%;
   height: 100vh;
   background: #00A06F;
@@ -643,6 +637,7 @@ padding-right: 34px;
   border-radius: 5px;
   border: 1px solid black;
   font-family: 'Muli', sans-serif;
+  overflow: scroll;
 }
 
 .draft-editable {
@@ -685,15 +680,8 @@ padding-right: 34px;
   top: 70%;
   font-family: 'Lobster', cursive;
   font-weight: lighter;
-  /*color: #DB9E36;*/
   color: #272A2F;
-  /*-webkit-text-fill-color: transparent;
- background: -webkit-linear-gradient(transparent, transparent),
-             url('../img/In-And-Out.jpg') repeat;
- background: -o-linear-gradient(transparent, transparent);
- -webkit-background-clip: text;*/
- /*opacity: .8;*/
- z-index: 40;
+  z-index: 40;
 }
 
 
@@ -790,7 +778,7 @@ padding-right: 34px;
   font-family: 'Merriweather Sans', sans-serif;
 }
 
-/*.myStories-label {
+.myStories-label {
   position: absolute;
   font-size: 160px;
   width: 100%;
@@ -800,36 +788,26 @@ padding-right: 34px;
   font-family: 'Lobster', cursive;
   font-weight: lighter;
   /*color: #272A2F;*/
-  /*-webkit-text-fill-color: transparent;
- background: -webkit-linear-gradient(transparent, transparent),
-             url('../img/In-And-Out.jpg') repeat;
- background: -o-linear-gradient(transparent, transparent);
- -webkit-background-clip: text;*/
- /*opacity: .8;*/
- /*z-index: 40;*/
-/*}*/
+  z-index: 40;
+}
 
 .savedStories {
   overflow: scroll;
-    position: relative;
-    /* left: 19%; */
-    /* background: #5B9A9E; */
-    background: #00A06F;
-    /* top: 12%; */
-    margin-top: 10px;
-    width: 67.5%;
-    height: 100vh;
-    z-index: 30;
-    border-radius: 5px;
-    /* border: 2px solid #D14758; */
-    border: 2px solid grey;
-    margin-top: 27px;
+  position: relative;
+  background: #00A06F;
+  margin-top: 10px;
+  width: 67.5%;
+  height: 100vh;
+  z-index: 30;
+  border-radius: 5px;
+  border: 2px solid grey;
+  margin-top: 27px;
 }
 
 .savedStory {
   background: #E8FFF5;
   position: relative;
-  left: 60px;
+  left: 29%;
   margin: 10px;
   text-align: center;
   height: 175px;

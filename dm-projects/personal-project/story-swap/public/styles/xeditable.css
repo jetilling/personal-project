@@ -18,14 +18,16 @@
 .editable-wrap .editable-controls > input,
 .editable-wrap .editable-controls > select,
 .editable-wrap .editable-controls > textarea {
-  margin-bottom: 0;
+  /*margin-bottom: 0;*/
 }
 
 /* keep buttons on the same line */
 .editable-wrap .editable-input {
   display: inline-block;
   border-radius: 5px;
-  height: 100px
+  height: 106px;
+  font-size: 12px;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .editable-buttons {
@@ -35,15 +37,18 @@
 
 .editable-buttons button {
   margin-left: 5px;
-  background: #2b8cbe;
+  background: transparent;
   outline: none;
-  border: 1.5px solid #0868ac;
-  color: white;
+  font-weight: lighter;
+  font-size: 14px;
+  border: none;
+  color: black;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 /* in bootstrap width: 100% => buttons go outside the box */
 .editable-input.editable-has-buttons {
-  width: auto;
+  width: 71%
 }
 
 

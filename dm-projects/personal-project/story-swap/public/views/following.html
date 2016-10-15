@@ -6,6 +6,10 @@
 
   <div class="following-page-stuff">
 
+    <div class="currentuser" ng-show="currentuser">
+      {{currentUser}}
+
+    </div>
 
     <div class="following-page-stories">
       <div  ng-repeat="follow in following | orderBy: 'id'">
@@ -19,9 +23,13 @@
 
         <div ng-show="followId">
           {{follow.id}}
+          {{follow.users_id}}
         </div>
         <div class="following-story">
           {{follow.story}}
+        </div>
+        <div class="followingPage-unfollow">
+          <div class="followingPage-unfollow-btn" ng-click="unfollow(follow.users_id, currentUser)">Unfollow</div>
         </div>
         </div>
       </div>
@@ -32,6 +40,9 @@
     </div>
 
     <div class="following-page-btns">
+      <div class="followingPage-title-box">
+        <h1>View stories from...</h1>
+      </div>
       <button class="following-button" type="button" name="button" ng-click="showAll()">All</button>
       <div ng-repeat="user in users">
         <div ng-show="userId">{{user.id}}</div>

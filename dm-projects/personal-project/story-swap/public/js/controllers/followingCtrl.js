@@ -10,7 +10,8 @@ angular.module('storySwap').controller('followingCtrl', function($scope, service
     newArr = []
   service.getUserId()
     .then(function(res) {
-      console.log(res);
+      $scope.currentUser = res
+      // console.log('user', res);
       if (res) {
         service.getViewFollower(res)
         .then(function(response){
@@ -101,8 +102,35 @@ $scope.viewUserStories = function(id){
     $scope.followUser = true;
 }
 
+//unfollow users
+$scope.unfollow = function(users_id, currentUser){
+  console.log(users_id, currentUser);
+  service.unfollowUser(users_id, currentUser)
+  .then(function(res){
+    var followingBtnArr = []
+    service.getUserId()
+      .then(function(res) {
+        if (res) {
+          service.getFollowing(res)
+            .then(function(response){
+              console.log(response.data[0].follows);
+              var result = response.data[0].follows;
+              result.forEach(function(item){
+                service.getFollowingUser(item)
+                  .then(function(response){
+                    followingBtnArr.push(response.data[0]);
+                    $scope.users = followingBtnArr;
+                  })
+                })
+              })
+          }
+          else console.log('idk');
+    });
 
+  $scope.showAll();
+ })
 
+}
 
 
 })

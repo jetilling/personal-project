@@ -4,18 +4,23 @@ var express = require('express'),
     cors = require('cors'),
     jwt = require('jwt-simple'),
     moment = require('moment'),
-    config = require('./config.json');
+    config = require('./config.json'),
+    connectionstring = config.connectionString;
 
-var db = massive.connectSync({
-  db: 'story_swap'
-});
+// var db = massive.connectSync({
+//   db: 'story_swap'
+// });
+
+var massiveInstance = massive.connectSync({connectionString:connectionstring})
 
 var corsOptions = {
   origin: 'http://localhost:8080'
 }
 
 var app = module.exports = express();
-app.set('db', db);
+app.set('db', massiveInstance);
+var db = app.get('db');
+
 var serverCtrl = require('./controllers/serverCtrl');
 
 
