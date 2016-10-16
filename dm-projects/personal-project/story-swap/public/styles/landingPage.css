@@ -850,7 +850,7 @@
   background: #FB8684
 }
 
-@media(max-width: 414px) {
+@media(max-width: 415px) {
 
   .intro-overlay {
     position: absolute;
@@ -997,6 +997,67 @@
     font-size: 17px;
   }
 
+  /*logout*/
+  .logout-background {
+    background: mintcream;
+  }
+
+  .logout-back-to-landing {
+    color: black;
+    border-bottom: 4px solid black;
+    -webkit-text-fill-color: transparent;
+   background: -webkit-linear-gradient(transparent, transparent),
+               url('../img/space2-background.jpg') repeat;
+   background: -o-linear-gradient(transparent, transparent);
+   -webkit-background-clip: text;
+  }
+
+  .logout-title {
+    color: black;
+  }
+
+  /*login*/
+  .login-background {
+    background: #394B49
+  }
+
+  .welcome {
+    font-size: 40px;
+  }
+
+  /*signup*/
+  .signup-background {
+    background: #394B49;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+  }
+
+  .signup-title {
+    font-size: 30px;
+  }
+
+  /*confirm*/
+
+  .confirm {
+    font-size: 22px;
+  }
+  .confirmLogin-background {
+    background: #394B49
+  }
+
+  .email {
+    width: 175px;
+    font-size: 17px;
+  }
+
+  .password {
+    width: 175px;
+    font-size: 17px;
+  }
+
 }
 
 @media(max-width: 375px) {
@@ -1042,6 +1103,26 @@
 
   .signup-call-btn {
     width: 175px;
+  }
+
+  /*signup*/
+  .signup-back-to-landing {
+    border: none;
+  }
+
+  .signup-form {
+    padding: 19px;
+  }
+
+  /*confirm*/
+  .confirm {
+    font-size: 20px;
+  }
+
+
+  /*logout*/
+  .logout-title {
+    font-size: 30px;
   }
 
 
@@ -1118,5 +1199,70 @@
   .signup-call-btn {
     width: 150px;
     font-size: 16px;
+  }
+
+  /*signup*/
+
+  .signup-title {
+    font-size: 22px;
+  }
+
+  .email {
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-bottom: 2px solid black;
+    margin: 20px;
+    outline: none;
+    background: transparent;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
+  }
+
+  .password {
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-bottom: 2px solid black;
+    margin: 20px;
+    outline: none;
+    background: transparent;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
+  }
+
+  .signup-form {
+    padding: 14px;
+    position: relative;
+    top: 4%;
+  }
+
+  /*login*/
+  .welcome {
+    font-size: 28px;
+  }
+
+  .email {
+    width: 120px;
+    font-size: 15px;
+  }
+
+  .password {
+    width: 120px;
+    font-size: 15px;
+  }
+
+  /*confirm*/
+  .confirm {
+    font-size: 16px;
+  }
+
+  .confirmLogin-background {
+    background: #394B49;
+  }
+
+  /*logout*/
+  .logout-title {
+    font-size: 22px;
   }
 }

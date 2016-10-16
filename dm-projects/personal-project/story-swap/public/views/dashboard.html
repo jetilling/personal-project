@@ -31,7 +31,7 @@
       <textarea class="compose-textarea" name="name" rows="4" cols="40" placeholder="What's your story?" ng-model="story"></textarea>
       <div class="compose-btn-body">
        <button class="compose-publishBtn" type="button" name="button" ng-click="addStory(story); compose()">Publish</button>
-       <button class="compose-saveBtn" type="button" name="button" ng-click='saveDraft(story)'>Save Draft</button>
+       <button class="compose-saveBtn" type="button" name="button" ng-click='saveDraft(story); compose()'>Save Draft</button>
       </div>
     </div>
 
