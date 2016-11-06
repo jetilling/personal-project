@@ -2,38 +2,24 @@
 <section class="storiesPage">
   <div ng-hide='user'>{{user}}</div>
 
-
-
-<div class="stories" >
-  <stories-directive ng-repeat="story in stories" story='story'></stories-directive>
-  <!-- <div class="story" ng-repeat="story in stories">
-    {{story.display_name}} -
-    {{story.story}}
-    {{story.users_id}}
-    {{story.category}}
-    <div ng-show="id" ng-model="id">{{story.id}}</div>
-    <br>
-    <div class="likeCount" ng-model="likeCount">{{story.like_count}}</div>
-    <button type="button" name="button" ng-show="likeBtn" ng-click="addOne(story.like_count,story.id)">like</button>
-    <button type="button" name="button" ng-click="followUser(story.users_id, user, story.display_name)">Follow</button>
-    <button type="button" name="button" ng-click="saveStory(story.id, user)">Save Story</button>
+  <!-- <div class="storiesPage-following">
+    <h1>Following:</h1>
+    <div  ng-repeat="follow in following">
+      <div ng-show="userId">{{follow.id}}</div>
+      <div  class="storiesPage-following-displayName" ng-click="viewStories(follow.id, user)">{{follow.display_name}}</div>
+      <button class="storiesPage-following-unfollowBtn" type="button" name="button" ng-click="unfollowUser(follow.id, user)" ><img src="./img/x.png" alt="" /></button>
+    </div>
   </div> -->
-</div>
 
-<div class="storiesPage-label">
-  stories
-</div>
+<!-- <div class="stories" > -->
+  <!-- <stories-directive ng-repeat="story in stories" story='story'></stories-directive> -->
+  <nvd3 options="options" data="data" events="events" class="with-3d-shadow with-transitions" id="chart"></nvd3>
 
-<div class="storiesPage-following">
-  <h1>Following:</h1>
-  <div  ng-repeat="follow in following">
-    <div ng-show="userId">{{follow.id}}</div>
-    <div  class="storiesPage-following-displayName" ng-click="viewStories(follow.id, user)">{{follow.display_name}}</div>
-    <button class="storiesPage-following-unfollowBtn" type="button" name="button" ng-click="unfollowUser(follow.id, user)" ><img src="./img/x.png" alt="" /></button>
-  </div>
-</div>
-  <!-- <div class="storiesPage-label">
-    stories
-  </div> -->
+<!-- </div> -->
+
+
+
+
+
 </section>
 </body>

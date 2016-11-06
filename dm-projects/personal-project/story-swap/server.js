@@ -11,14 +11,14 @@ var express = require('express'),
 //   db: 'story_swap'
 // });
 
-var massiveInstance = massive.connectSync({connectionString:connectionstring})
+var db = massive.connectSync({connectionString:connectionstring})
 
 var corsOptions = {
   origin: 'http://localhost:8080'
 }
 
 var app = module.exports = express();
-app.set('db', massiveInstance);
+app.set('db', db);
 var db = app.get('db');
 
 var serverCtrl = require('./controllers/serverCtrl');

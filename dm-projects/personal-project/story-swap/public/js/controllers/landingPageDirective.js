@@ -14,29 +14,29 @@ angular.module('storySwap').directive('landingPageDirective', function(){
     },
     link: function(scope, element, attrs) {
 
-      $(window).scroll(function(){
-
-        var winScroll = $(this).scrollTop()
-
-        var fixmeTop = $('.main-nav').offset().top;
-        var scrollBottom = winScroll + $(window).height();
-        // console.log(scrollBottom);
-
-    if (winScroll <= fixmeTop) {
-        $('.main-nav').css({
-            position: 'fixed',
-            top: '-86px',
-            left: '0'
-        });
-    } else if (scrollBottom < 1205) {
-      $('.main-nav').css({
-        'transform': 'translate(0px,'+ winScroll / 5 +'%)'
-      })
-    } else {
-      $('.main-nav').css({
-        'transform': 'translate(0px,'- winScroll / 5 +'%)'
-      })
-    }
+    //   $(window).scroll(function(){
+    //
+    //     var winScroll = $(this).scrollTop()
+    //
+    //     var fixmeTop = $('.main-nav').offset().top;
+    //     var scrollBottom = winScroll + $(window).height();
+    //     // console.log(scrollBottom);
+    //
+    // if (winScroll <= fixmeTop) {
+    //     $('.main-nav').css({
+    //         position: 'fixed',
+    //         top: '-86px',
+    //         left: '0'
+    //     });
+    // } else if (scrollBottom < 1205) {
+    //   $('.main-nav').css({
+    //     'transform': 'translate(0px,'+ winScroll / 5 +'%)'
+    //   })
+    // } else {
+    //   $('.main-nav').css({
+    //     'transform': 'translate(0px,'- winScroll / 5 +'%)'
+    //   })
+    // }
 
     // var controller = new ScrollMagic.Controller();
 
@@ -112,7 +112,7 @@ angular.module('storySwap').directive('landingPageDirective', function(){
         // })
 
 
-      })
+      // })
 
     }
   }

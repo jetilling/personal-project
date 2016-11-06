@@ -1,12 +1,13 @@
-angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable'])
+angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable', 'nvd3'])
 .config(function($stateProvider, $urlRouterProvider, $authProvider){
   $urlRouterProvider.otherwise('/').when('/dashboard', '/dashboard/stories');
 
-  var skipIfLoggedIn = ['$q', '$auth', function($q, $auth) {
+  var skipIfLoggedIn = ['$q', '$location', '$auth', function($q, $location, $auth) {
   var deferred = $q.defer();
   if ($auth.isAuthenticated()) {
-    deferred.reject();
+    $location.path('/dashboard')
   } else {
+    console.log('hey');
     deferred.resolve();
   }
   return deferred.promise;
@@ -30,6 +31,9 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
             controller: 'landingPageCtrl',
             templateUrl: './views/landingPage.html'
           }
+        },
+        resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
         }
     })
     .state('login', {
@@ -132,7 +136,7 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
         }
     })
 
-  $authProvider.loginUrl = 'http://localhost:8080/auth/login';
-  $authProvider.signupUrl = 'http://localhost:8080/auth/signup';
+  $authProvider.loginUrl = '/auth/login';
+  $authProvider.signupUrl = '/auth/signup';
 })
 // })
