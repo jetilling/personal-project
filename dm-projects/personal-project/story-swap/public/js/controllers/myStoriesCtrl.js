@@ -7,15 +7,15 @@ angular.module('storySwap').controller('myStoriesCtrl', function($scope, service
   $scope.viewSavedStories = function(){
     $scope.stories = true;
     $scope.storiesByMe = false;
-    angular.element(document).find('.myStories-savedStories-btn').css("background", "#E8FFF5");
-    angular.element(document).find('.myStories-btn').css("background", "transparent")
+    angular.element(document).find('.myStories-savedStories-btn').css("color", "#DE5F55");
+    angular.element(document).find('.myStories-btn').css("color", "mintcream")
   }
 
   $scope.viewMyStories = function(){
     $scope.stories = false;
     $scope.storiesByMe = true;
-    angular.element(document).find('.myStories-savedStories-btn').css("background", "transparent");
-    angular.element(document).find('.myStories-btn').css("background", "#E8FFF5")
+    angular.element(document).find('.myStories-savedStories-btn').css("color", "mintcream");
+    angular.element(document).find('.myStories-btn').css("color", "#DE5F55")
   }
 
 var myStories = [];

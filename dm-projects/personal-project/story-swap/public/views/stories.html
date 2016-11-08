@@ -13,7 +13,17 @@
 
 <!-- <div class="stories" > -->
   <!-- <stories-directive ng-repeat="story in stories" story='story'></stories-directive> -->
-  <nvd3 options="options" data="data" events="events" class="with-3d-shadow with-transitions" id="chart"></nvd3>
+  <div class="chart-box">
+    <nvd3 options="options" data="data" events="events" class="with-3d-shadow with-transitions" id="chart"></nvd3>
+  </div>
+
+  <div class="stories-page-info">
+    <div class="stories-page-text">
+
+    </div>
+    <div ui-view="dashboard.stories" class="view"></div>
+  </div>
+
 
 <!-- </div> -->
 

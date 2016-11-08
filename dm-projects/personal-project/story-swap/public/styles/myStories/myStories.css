@@ -1,7 +1,7 @@
 .myStories-page {
-  height: 100vh;
-  width: 100%;
-  background: #394B49;
+  height: 88vh;
+  width: 49vw;
+  background: #1E1E20;
 }
 
 .myStories-page-toggleBtns {
@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #394B49;
+  background: #1E1E20;
   width: 100%;
   overflow: scroll;
 }
@@ -27,12 +27,9 @@
   height: 90vh;
   overflow: scroll;
   position: relative;
-  width: 67.5%;
-  height: 100vh;
-  background: #00A06F;
+  width: 49vw;
+  height: 82vh;
   margin-top: 28px;
-  border: 1px solid grey;
-  border-radius: 5px;
 }
 
 .myStory {
@@ -43,8 +40,8 @@
   position: relative;
   margin: 10px;
   text-align: center;
-  height: 32%;
-  width: 40%;
+  height: 25vh;
+  width: 32vw;
   border-radius: 5px;
   border: 1px solid black;
   font-family: 'Muli', sans-serif;
@@ -67,37 +64,23 @@
 
 .myStories-page-toggleBtns {
   font-size: 15px;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  outline: none;
+  border: none;
 }
 
 .myStories-btn {
-  background: #E8FFF5;
+  background: transparent;
   outline: none;
   border: none;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
-  border-top: 2px solid black;
-  font-size: 12px;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 16px;
+  color: #DE5F55;
 }
 
 .myStories-savedStories-btn {
   background: transparent;
   outline: none;
-  border: 2px solid black;
-  font-size: 12px;
-  font-family: 'Merriweather Sans', sans-serif;
-}
-
-.myStories-label {
-  position: absolute;
-  font-size: 160px;
-  width: 100%;
-  padding-left: 5%;
-  left: 48%;
-  top: 70%;
-  font-family: 'Lobster', cursive;
-  font-weight: lighter;
-  /*color: #272A2F;*/
-  z-index: 40;
+  border: none;
+  font-size: 16px;
+  color: mintcream;
 }

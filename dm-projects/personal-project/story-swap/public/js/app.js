@@ -1,4 +1,4 @@
-angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable', 'nvd3'])
+angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable', 'nvd3', 'ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider, $authProvider){
   $urlRouterProvider.otherwise('/').when('/dashboard', '/dashboard/stories');
 
@@ -96,28 +96,28 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
         loginRequired: loginRequired
       }
     })
-    .state('dashboard.following', {
+    .state('dashboard.stories.following', {
       url: '/following',
       views: {
-        "dashboard@dashboard": {
+        "dashboard.stories@dashboard.stories": {
           controller: 'followingCtrl',
           templateUrl: './views/following.html'
         }
       }
     })
-    .state('dashboard.myStories', {
+    .state('dashboard.stories.myStories', {
       url: '/myStories',
       views: {
-        "dashboard@dashboard": {
+        "dashboard.stories@dashboard.stories": {
           controller: 'myStoriesCtrl',
           templateUrl: './views/myStories.html'
         }
       }
     })
-    .state('dashboard.drafts', {
+    .state('dashboard.stories.drafts', {
       url: '/drafts',
       views: {
-        "dashboard@dashboard": {
+        "dashboard.stories@dashboard.stories": {
           controller: 'draftsCtrl',
           templateUrl: './views/drafts.html'
         }

@@ -1,20 +1,66 @@
+.storiesPage.ng-enter {
+  transition: 3s;
+  animation:slideInRight 3s both ease-in;
+  }
+.storiesPage.ng-leave {
+  transition: 3s;
+  animation:slideOutLeft 3s both ease-in;
+}
+
 .storiesPage {
   overflow: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url('../../img/dark-space.jpg');
   width: 100vw;
   height: 90vh;
+  transition: 3s;
+  z-index: 100;
+}
+
+.ng-scope {
+  /*left: 0vw;*/
+}
+
+.view {
+  position: absolute;
+  left: 0vw;
+}
+
+.chart-box {
+  background: url('../../img/dark-space.jpg');
+  width: 50vw;
+  height: 90vh;
+  position: relative;
+  left: -25vw;
+  overflow: hidden;
 }
 
 #chart {
   height: 90vh;
-  width: 100vw;
-  position: fixed
+  width: 50vw;
+  position: relative;
+  left: -25vw;
+  top: -10vh
 }
 
+.nvd3-svg {
+  height: 90vh;
+}
+
+.stories-page-info {
+  width: 50vw;
+  height: 90vh;
+  position: absolute;
+  left: 50vw;
+  background: #1E1E20;
+  border-left: 3px solid mintcream;
+}
+
+.stories-page-text {
+
+}
 
 
 
@@ -28,6 +74,24 @@
   height: 100vh;
   z-index: 30;
   border-radius: 5px;
+}
+
+.userStory {
+  border: 3px solid mintcream;
+  color: white;
+}
+
+.swal2-modal h2 {
+  color: mintcream;
+}
+
+.swal2-modal .swal2-content {
+  color: mintcream;
+}
+
+.btn-success {
+  outline: none;
+  border: none;
 }
 
 .story {

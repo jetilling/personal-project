@@ -329,8 +329,12 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
                           swal({
                             title: e.display_name,
                             text: e.story,
+                            background: '#1E1E20',
+                            confirmButtonText: 'Done',
+                            confirmButtonColor: '#DE5F55',
+                            confirmButtonClass: 'btn-success',
                             animation: false,
-                            customClass: 'animated pulse'
+                            customClass: 'animated pulse userStory'
                           }).then(
                                function(){
                                  d3.selectAll('.nvtooltip').each(function(){

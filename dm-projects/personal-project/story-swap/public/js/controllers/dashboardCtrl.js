@@ -18,6 +18,7 @@ $scope.closeMenu = function(){
   $scope.close = false;
 }
 
+
 // angular.element(document).find('.storiesBtn').css("border-left", "3px solid black", "border-right", "3px solid black", "border-top", "3px solid black")
 // $auth.get(req.user)
 $scope.logout = function(){
@@ -67,8 +68,9 @@ $scope.compose = function(){
       '<button class="compose-publishBtn" type="button" name="button" ng-click="addStory(story); compose()">Publish</button>',
     showCloseButton: true,
     showCancelButton: true,
-    // confirmButtonText: 'Publish',
-    cancelButtonText: 'Save Draft'
+    confirmButtonText: 'Publish',
+    cancelButtonText: 'Save Draft',
+    background: '#1E1E20'
   })
 }
 

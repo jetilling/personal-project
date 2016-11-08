@@ -1,10 +1,23 @@
 <body ng-controller="followingCtrl">
-  <section class="following-page">
+  <section class="following-page" style="left: 0vw">
 
 
     <!-- <h1>{{test}}</h1> -->
 
   <div class="following-page-stuff">
+
+    <div class="following-page-btns">
+      <div class="followingPage-title-box">
+        <h1>View stories from...</h1>
+      </div>
+      <button class="following-button" type="button" name="button" ng-click="showAll()">All</button>
+      <div ng-repeat="user in users">
+        <div ng-show="userId">{{user.id}}</div>
+        <button class="following-button" type="button" name="button" ng-click="viewUserStories(user.id)">{{user.display_name}}</button>
+      </div>
+    </div>
+    </div>
+
 
     <div class="currentuser" ng-show="currentuser">
       {{currentUser}}
@@ -35,21 +48,8 @@
       </div>
     </div>
 
-    <div class="followingPage-label">
-      following
-    </div>
 
-    <div class="following-page-btns">
-      <div class="followingPage-title-box">
-        <h1>View stories from...</h1>
-      </div>
-      <button class="following-button" type="button" name="button" ng-click="showAll()">All</button>
-      <div ng-repeat="user in users">
-        <div ng-show="userId">{{user.id}}</div>
-        <button class="following-button" type="button" name="button" ng-click="viewUserStories(user.id)">{{user.display_name}}</button>
-      </div>
-    </div>
-    </div>
+
 
   </section>
 
