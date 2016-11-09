@@ -6,11 +6,11 @@ angular.module('storySwap').directive('landingPageDirective', function(){
       var videoList = ["./videos/Falling-Leaf.mp4", "./videos/In-And-Out.mp4", "./videos/The-DJ.mp4", "./videos/High-Lines.mp4"];
       videoList.sort(function(a, b) {return 0.5 - Math.random()});
 
-      var pictureList = ["./img/Falling-Leaf.jpg", "./img/In-And-Out.jpg", "./img/The-DJ.jpg", "./img/High-Lines.jpg"]
+      var pictureList = ["./img/blue.jpeg", "./img/earth.jpeg", "./img/vortex.jpeg"]
       pictureList.sort(function(a, b) {return 0.5 - Math.random()});
 
-      angular.element(document).find(".intro-video").append("<video loop class='background-vid' src=" + videoList[0] + " autoplay poster=" + pictureList[0] + "></video>");
-      // angular.element(document).find(".intro-video").append("<img src=" + pictureList[0] + " alt='' />")
+      // angular.element(document).find(".intro-video").append("<video loop class='background-vid' src=" + videoList[0] + " autoplay poster=" + pictureList[0] + "></video>");
+      angular.element(document).find(".intro-video").append("<img src=" + pictureList[0] + " alt='' />")
     },
     link: function(scope, element, attrs) {
 
