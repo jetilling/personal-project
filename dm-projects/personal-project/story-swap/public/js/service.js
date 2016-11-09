@@ -71,11 +71,10 @@ angular.module('storySwap').service('service', function($http){
   }
 
 
-  this.getStories = function(ids){
-    console.log(ids);
+  this.getStories = function(){
     return $http({
       method: "GET",
-      url: '/api/stories/' + ids
+      url: '/api/stories'
     })
     .then(function(res){
       return res.data

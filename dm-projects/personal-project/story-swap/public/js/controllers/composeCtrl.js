@@ -11,7 +11,7 @@ angular.module('storySwap').controller('composeCtrl', function($scope, service){
   $scope.addStory = function(story){
     console.log(story);
     var complete = true
-    service.add(story, currentUserId, complete)
+    // service.add(story, currentUserId, complete)
     $scope.story = ''
   }
 

@@ -29,18 +29,18 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
           // if ($scope.user === $scope.story.users_id) $scope.followBtn = false;
         })
 
-  service.getLastStory()
-    .then(function(res){
-      function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-      ids = [];
-      for (var i = 0; i < 40; i++){
-      ids.push(getRandomInt(1, res[0].id))
-      }
-      for(var i = 0; i < ids.length; i++){
-        console.log(ids[i]);
-      service.getStories(ids[i])
+  // service.getLastStory()
+  //   .then(function(res){
+  //     function getRandomInt(min, max) {
+  //       return Math.floor(Math.random() * (max - min + 1)) + min;
+  //     }
+  //     ids = [];
+  //     for (var i = 0; i < 40; i++){
+  //     ids.push(getRandomInt(1, res[0].id))
+  //     }
+  //     for(var i = 0; i < ids.length; i++){
+  //       console.log(ids[i]);
+      service.getStories()
            .then(function(res){
              if(res) var result = res;
              result.forEach(function(item){
@@ -157,9 +157,8 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
 
                // stories.push(item.category)
              })
-           })
-         }
-    })
+     })
+
 
       $scope.stories = stories
       // console.log(stories);

@@ -175,7 +175,7 @@ app.get('/api/randomWords', serverCtrl.randomWords);
 app.get('/api/checkEmail', ensureAuthenticated, serverCtrl.checkEmail);
 app.get('/api/dashboard', ensureAuthenticated, serverCtrl.getUser);
 app.get('/api/lastStory', ensureAuthenticated, serverCtrl.getLastStory);
-app.get('/api/stories/:id', ensureAuthenticated, serverCtrl.readStories);
+app.get('/api/stories', ensureAuthenticated, serverCtrl.readStories);
 app.get('/api/drafts/:id', ensureAuthenticated, serverCtrl.getDrafts);
 app.get('/api/myStories/:id', ensureAuthenticated, serverCtrl.getMyStories);
 app.get('/api/getDisplayName/:id', ensureAuthenticated, serverCtrl.getDisplayName);

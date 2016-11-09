@@ -29,8 +29,8 @@ $scope.drafts = drafts
 
 $scope.publish = function(id){
   var complete = true;
-  service.publishdraft(id, complete)
-  .then(function(res){
+  // service.publishdraft(id, complete)
+  // .then(function(res){
     console.log(res);
     if(res.data){
       var index = -1;
@@ -45,8 +45,8 @@ $scope.publish = function(id){
         if (index !== -1) {
             drafts.splice(index,1);
         }
-    }
-  })
+  //   }
+  // })
 }
 
 $scope.update = function(draft){
