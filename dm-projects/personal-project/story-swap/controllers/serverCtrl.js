@@ -68,8 +68,7 @@ module.exports = {
   },
 
   readStories: function(req, res){
-    console.log(req.params.id);
-    db.get_stories([req.params.id], function(err, content){
+    db.get_stories(function(err, content){
       console.log(content);
       if(err) console.log(err);
       else res.status(200).json(content)
