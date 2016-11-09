@@ -60,11 +60,22 @@ angular.module('storySwap').service('service', function($http){
     })
   }
 
-
-  this.getStories = function(){
+  this.getLastStory = function(){
     return $http({
       method: "GET",
-      url: '/api/stories'
+      url: '/api/lastStory'
+    })
+    .then(function(res){
+      return res.data
+    })
+  }
+
+
+  this.getStories = function(ids){
+    console.log(ids);
+    return $http({
+      method: "GET",
+      url: '/api/stories/' + ids
     })
     .then(function(res){
       return res.data
