@@ -19,8 +19,35 @@
 
   <div class="stories-page-info">
     <div class="stories-page-text">
-
+      Welcome to the galactic web, the nebula of stories, whatever you want to call it, <br> this is where you will find the stories.<br>
+      Hover over a red <span>node</span> and you'll see the name of the poster and category of the story. <br>
+      Click to drag the <span>node</span> wherever you like. <br>
+      Double click a <span>node</span> to read a story. <br>
+      That's about it! We look forward to seeing what you come up with.
     </div>
+    <div class="stories-page-bottom">
+      <div class="story" ng-repeat="item in story">
+        <div class="story-displayName-box">
+          <div class="story-displayName">
+            {{item.display_name}}
+          </div>
+        </div>
+
+        <div class="story-box">
+          {{item.story}}
+        </div>
+
+        <div class="storiesPage-story-control">
+          <div class="storiesPage-likeBtn" type="button" name="button" ng-show="likeBtn" ng-click="addOne(item.like_count, item.id)">like</div>
+          <div class="likeCount" ng-model="likeCount">{{item.like_count}}</div>
+          <div class="storiesPage-followBtn" type="button" name="button" ng-show="followBtn" ng-click="followUser(item.users_id, user, item.display_name); getFollowing()">Follow</div>
+          <div class="storiesPage-saveBtn" type="button" name="button" ng-click="saveStory(item.id, user)">Save Story</div>
+        </div>
+
+
+      </div>
+    </div>
+
     <div ui-view="dashboard.stories" class="view"></div>
   </div>
 

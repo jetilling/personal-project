@@ -1,0 +1,88 @@
+.compose-page {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 49.75vw;
+  height: 89vh;
+  transition: 3s;
+  z-index: 100;
+  background: #1E1E20;
+}
+
+.compose-title {
+  width: 40vw;
+  color: mintcream;
+  position: relative;
+  top: -34vh;
+  font-size: 46px;
+  font-family: 'Josefin Sans', sans-serif;
+  left: 7vw;
+}
+
+.compose{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 45vh;
+  background: #1E1E20;
+  padding-top: 9px;
+  position: absolute;
+  z-index: 100;
+}
+
+
+.compose-textarea {
+  border-radius: 5px;
+  position: relative;
+  font-family: 'Muli', sans-serif;
+  background: mintcream;
+  font-family: 'Muli', sans-serif;
+  font-size: 15px;
+  width: 40vw;
+  height: 40vh;
+}
+
+.compose-btn-body {
+  display: flex;
+  justify-content: space-around;
+  width: 41vw;
+  position: relative;
+  top: 6vh;
+}
+
+.compose-publishBtn {
+  display: flex;
+  height: 6vh;
+  position: relative;
+  font-family: 'Merriweather Sans', sans-serif;
+  width: 10%;
+  padding-left: 58px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #FF5B64;
+  width: 13vw;
+}
+
+.compose-publishBtn:hover {
+  background: #FB8684;
+}
+
+.compose-saveBtn {
+  display: flex;
+  height: 6vh;
+  position: relative;
+  font-family: 'Merriweather Sans', sans-serif;
+  width: 10%;
+  padding-left: 55px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #FF5B64;
+  width: 13vw;
+}
+
+.compose-saveBtn:hover {
+  background: #FB8684;
+}

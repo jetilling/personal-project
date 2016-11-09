@@ -3,8 +3,8 @@
   position: relative;
   background: #1E1E20;
   margin-top: 10px;
-  width: 49vw;
-  height: 82vh;
+  width: 49.75vw;
+  height: 81vh;
   z-index: 30;
   margin-top: 27px;
 }
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   /*left: -24%;*/
-  top: 60%;
+  top: 0vh;
   font-family: 'Lobster', cursive;
   font-size: 20px;
   width: 200px;
@@ -51,13 +51,10 @@
 }
 
 .savedStory-story-box {
-  height: 100%;
-  width: 90%;
-  margin-left: 10%;
-  padding-top: 8px;
-  padding-bottom: 20%;
+  height: 19vh;
+  width: 32vw;
   position: relative;
-  top: -11%;
+  top: 5vh;
   overflow: scroll;
 }
 
@@ -65,8 +62,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  top: -30%;
-  height: 19%;
+  height: 6vh;
   background: #E8FFF5;
   padding-top: 10px;
   border-bottom-left-radius: 5px;

@@ -9,14 +9,14 @@
 
 
 .following-page {
-  position: absolute;
+  /*position: absolute;*/
   left: 0vw !important;
   top: 0vh;
   height: 90vh;
-  width: 49vw;
+  width: 49.75vw;
   /*background: url('../../img/dark-space.jpg');*/
   background: #1E1E20;
-
+  z-index: 100;
 }
 
 .following-page h1 {
@@ -38,16 +38,14 @@
 
 .following-page-btns {
   position: relative;
-  height: 10vh;
+  height: 84vh;
   width: 16vw;
-  /* margin-right: 19%; */
-  /* margin-bottom: 20%; */
   font-family: 'Merriweather Sans', sans-serif;
   outline: none;
   z-index: 30;
   color: mintcream;
-  top: -37vh;
   left: -16vw;
+  overflow: scroll;
 }
 
 .following-button {

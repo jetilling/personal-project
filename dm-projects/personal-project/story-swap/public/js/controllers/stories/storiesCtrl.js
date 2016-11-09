@@ -4,6 +4,21 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
 
   var followingArr = []
   var stories = []
+  function Story(display_name, story, users_id, like_count, id){
+    this.display_name = display_name,
+    this.story = story,
+    this.users_id = users_id,
+    this.like_count = like_count,
+    this.id = id
+  }
+
+
+
+
+  $scope.storyPageStories = false;
+  $scope.likeBtn = true;
+  $scope.followBtn = true
+
 
 //get current use Id
   var currentUserId;
@@ -11,6 +26,7 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
      .then(function(res) {
         if (res) currentUserId = res;
           $scope.user = currentUserId
+          // if ($scope.user === $scope.story.users_id) $scope.followBtn = false;
         })
 
 
@@ -290,7 +306,27 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
           })
         })
       $scope.stories = stories
-      console.log(stories);
+      // console.log(stories);
+
+      $scope.addOne = function(likeCount, id){
+        console.log(likeCount, id);
+        service.addToLikeCount(likeCount, id)
+          .then(function(res){
+            if(res){
+              $scope.story.forEach(function(item){
+                if(item.id === id){
+                  item.like_count++
+                  $scope.likeBtn = false
+                }
+              })
+            }
+          })
+      }
+
+      $scope.saveStory = function(id, user){
+        console.log(id, user);
+        service.saveStory(id, user)
+      }
 
 
       //graph
@@ -310,8 +346,8 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
                     useInteractiveGuideline: false,
                     interactive: true,
                     contentGenerator: function (e) { //return html content
-                      return '<h3>' + e.display_name + '</h3>' +
-                             '<p>' + 'Category' + ' ' + e.Category + '</p>'
+                      return '<h3>' + e.display_name + '</h3>'
+                            //  '<p>' + 'Category' + ' ' + e.Category + '</p>'
                   }
                 },
                   nodeExtras: function(node) {
@@ -330,16 +366,36 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
                             title: e.display_name,
                             text: e.story,
                             background: '#1E1E20',
-                            confirmButtonText: 'Done',
+                            confirmButtonText: 'View More',
                             confirmButtonColor: '#DE5F55',
                             confirmButtonClass: 'btn-success',
+                            showCancelButton: true,
+                            cancelButtonText: 'Done',
+                            cancelButtonColor: '#DE5F55',
+                            cancelButtonClass: 'btn-done',
                             animation: false,
                             customClass: 'animated pulse userStory'
                           }).then(
-                               function(){
-                                 d3.selectAll('.nvtooltip').each(function(){
-                                     this.style.setProperty('display', 'block', 'important');
-                                 });
+                               function(isConfirm){
+                                 if(isConfirm){
+                                   $scope.storyPageStories = true;
+                                   var story = new Story(e.display_name, e.story, e.users_id, e.like_count, e.id)
+                                   var selectedStories = [];
+                                   selectedStories.push(story)
+                                   $scope.story = selectedStories
+                                  //  console.log($scope.story);
+                                  if($scope.user === e.users_id) $scope.followBtn = false;
+                                   $state.go('dashboard.stories.following');
+                                   $state.go('dashboard.stories');
+                                   d3.selectAll('.nvtooltip').each(function(){
+                                       this.style.setProperty('display', 'block', 'important');
+                                   });
+                                 }
+                                 else {
+                                   d3.selectAll('.nvtooltip').each(function(){
+                                       this.style.setProperty('display', 'block', 'important');
+                                   });
+                                 }
                                }
                              )
 
@@ -368,7 +424,6 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
 
 
 
-
 //get users you're following
     service.getUserId()
       .then(function(res) {
@@ -385,7 +440,7 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
                     })
                     // followingArr.push(response.data[0]);
                     // $scope.following = followingArr;
-                    console.log(followingArr);
+                    // console.log(followingArr);
                   })
                 })
               })
@@ -406,12 +461,14 @@ angular.module('storySwap').controller('storiesCtrl', function($scope, service, 
 
 //follow User
     $scope.followUser = function(users_id, user, display_name){
-      service.followUser(users_id, user)
-      .then(function(res){
-        if(res){
-          followingArr.push({display_name: display_name, id: users_id})
-        }
-      })
+      if (users_id !== user){
+        service.followUser(users_id, user)
+        .then(function(res){
+          if(res){
+            followingArr.push({display_name: display_name, id: users_id})
+          }
+        })
+      }
     }
 
 //unfollow User

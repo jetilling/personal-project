@@ -1,11 +1,4 @@
-.storiesPage.ng-enter {
-  transition: 3s;
-  animation:slideInRight 3s both ease-in;
-  }
-.storiesPage.ng-leave {
-  transition: 3s;
-  animation:slideOutLeft 3s both ease-in;
-}
+
 
 .storiesPage {
   overflow: scroll;
@@ -56,12 +49,27 @@
   left: 50vw;
   background: #1E1E20;
   border-left: 3px solid mintcream;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .stories-page-text {
-
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  font-size: 23px;
+  width: 49vw;
+  line-height: 34px;
+  height: 44vh;
+  position: relative;
+  padding-top: 21px;
 }
 
+.stories-page-text span {
+  color: #DE5F55;
+}
 
 
 .stories {
@@ -83,37 +91,53 @@
 
 .swal2-modal h2 {
   color: mintcream;
+  font-family: 'Lobster', cursive;
 }
 
 .swal2-modal .swal2-content {
   color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .btn-success {
   outline: none;
   border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.btn-done {
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.stories-page-bottom {
+  border-top: 3px solid mintcream;
+  width: 49.75vw;
+  height: 44vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .story {
   background: #E8FFF5;
   position: relative;
-  left: 15vw;
   margin: 10px;
   text-align: center;
-  height: auto;
-  min-height: 40%;
+  height: 30vh;
   width: 40vw;
-  /* min-width: 47%; */
   border-radius: 5px;
   border: 1px solid black;
   font-family: 'Merriweather Sans', sans-serif;
   display: inline-block;
+  z-index: 0;
 }
 
 .story-box {
-  height: 189px;
+  height: 19vh;
   position: relative;
-  top: 29px;
+  top: 39px;
   overflow: scroll;
 }
 
@@ -121,13 +145,13 @@
   display: flex;
   justify-content: center;
   position: relative;
-  top: 5vh;
   height: 16%;
   background: #E8FFF5;
   padding-top: 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top: 1px solid black;
+  top: 6vh;
 }
 
 .storiesPage-likeBtn {
@@ -137,6 +161,8 @@
   background: transparent;
   font-size: 15px;
   cursor: pointer;
+  position: absolute;
+  left: 6vw;
 }
 
 .storiesPage-likeBtn:hover {
@@ -145,6 +171,8 @@
 
 .likeCount {
   margin-right: 5%;
+  position: absolute;
+  left: 9vw;
 }
 
 .storiesPage-followBtn {
@@ -154,6 +182,8 @@
   background: transparent;
   font-size: 15px;
   cursor: pointer;
+  position: absolute;
+
 }
 
 .storiesPage-followBtn:hover {
@@ -166,6 +196,8 @@
   background: transparent;
   font-size: 15px;
   cursor: pointer;
+  position: absolute;
+  left: 28vw;
 }
 
 .storiesPage-saveBtn:hover {
@@ -190,7 +222,7 @@
   position: relative;
   font-family: 'Lobster', cursive;
   font-size: 20px;
-  top: 2vh;
+  top: 1vh;
   z-index: 30;
 }
 
@@ -235,18 +267,4 @@
 
 .nvtooltip {
   display: block;
-}
-
-.storiesPage-label {
-  display: none;
-  position: absolute;
-  font-size: 160px;
-  width: 100%;
-  padding-left: 5%;
-  left: 47%;
-  top: 70%;
-  font-family: 'Lobster', cursive;
-  font-weight: lighter;
-  color: #272A2F;
-  z-index: 40;
 }

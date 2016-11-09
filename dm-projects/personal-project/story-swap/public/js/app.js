@@ -1,4 +1,4 @@
-angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable', 'nvd3', 'ngAnimate'])
+angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable', 'nvd3'])
 .config(function($stateProvider, $urlRouterProvider, $authProvider){
   $urlRouterProvider.otherwise('/').when('/dashboard', '/dashboard/stories');
 
@@ -123,6 +123,17 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
         }
       }
     })
+
+    .state('dashboard.stories.compose', {
+      url: '/compose',
+      views: {
+        "dashboard.stories@dashboard.stories": {
+          controller: 'composeCtrl',
+          templateUrl: './views/compose.html'
+        }
+      }
+    })
+    
     .state('logout', {
       url: '/logout',
         views: {

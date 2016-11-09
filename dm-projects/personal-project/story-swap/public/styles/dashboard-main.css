@@ -12,6 +12,9 @@
 @import "./myStories/myStories.css";
 @import "./savedStories/savedStories.css";
 
+/*compose page*/
+@import "./compose/compose.css";
+
 body {
   background: black;
 }
@@ -142,71 +145,7 @@ body {
   color: #DE5F55;
 }
 
-.compose{
-  display: flex;
-  height: 20vh;
-  background: #394B49;
-  padding-top: 9px;
-  position: absolute;
-  z-index: 100;
-  left: 61vw;
 
-}
-
-.compose textarea {
-  font-family: 'Muli', sans-serif;
-  font-size: 15px;
-}
-
-.compose-textarea {
-  border-radius: 5px;
-  position: relative;
-  /*left: -7%;*/
-  font-family: 'Muli', sans-serif;
-  background: mintcream;
-}
-
-.compose-btn-body {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.compose-publishBtn {
-  display: flex;
-    height: 25%;
-    position: relative;
-    font-family: 'Merriweather Sans', sans-serif;
-    width: 10%;
-    padding-left: 43px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background: #FF5B64;
-    width: 100%;
-    padding-right: 34px;
-}
-
-.compose-publishBtn:hover {
-  background: #FB8684;
-}
-
-.compose-saveBtn {
-  display: flex;
-height: 25%;
-position: relative;
-font-family: 'Merriweather Sans', sans-serif;
-width: 10%;
-padding-left: 43px;
-border: 1px solid black;
-border-radius: 5px;
-background: #FF5B64;
-width: 100%;
-padding-right: 34px;
-}
-
-.compose-saveBtn:hover {
-  background: #FB8684;
-}
 
 
 

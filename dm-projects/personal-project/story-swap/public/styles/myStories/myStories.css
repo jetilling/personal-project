@@ -1,6 +1,6 @@
 .myStories-page {
   height: 88vh;
-  width: 49vw;
+  width: 49.75vw;
   background: #1E1E20;
 }
 
@@ -24,11 +24,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90vh;
   overflow: scroll;
   position: relative;
   width: 49vw;
-  height: 82vh;
+  height: 81vh;
   margin-top: 28px;
 }
 

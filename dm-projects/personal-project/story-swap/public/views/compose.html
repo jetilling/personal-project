@@ -1,0 +1,17 @@
+<body ng-controller="composeCtrl">
+  <div class="compose-page">
+
+    <div class="compose-title">
+      What's your story?
+    </div>
+
+    <div class="compose">
+      <textarea class="compose-textarea" name="name" rows="4" cols="40" placeholder="Tell us something..." ng-model="story"></textarea>
+      <div class="compose-btn-body">
+       <button class="compose-publishBtn" type="button" name="button" ng-click="addStory(story)">Publish</button>
+       <button class="compose-saveBtn" type="button" name="button" ng-click='saveDraft(story)'>Save Draft</button>
+      </div>
+    </div>
+
+  </div>
+</body>

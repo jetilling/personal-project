@@ -1,6 +1,6 @@
 .drafts-page {
   height: 88vh;
-  width: 49vw;
+  width: 49.75vw;
   background: #1E1E20;
 }
 
@@ -15,8 +15,9 @@
 .drafts {
   overflow: scroll;
   position: relative;
-  width: 49vw;
+  width: 49.75vw;
   height: 88vh;
+  background: #1E1E20;
 }
 
 .draft {
@@ -27,13 +28,13 @@
   position: relative;
   margin: 10px;
   text-align: center;
-  height: 29%;
-  width: 50%;
+  height: 27vh;
+  width: 34vw;
   border-radius: 5px;
   border: 1px solid black;
   font-family: 'Muli', sans-serif;
   overflow: scroll;
-  left: 12vw;
+  left: 8vw;
 }
 
 .draft-editable {

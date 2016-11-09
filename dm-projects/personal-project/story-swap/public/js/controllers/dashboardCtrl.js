@@ -53,38 +53,9 @@ $scope.logout = function(){
       currentUserId = currentUser
     })
 
-console.log(currentUserId);
 
-  // $scope.message = false;
-  // $scope.compose = function(){
-  //   $scope.message = !$scope.message
-  // }
 
-$scope.compose = function(){
-  swal({
-    title: 'What\'s your story?',
-    html:
-      '<textarea class="compose-textarea" name="name" rows="4" cols="40" placeholder="Tell us something..." ng-model="story"></textarea>' +
-      '<button class="compose-publishBtn" type="button" name="button" ng-click="addStory(story); compose()">Publish</button>',
-    showCloseButton: true,
-    showCancelButton: true,
-    confirmButtonText: 'Publish',
-    cancelButtonText: 'Save Draft',
-    background: '#1E1E20'
-  })
-}
 
-  $scope.addStory = function(story){
-    var complete = true
-    service.add(story, currentUserId, complete)
-    $scope.story = ''
-  }
-
-  $scope.saveDraft = function(story){
-    var complete = false
-    service.add(story, currentUserId, complete)
-    $scope.story = ''
-  }
 
   // $scope.logout = function(){
   //   service.logout()
