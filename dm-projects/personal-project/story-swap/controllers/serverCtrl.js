@@ -60,8 +60,17 @@ module.exports = {
     })
   },
 
+  getLastStory: function(req, res){
+    db.get_last_story(function(err, content){
+      if(err) console.log(err);
+      else res.status(200).json(content)
+    })
+  },
+
   readStories: function(req, res){
-    db.get_stories(function(err, content){
+    console.log(req.params.id);
+    db.get_stories([req.params.id], function(err, content){
+      console.log(content);
       if(err) console.log(err);
       else res.status(200).json(content)
     });

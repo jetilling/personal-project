@@ -1,0 +1,77 @@
+.savedStories {
+  overflow: scroll;
+  position: relative;
+  background: #1E1E20;
+  margin-top: 10px;
+  width: 49.75vw;
+  height: 81vh;
+  z-index: 30;
+  margin-top: 27px;
+}
+
+.savedStory {
+  background: #E8FFF5;
+  position: relative;
+  left: 8vw;
+  margin: 10px;
+  text-align: center;
+  height: 25vh;
+  width: 32vw;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family: 'Muli', sans-serif;
+}
+
+.savedStory-displayName-box {
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 16%;
+  background: mintcream;
+  display: inline-block;
+  position: absolute;
+  left: 0%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.savedStory-displayName {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /*left: -24%;*/
+  top: 0vh;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  width: 200px;
+  z-index: 30;
+}
+
+.savedStory-story-box {
+  height: 19vh;
+  width: 32vw;
+  position: relative;
+  top: 5vh;
+  overflow: scroll;
+}
+
+.savedStory-btn-control {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 6vh;
+  background: #E8FFF5;
+  padding-top: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.savedStory-delete:hover {
+  cursor: default;
+  border-bottom: 1px solid black;
+}

@@ -1,7 +1,7 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
     massive = require('massive'),
-    cors = require('cors'),
+    // cors = require('cors'),
     jwt = require('jwt-simple'),
     moment = require('moment'),
     config = require('./config.json'),
@@ -11,21 +11,21 @@ var express = require('express'),
 //   db: 'story_swap'
 // });
 
-var massiveInstance = massive.connectSync({connectionString:connectionstring})
+var db = massive.connectSync({connectionString:connectionstring})
 
-var corsOptions = {
-  origin: 'http://localhost:8080'
-}
+// var corsOptions = {
+//   origin: 'http://localhost:8080'
+// }
 
 var app = module.exports = express();
-app.set('db', massiveInstance);
+app.set('db', db);
 var db = app.get('db');
 
 var serverCtrl = require('./controllers/serverCtrl');
 
 
 app.use(bodyParser.json())
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/public'));
 
 
@@ -174,7 +174,8 @@ function getSafeUser (user) {
 app.get('/api/randomWords', serverCtrl.randomWords);
 app.get('/api/checkEmail', ensureAuthenticated, serverCtrl.checkEmail);
 app.get('/api/dashboard', ensureAuthenticated, serverCtrl.getUser);
-app.get('/api/stories', ensureAuthenticated, serverCtrl.readStories);
+app.get('/api/lastStory', ensureAuthenticated, serverCtrl.getLastStory);
+app.get('/api/stories/:id', ensureAuthenticated, serverCtrl.readStories);
 app.get('/api/drafts/:id', ensureAuthenticated, serverCtrl.getDrafts);
 app.get('/api/myStories/:id', ensureAuthenticated, serverCtrl.getMyStories);
 app.get('/api/getDisplayName/:id', ensureAuthenticated, serverCtrl.getDisplayName);

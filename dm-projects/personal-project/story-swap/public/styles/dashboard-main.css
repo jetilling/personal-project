@@ -1,0 +1,612 @@
+/*stories page*/
+@import "./stories/stories.css";
+
+/*Following */
+@import "./following/following.css";
+
+/* drafts */
+@import "./drafts/drafts.css";
+
+
+/*my stories page*/
+@import "./myStories/myStories.css";
+@import "./savedStories/savedStories.css";
+
+/*compose page*/
+@import "./compose/compose.css";
+
+body {
+  background: black;
+}
+
+.dashboard-nav {
+  height: 10vh;
+  width: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid mintcream;
+}
+
+.dashTitle {
+  display: flex;
+  margin-top: 17px;
+  height: 10vh;
+  margin-left: 20px;
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  color: #DE5F55;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.dashboard-nav-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+}
+
+.storiesBtn {
+  height: 10vh;
+  background: transparent;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.storiesBtn:hover{
+  /*text-decoration: line-through;*/
+  color: #DE5F55;
+}
+
+.followingBtn {
+  height: 10vh;
+  font-size: 20px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.followingBtn:hover{
+  /*text-decoration: line-through;*/
+  color: #DE5F55;
+}
+
+.draftsBtn {
+  height: 10vh;
+  font-size: 20px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.draftsBtn:hover{
+  /*text-decoration: line-through;*/
+  color: #DE5F55;
+}
+
+.userBtn {
+  height: 10vh;
+  font-size: 20px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.userBtn:hover{
+  /*text-decoration: line-through;*/
+  color: #DE5F55;
+}
+
+.composeBtn {
+  height: 10vh;
+  font-size: 20px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.composeBtn:hover{
+  /*text-decoration: line-through;*/
+  color: #DE5F55;
+}
+
+.logOutBtn {
+  height: 10vh;
+  font-size: 20px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.logOutBtn:hover{
+  /*text-decoration: line-through;*/
+  color: #DE5F55;
+}
+
+
+
+
+
+
+
+@media(max-width: 770px) {
+  body {
+    background: #394B49;
+  }
+  /*dashboard nav*/
+  .dashTitle {
+    margin-top: 10%
+  }
+
+  .storiesBtn {
+    font-size: 13px;
+  }
+
+  .followingBtn {
+    font-size: 13px;
+  }
+
+  .draftsBtn {
+    font-size: 13px;
+  }
+
+  .userBtn {
+    font-size: 13px;
+  }
+
+  .composeBtn {
+    font-size: 13px;
+  }
+
+  .logOutBtn {
+    font-size: 13px;
+  }
+
+  .compose {
+    left: 0vw;
+    width: 100vw;
+    position: inherit;
+  }
+
+  .compose-textarea {
+    left: 28vw;
+  }
+
+  .compose-btn-body {
+    position: relative;
+    left: 34vw;
+  }
+
+  /*stories page*/
+  .storiesPage {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .stories {
+    /*left: 16%;
+    height: 90vh;
+    width: 300%;*/
+    left: 9%;
+    height: 90vh;
+    width: 192vw;
+  }
+
+  .story {
+    width: 55%;
+    left: 3%;
+  }
+
+  .story-displayName {
+    left: -25%;
+    top: 66%;
+  }
+
+  .storiesPage-story-control {
+    top: -18%;
+  }
+
+  .story-box {
+    top: -8%;
+    height: 20vh;
+  }
+
+  .storiesPage-following {
+    width: 44vw;
+    left: -16%;
+    margin-right: 0%;
+    position: relative;
+    height: 33vh;
+    top: -15%;
+    overflow: scroll;
+  }
+
+  .storiesPage-label {
+    width: 53%;
+    left: 48%;
+    top: 66%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3)
+  }
+
+  /*following page*/
+  .following-page {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .following-page-stuff {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .following-page-stories {
+    height: 90vh;
+    width: 500vw;
+    left: 14%;
+  }
+
+  .following-page-story {
+
+  }
+
+  .followingPage-label {
+    width: 53%;
+    left: 48%;
+    top: 66%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3)
+  }
+}
+
+@media(max-width: 415px) {
+  .dashboard-nav {
+    width: 100vw;
+  }
+
+  .dashTitle {
+    font-size: 52px;
+    margin-top: 20px;
+    /* height: 17vh; */
+    width: 600%;
+    display: inline-block;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transition: .5s;
+  }
+
+  .menu-btn {
+    display: inline-block;
+    position: relative;
+    left: -4%;
+  }
+
+  .menu-btn img {
+    width: 30px;
+  }
+
+  .mobile-nav {
+    top: -5%;
+    left: 8%;
+    position: absolute;
+    transition: .5s;
+    display: inline-block;
+    background: transparent;
+    border: none;
+  }
+
+  .dashboard-nav-btns {
+    display: none;
+  }
+
+  .compose-textarea {
+    left: 3vw;
+    width: 72vw;
+  }
+
+  .compose-btn-body {
+    left: 15px;
+    width: 22vw;
+  }
+
+  .compose-saveBtn {
+    width: 21vw;
+    padding-left: 28px;
+  }
+
+  .compose-publishBtn {
+    width: 21vw;
+    padding-left: 21px;
+  }
+
+  /* stories page*/
+  .storiesPage {
+    width: 100vw;
+    height: 90vh;
+    z-index: 30
+  }
+
+  .stories {
+    width: 96vw;
+    height: 90vh;
+    left: 0%;
+  }
+
+  .story {
+    width: 87vw;
+    left: 1.5%;
+  }
+
+  .story-box {
+
+  }
+
+  .story-displayName-box {
+
+  }
+
+  .story-displayName {
+    top: 57%;
+    left: -22%;
+  }
+
+  .storiesPage-story-control {
+    top: -24%;
+  }
+
+  .storiesPage-label {
+    display: none;
+    font-size: 100px;
+    top: 63%;
+    left: 59%;
+  }
+
+  .storiesPage-following {
+    display: none;
+  }
+
+  /*Following page*/
+  .following-page {
+
+  }
+
+  .following-page-stuff {
+    width: 100vw;
+  }
+
+  .following-page-stories {
+    width: 96vw;
+    height: 90vh;
+    left: 0%;
+  }
+
+  .following-displayName {
+    left: -22%;
+  }
+
+  .following-page-story {
+    width: 87vw;
+    left: 2%;
+  }
+
+  .following-page-btns {
+    display: none;
+  }
+
+  .followingPage-unfollow {
+    top: -29%;
+    width: 77vw;
+  }
+
+  .followingPage-label{
+    display: none;
+  }
+
+  /*drafts page*/
+  .drafts-page {
+    height: 90vh;
+  }
+  .drafts-page-stuff {
+    width: 100vw;
+  }
+
+  .drafts {
+    width: 96vw;
+    height: 90vh;
+    left: 0%;
+  }
+
+  .draft {
+    width: 87vw;
+    left: 0%;
+  }
+
+  .draftPage-label {
+    display: none;
+  }
+
+  .myStories-page {
+    height: 90vh;
+  }
+
+  .myStories-page-stuff {
+    width: 100vw;
+  }
+
+  .myStories {
+    width: 96vw;
+    height: 90vh;
+    left: 0%;
+  }
+
+  .myStory {
+    width: 87vw;
+    left: 0%;
+  }
+
+  .savedStories {
+    width: 96vw;
+    height: 90vh;
+    left: 0%;
+  }
+
+  .savedStory {
+    width: 87vw;
+    left: 1.5%;
+  }
+
+  .savedStory-displayName {
+    left: -22%;
+  }
+
+  .savedStory-story-box {
+    height: 145px;
+  }
+
+  .savedStory-btn-control {
+    top: -14%;
+  }
+
+}
+
+@media(max-width: 375px) {
+  .dashTitle {
+    font-size: 48px;
+    top: -9%;
+  }
+
+  .mobile-nav {
+    display: inline-block;
+    left: 4%;
+    border: none;
+    background: transparent;
+  }
+
+  .story-displayName {
+    left: -25%;
+    top: 58%;
+    font-size: 17px;
+  }
+
+  .following-displayName {
+    left: -25%;
+    top: 58%;
+    font-size: 17px;
+  }
+
+  .followingPage-unfollow {
+    width: 77vw;
+  }
+
+  .myStories-btn-box {
+    height: 17%;
+  }
+
+  .savedStory-displayName {
+    left: -25%;
+    top: 64%;
+    font-size: 17px;
+  }
+
+  .savedStory-btn-control {
+    top: -12%;
+  }
+
+}
+
+@media(max-width: 320px) {
+  .dashTitle {
+    left: 0%;
+    font-size: 45px;
+    top: -14%;
+  }
+
+  .mobile-nav {
+    display: inline-block;
+    left: 2%;
+    width: 82%;
+    border: none;
+    background: transparent;
+  }
+
+  .compose-publishBtn {
+    font-size: 8px;
+    padding-left: 19px;
+  }
+
+  .compose-saveBtn {
+    font-size: 8px;
+    padding-left: 24px;
+  }
+
+  .story-displayName {
+    left: -31%;
+    top: 56%;
+    font-size: 15px;
+  }
+
+  .storiesPage-likeBtn {
+    font-size: 12px;
+  }
+
+  .storiesPage-saveBtn {
+    font-size: 12px;
+  }
+
+  .likeCount {
+    font-size: 12px;
+  }
+
+  .following-displayName {
+    left: -31%;
+    top: 56%;
+    font-size: 15px;
+  }
+
+  .myStories-btn-box {
+    height: 21%;
+  }
+
+  .myStories-btn-box div {
+    font-size: 15px;
+  }
+
+  .savedStory-displayName {
+    left: -31%;
+    top: 63%;
+    font-size: 15px;
+  }
+
+  .savedStory-btn-control {
+    top: -11%;
+  }
+}

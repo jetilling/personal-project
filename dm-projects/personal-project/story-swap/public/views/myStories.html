@@ -9,13 +9,15 @@
 
   <div ng-show="userLoggedIn">{{user}}</div>
 
-<div class="myStories-page-stuff">
+<!-- <div class="myStories-page-stuff"> -->
   <div class="savedStories" ng-show="stories">
     <div class="savedStory" ng-repeat="savedStory in savedStories">
-      <div class="savedStory-displayName-box"></div>
-      <div class="savedStory-displayName">
-        {{savedStory.display_name}}
+      <div class="savedStory-displayName-box">
+        <div class="savedStory-displayName">
+          {{savedStory.display_name}}
+        </div>
       </div>
+
       <div class="savedStory-story-box">
         {{savedStory.story}}
       </div>
@@ -37,7 +39,7 @@
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
 
   <!-- <div class="myStories-label">
     {{displayName}}

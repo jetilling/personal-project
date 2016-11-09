@@ -1,6 +1,8 @@
 angular.module('storySwap').controller('followingCtrl', function($scope, service){
   $scope.test = "Who are you following?"
 
+  angular.element(document).find('.following-page').css("left", "50vw");
+
 
 //stories
   var followingArr = [];

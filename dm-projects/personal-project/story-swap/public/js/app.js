@@ -1,12 +1,13 @@
-angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable'])
+angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard', 'satellizer', 'xeditable', 'nvd3'])
 .config(function($stateProvider, $urlRouterProvider, $authProvider){
   $urlRouterProvider.otherwise('/').when('/dashboard', '/dashboard/stories');
 
-  var skipIfLoggedIn = ['$q', '$auth', function($q, $auth) {
+  var skipIfLoggedIn = ['$q', '$location', '$auth', function($q, $location, $auth) {
   var deferred = $q.defer();
   if ($auth.isAuthenticated()) {
-    deferred.reject();
+    $location.path('/dashboard')
   } else {
+    console.log('hey');
     deferred.resolve();
   }
   return deferred.promise;
@@ -30,6 +31,9 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
             controller: 'landingPageCtrl',
             templateUrl: './views/landingPage.html'
           }
+        },
+        resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
         }
     })
     .state('login', {
@@ -92,33 +96,44 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
         loginRequired: loginRequired
       }
     })
-    .state('dashboard.following', {
+    .state('dashboard.stories.following', {
       url: '/following',
       views: {
-        "dashboard@dashboard": {
+        "dashboard.stories@dashboard.stories": {
           controller: 'followingCtrl',
           templateUrl: './views/following.html'
         }
       }
     })
-    .state('dashboard.myStories', {
+    .state('dashboard.stories.myStories', {
       url: '/myStories',
       views: {
-        "dashboard@dashboard": {
+        "dashboard.stories@dashboard.stories": {
           controller: 'myStoriesCtrl',
           templateUrl: './views/myStories.html'
         }
       }
     })
-    .state('dashboard.drafts', {
+    .state('dashboard.stories.drafts', {
       url: '/drafts',
       views: {
-        "dashboard@dashboard": {
+        "dashboard.stories@dashboard.stories": {
           controller: 'draftsCtrl',
           templateUrl: './views/drafts.html'
         }
       }
     })
+
+    .state('dashboard.stories.compose', {
+      url: '/compose',
+      views: {
+        "dashboard.stories@dashboard.stories": {
+          controller: 'composeCtrl',
+          templateUrl: './views/compose.html'
+        }
+      }
+    })
+    
     .state('logout', {
       url: '/logout',
         views: {
@@ -132,7 +147,7 @@ angular.module('storySwap', ['ui.router', 'storySwap.info', 'storySwap.dashboard
         }
     })
 
-  $authProvider.loginUrl = 'http://localhost:8080/auth/login';
-  $authProvider.signupUrl = 'http://localhost:8080/auth/signup';
+  $authProvider.loginUrl = '/auth/login';
+  $authProvider.signupUrl = '/auth/signup';
 })
 // })

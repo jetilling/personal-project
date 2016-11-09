@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="./styles/fonts.css" media="screen" title="no title">
     <!-- <link rel="stylesheet" href="./js/jquery/slick-1.6.0/slick/slick.css" media="screen" title="no title"> -->
     <link rel="stylesheet" href="./styles/landingPage.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="./styles/dashboard.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.0.0/sweetalert2.css">
+    <link rel="stylesheet" href="./styles/dashboard-main.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="./styles/xeditable.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.3/nv.d3.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" media="screen" title="no title">
+
     <title>Story Swap</title>
   </head>
   <body>
@@ -17,13 +21,18 @@
     <div ui-view="info"></div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.3/nv.d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.7/angular-nvd3.js"></script>
     <script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-xeditable/0.4.0/js/xeditable.js" charset="utf-8"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.0.0/sweetalert2.js" charset="utf-8"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script> -->
     <script src="./js/app.js" charset="utf-8"></script>
     <script src="./js/info.module.js" charset="utf-8"></script>
     <script src="./js/dashboard.module.js" charset="utf-8"></script>
@@ -41,6 +50,7 @@
     <script src="./js/controllers/stories/storiesDirective.js" charset="utf-8"></script>
     <script src="./js/controllers/drafts/draftsCtrl.js" charset="utf-8"></script>
     <script src="./js/controllers/drafts/draftsDirective.js" charset="utf-8"></script>
+    <script src="./js/controllers/composeCtrl.js" charset="utf-8"></script>
     <script src="./js/jquery/landingPage.js" charset="utf-8"></script>
 
 

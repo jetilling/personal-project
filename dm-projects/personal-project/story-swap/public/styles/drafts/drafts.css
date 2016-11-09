@@ -1,0 +1,82 @@
+.drafts-page {
+  height: 88vh;
+  width: 49.75vw;
+  background: #1E1E20;
+}
+
+.drafts-page-stuff {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1E1E20;
+  width: 100%;
+}
+
+.drafts {
+  overflow: scroll;
+  position: relative;
+  width: 49.75vw;
+  height: 88vh;
+  background: #1E1E20;
+}
+
+.draft {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background: #E8FFF5;
+  position: relative;
+  margin: 10px;
+  text-align: center;
+  height: 27vh;
+  width: 34vw;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family: 'Muli', sans-serif;
+  overflow: scroll;
+  left: 8vw;
+}
+
+.draft-editable {
+  margin-top: 10px;
+}
+
+.draft-btns {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+
+.draft-publish {
+  margin-right: 10px;
+}
+
+.draft-publish:hover {
+  border-bottom: 1px solid black;
+  cursor: default;
+
+}
+
+.draft-delete {
+  margin-left: 10px;
+}
+
+.draft-delete:hover {
+  /*font-weight: bolder;*/
+  border-bottom: 1px solid black;
+  cursor: default;
+}
+
+.draftPage-label {
+  position: absolute;
+  font-size: 140px;
+  width: 100%;
+  padding-left: 5%;
+  left: 49%;
+  top: 70%;
+  font-family: 'Lobster', cursive;
+  font-weight: lighter;
+  color: #272A2F;
+  z-index: 40;
+}

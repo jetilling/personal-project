@@ -1,0 +1,270 @@
+
+
+.storiesPage {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 90vh;
+  transition: 3s;
+  z-index: 100;
+}
+
+.ng-scope {
+  /*left: 0vw;*/
+}
+
+.view {
+  position: absolute;
+  left: 0vw;
+}
+
+.chart-box {
+  background: url('../../img/dark-space.jpg');
+  width: 50vw;
+  height: 90vh;
+  position: relative;
+  left: -25vw;
+  overflow: hidden;
+}
+
+#chart {
+  height: 90vh;
+  width: 50vw;
+  position: relative;
+  left: -25vw;
+  top: -10vh
+}
+
+.nvd3-svg {
+  height: 90vh;
+}
+
+.stories-page-info {
+  width: 50vw;
+  height: 90vh;
+  position: absolute;
+  left: 50vw;
+  background: #1E1E20;
+  border-left: 3px solid mintcream;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.stories-page-text {
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  font-size: 23px;
+  width: 49vw;
+  line-height: 34px;
+  height: 44vh;
+  position: relative;
+  padding-top: 21px;
+}
+
+.stories-page-text span {
+  color: #DE5F55;
+}
+
+
+.stories {
+  overflow: scroll;
+  position: relative;
+  /* left: 19%; */
+  background: #00A06F;
+  margin-top: 20px;
+  width: 70%;
+  height: 100vh;
+  z-index: 30;
+  border-radius: 5px;
+}
+
+.userStory {
+  border: 3px solid mintcream;
+  color: white;
+}
+
+.swal2-modal h2 {
+  color: mintcream;
+  font-family: 'Lobster', cursive;
+}
+
+.swal2-modal .swal2-content {
+  color: mintcream;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.btn-success {
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.btn-done {
+  outline: none;
+  border: none;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.stories-page-bottom {
+  border-top: 3px solid mintcream;
+  width: 49.75vw;
+  height: 44vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story {
+  background: #E8FFF5;
+  position: relative;
+  margin: 10px;
+  text-align: center;
+  height: 30vh;
+  width: 40vw;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family: 'Merriweather Sans', sans-serif;
+  display: inline-block;
+  z-index: 0;
+}
+
+.story-box {
+  height: 19vh;
+  position: relative;
+  top: 39px;
+  overflow: scroll;
+}
+
+.storiesPage-story-control {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 16%;
+  background: #E8FFF5;
+  padding-top: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 1px solid black;
+  top: 6vh;
+}
+
+.storiesPage-likeBtn {
+  margin-right: 5%;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+  position: absolute;
+  left: 6vw;
+}
+
+.storiesPage-likeBtn:hover {
+  text-decoration: underline;
+}
+
+.likeCount {
+  margin-right: 5%;
+  position: absolute;
+  left: 9vw;
+}
+
+.storiesPage-followBtn {
+  margin-right: 5%;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+  position: absolute;
+
+}
+
+.storiesPage-followBtn:hover {
+  text-decoration: underline;
+}
+
+.storiesPage-saveBtn {
+  font-family: 'Merriweather Sans', sans-serif;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+  position: absolute;
+  left: 28vw;
+}
+
+.storiesPage-saveBtn:hover {
+  text-decoration: underline;
+
+}
+
+.story-displayName-box {
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 16%;
+  background: mintcream;
+  display: inline-block;
+  position: absolute;
+  left: 0%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  z-index: 30;
+}
+
+.story-displayName {
+  position: relative;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  top: 1vh;
+  z-index: 30;
+}
+
+.storiesPage-following {
+  column-count: 3;
+  position: relative;
+  height: 6vh;
+  width: 39%;
+  /* border: 3px solid black; */
+  /* margin-right: 19%; */
+  /* margin-bottom: 20%; */
+  font-family: 'Merriweather Sans', sans-serif;
+  z-index: 30;
+  left: -22%;
+  top: 9px;
+}
+
+.storiesPage-following h1 {
+  font-size: 25px;
+  font-family: 'Lobster', cursive;
+  text-decoration: underline;
+}
+.storiesPage-following-displayName {
+  display: inline-block;
+  margin: 10px;
+}
+
+.storiesPage-following-displayName:hover {
+  border-bottom: 2px solid black;
+  cursor: default;
+}
+
+.storiesPage-following-unfollowBtn {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.storiesPage-following-unfollowBtn img {
+  height: 15px;
+}
+
+.nvtooltip {
+  display: block;
+}

@@ -63,7 +63,12 @@
 }
 
 .intro-main img {
-  display: none;
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
 }
 
 .background-vid {
@@ -123,6 +128,9 @@
 }
 .intro-title {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   height: 125px;
   position: relative;
   font-size: 120px;
@@ -139,6 +147,13 @@
   font-family: 'Lobster', cursive;
   font-size: 100px;
   color: white;
+}
+
+.sub-title {
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+  top: 5vh;
 }
 
 .buttons{
@@ -206,13 +221,15 @@
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: url('../img/skyline.jpeg');
-  background-position: left -346% top -324%;
-  -webkit-filter: blur(5px);
+  /*background: url('../img/skyline.jpeg');*/
+  background: url('../img/dark-space.jpg');
+
+  /*background-position: left -346% top -324%;*/
+  /*-webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
-  filter: blur(5px);
+  filter: blur(5px);*/
 }
 
 .signup-under-nav{
@@ -231,14 +248,14 @@
   text-decoration: none;
   font-family: 'Lobster', cursive;
   font-size: 60px;
-  color: mintcream;
+  color: #DE5F55;
   position: relative;
   top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 50;
-  border-bottom: 4px solid mintcream;
+  border-bottom: 4px solid #DE5F55;
 }
 
 
@@ -263,7 +280,7 @@
   padding: 40px;
   border: 3px solid black;
   background: mintcream;
-  box-shadow: 5px 5px 20px #141414;
+  box-shadow: 5px 5px 20px #5A5B5F;
   z-index: 30;
 }
 
@@ -338,20 +355,14 @@
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: url('../img/skyline.jpeg');
-  background-position: left -346% top -324%;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  background: url('../img/dark-space.jpg');
 }
 
 .loginBox {
   padding: 40px;
   border: 3px solid black;
   background: mintcream;
-  box-shadow: 5px 5px 20px #141414;
+  box-shadow: 5px 5px 20px #5A5B5F;
   z-index: 30;
 }
 
@@ -372,14 +383,14 @@
   text-decoration: none;
   font-family: 'Lobster', cursive;
   font-size: 60px;
-  color: mintcream;
+  color: #DE5F55;
   position: relative;
   top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 50;
-  border-bottom: 4px solid mintcream;
+  border-bottom: 4px solid #DE5F55;
 }
 
 .confirmLogin-under-nav{
@@ -398,34 +409,28 @@
   text-decoration: none;
   font-family: 'Lobster', cursive;
   font-size: 60px;
-  color: mintcream;
+  color: #DE5F55;
   position: relative;
   top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 50;
-  border-bottom: 4px solid mintcream;
+  border-bottom: 4px solid #DE5F55;
 }
 
 .confirmLogin-background {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: url('../img/skyline.jpeg');
-  background-position: left -346% top -324%;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  background: url('../img/dark-space.jpg');
 }
 
 .confirmLogin-box {
   padding: 40px;
   border: 3px solid black;
   background: mintcream;
-  box-shadow: 5px 5px 20px #141414;
+  box-shadow: 5px 5px 20px #5A5B5F;
   z-index: 30;
 }
 
@@ -517,13 +522,7 @@
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: url('../img/skyline.jpeg');
-  background-position: left -346% top -324%;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  background: url('../img/dark-space.jpg');
 }
 
 
@@ -544,14 +543,14 @@
   text-decoration: none;
   font-family: 'Lobster', cursive;
   font-size: 60px;
-  color: mintcream;
+  color: #DE5F55;
   position: relative;
   top: 0%;
   left: 5%;
   font-weight: bold;
   letter-spacing: 2px;
   z-index: 50;
-  border-bottom: 4px solid mintcream;
+  border-bottom: 4px solid #DE5F55;
 }
 
 .logout-Page-Btn {
@@ -585,7 +584,7 @@
 .section-1{
   width: 100%;
   height: 68vh;
-  background: #394B49;
+  background: #1E1E20;
   color: mintcream;
   font-size: 50px;
   font-family: 'Merriweather Sans', sans-serif;
@@ -674,7 +673,7 @@
 .how-it-works {
   height: 105vh;
   width: 100vw;
-  background: #00A06F;
+  background: #1E1E20;
   display: flex;
   align-items: center;
   position: relative;
@@ -682,17 +681,17 @@
 
 .hiw-title {
   font-size: 100px;
-    color: #3D4148;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    position: absolute;
-    left: -17%;
-    top: 44%;
-    width: 50vw;
-    font-family: 'Merriweather Sans', sans-serif;
+  color: #DE5F55;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  position: absolute;
+  left: -17%;
+  top: 44%;
+  width: 50vw;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .steps {
@@ -701,7 +700,7 @@
     position: relative;
     left: 16%;
     width: 84vw;
-    background: #394B49;
+    background: url('../img/dark-space.jpg');
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -807,6 +806,7 @@
   -webkit-box-shadow: inset 0px 0px 31px black;
   -moz-box-shadow: inset 0px 0px 31px black;
   box-shadow: inset 0px 0px 31px black;
+  opacity: .9;
 }
 
 .signup-call {

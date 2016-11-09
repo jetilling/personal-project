@@ -18,6 +18,7 @@ $scope.closeMenu = function(){
   $scope.close = false;
 }
 
+
 // angular.element(document).find('.storiesBtn').css("border-left", "3px solid black", "border-right", "3px solid black", "border-top", "3px solid black")
 // $auth.get(req.user)
 $scope.logout = function(){
@@ -52,30 +53,9 @@ $scope.logout = function(){
       currentUserId = currentUser
     })
 
-console.log(currentUserId);
 
-  $scope.message = false;
-  $scope.compose = function(){
-    $scope.message = !$scope.message
-  }
 
-  $scope.addStory = function(story){
-    var complete = true
-    service.add(story, currentUserId, complete)
-    $scope.story = ''
-  }
 
-// //Socket.io
-//   $scope.addStory = function(story){
-//     console.log(story);
-//     socket.emit('story', story)
-//   }
-
-  $scope.saveDraft = function(story){
-    var complete = false
-    service.add(story, currentUserId, complete)
-    $scope.story = ''
-  }
 
   // $scope.logout = function(){
   //   service.logout()
